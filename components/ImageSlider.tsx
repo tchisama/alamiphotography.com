@@ -14,23 +14,30 @@ const images=[
     "https://images.pexels.com/photos/2403568/pexels-photo-2403568.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 ]
 const ImageSlider = (props: Props) => {
-  
+    useEffect(
+        () => {
+            gsap.fromTo(
+                '.mySwiper',
+                {y: 30, opacity: 0},
+                {y: 0, opacity: 1, duration: 1}
+            )
+    },[])
 
   return (
     <Swiper
         spaceBetween={10}
-        slidesPerView={4}
+        slidesPerView={3.5}
         autoCorrect='off'
         autoplay={{
             delay: 2500,
             disableOnInteraction: false,
         }}
         modules={[Autoplay]}
+        className='mySwiper'
         >
         {images.map((image, index) => (
-            <SwiperSlide className='w-full h-full' key={index} >
-                <div className='h-[70vh] rounded-md bg-repeat-no-repeat'  style={{backgroundSize:'cover',backgroundImage: `url(${image})`}}>
-
+            <SwiperSlide className='w-full h-full rounded-md overflow-hidden group' key={index} >
+                <div className='h-[70vh]  bg-repeat-no-repeat group-hover:scale-105 scale-100 duration-300 group-hover:rotate-2'  style={{backgroundSize:'cover',backgroundImage: `url(${image})`}}>
                 </div>
             </SwiperSlide>
         ))}
