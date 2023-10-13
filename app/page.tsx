@@ -43,7 +43,7 @@ export default function Home() {
         <div className='my-8 '>
           <ImageSlider/>
         </div>
-        <div className="texth my-10">
+        <div className="texth my-20">
         <div ref={texth} className='max-w-[1500px] texth mx-auto flex flex-col items-center'>
           <h1 className='text-4xl font-light text-center max-w-[800px]'>
               NATURAL & ELEGANT <br/>
