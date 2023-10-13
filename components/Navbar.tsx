@@ -14,13 +14,16 @@ import {
     NavigationMenuViewport,
   } from "@/components/ui/navigation-menu"
 import { Button } from './ui/button'
+import LangButton from './LangButton'
 
 type Props = {}
 
 function Navbar({}: Props) {
   return (
     <div className='w-full p-4  items-center flex justify-between'>
-        <Image alt='' src={blackLogo} width={160} height={100}></Image>
+        <Link href={"/"}>
+            <Image alt='' src={blackLogo} width={160} height={100}></Image>
+        </Link>
         <NavigationMenu>
             <NavigationMenuList>
                 <NavigationMenuItem>
@@ -47,6 +50,9 @@ function Navbar({}: Props) {
                     <Link href="/" legacyBehavior passHref>
                             <NavigationMenuLink className={"uppercase px-2"}>CONTACT</NavigationMenuLink>
                     </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem >
+                    <LangButton/>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                             <Button className={"ml-2"}>ENQUIRE</Button>
