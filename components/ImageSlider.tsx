@@ -21,7 +21,6 @@ const ImageSlider = (props: Props) => {
         spaceBetween={10}
         slidesPerView={4}
         autoCorrect='off'
-        loop={true}
         autoplay={{
             delay: 2500,
             disableOnInteraction: false,
@@ -30,7 +29,7 @@ const ImageSlider = (props: Props) => {
         >
         {images.map((image, index) => (
             <SwiperSlide className='w-full h-full' key={index} >
-                <div className='h-[70vh] rounded-md'  style={{backgroundImage: `url(${image})`}}>
+                <div className='h-[70vh] rounded-md bg-repeat-no-repeat'  style={{backgroundSize:'cover',backgroundImage: `url(${image})`}}>
 
                 </div>
             </SwiperSlide>
