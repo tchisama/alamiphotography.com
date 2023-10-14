@@ -1,4 +1,5 @@
 "use client";
+import Featured from "@/components/Featured";
 import HelloSection from "@/components/HelloSection";
 import ImageSlider from "@/components/ImageSlider";
 import Loading from "@/components/Loading";
@@ -59,6 +60,7 @@ export default function Home() {
         <div className="nav  opacity-0 -translate-y-6">
           <HelloSection />
           <MyWork />
+          <Featured/>
         </div>
       </div>
 
