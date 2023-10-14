@@ -2,6 +2,7 @@
 import HelloSection from "@/components/HelloSection";
 import ImageSlider from "@/components/ImageSlider";
 import Loading from "@/components/Loading";
+import MyWork from "@/components/MyWork";
 import Navbar from "@/components/Navbar";
 import gsap from "gsap";
 import Image from "next/image";
@@ -57,6 +58,7 @@ export default function Home() {
       <div className="max-w-[1500px] mx-auto">
         <div className="nav  opacity-0 -translate-y-6">
           <HelloSection />
+          <MyWork />
         </div>
       </div>
 
