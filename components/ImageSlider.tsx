@@ -18,16 +18,20 @@ const images=[
 const ImageSlider = (props: Props) => {
     useEffect(
         () => {
-            gsap.fromTo(
-                '.mySwiper',
-                {y: 60, opacity: 0,scale:1.05,z:10},
-                {y: 0, opacity: 1,scale:1,z:1, duration: .3}
-            ).then(()=>{
-            })
-            gsap.to(
-                '.img',
-                {x: 0, opacity: 1, duration: .3}
-            )
+            
+            setTimeout(() => {
+                gsap.fromTo(
+                    '.mySwiper',
+                    {y: 120, opacity: 0,scale:1.05,z:10},
+                    {y: 0, opacity: 1,scale:1,z:1, duration: .3}
+                ).then(()=>{
+                })
+                gsap.to(
+                    '.img',
+                    {y: 0,scale:1, opacity: 1, duration: .3}
+                )
+                
+            },400)
     },[])
 
   return (
@@ -40,12 +44,12 @@ const ImageSlider = (props: Props) => {
             disableOnInteraction: false,
         }}
         modules={[Autoplay]}
-        className='mySwiper'
+        className='mySwiper opacity-0'
         >
         {images.map((image, index) => (
             <SwiperSlide className='w-full h-full rounded-md overflow-hidden group' key={index} >
                 <div className='h-full w-full overflow-hidden '>
-                <div className='h-[70vh] img translate-x-[400px] w-full  bg-repeat-no-repeat group-hover:scale-[1.02] scale-100 duration-300 group-hover:rotate-1'  style={{backgroundSize:'cover',backgroundImage: `url(${image})`}}>
+                <div className='h-[70vh]  img translate-y-[150px] w-full  bg-repeat-no-repeat group-hover:scale-[1.02] duration-300 group-hover:rotate-1'  style={{backgroundSize:'cover',backgroundImage: `url(${image})`}}>
                 </div>
                 </div>
             </SwiperSlide>

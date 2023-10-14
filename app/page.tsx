@@ -18,15 +18,20 @@ export default function Home() {
   },[])
   useEffect(() => {
       let tl = gsap.timeline()
-     
        tl
-      .from(
-          ".texth",
-          {y: 40, opacity: 0},
-      ).to(
+      .to(
+          ".nav",
+          {y: 0, opacity: 1, duration: 1}
+      )
+    setTimeout(() => {
+      let tl = gsap.timeline()
+       tl
+      .to(
           ".texth",
           {y: 0, opacity: 1, duration: 1}
       )
+      
+    }, 1000);
   },[loading])
   if(loading){
     return(
@@ -36,14 +41,14 @@ export default function Home() {
   return (
       <div className='px-6'>
         <div className='max-w-[1500px] mx-auto'>
-          <div className='texth'>
+          <div className='nav  opacity-0 -translate-y-6'>
             <Navbar/>
           </div>
         </div>
         <div className='my-8 '>
           <ImageSlider/>
         </div>
-        <div className="texth my-20">
+        <div className="texth opacity-0 translate-y-12 my-20">
         <div ref={texth} className='max-w-[1500px] texth mx-auto flex flex-col items-center'>
           <h1 className='text-4xl font-light text-center max-w-[800px]'>
               NATURAL & ELEGANT <br/>
