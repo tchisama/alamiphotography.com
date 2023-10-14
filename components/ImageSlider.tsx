@@ -50,7 +50,6 @@ const ImageSlider = (props: Props) => {
             <SwiperSlide className='w-full h-full rounded-md overflow-hidden group' key={index} >
                 <div className='h-full  w-full overflow-hidden '>
                 <div className='h-[70vh]  img translate-y-[150px] w-full  bg-repeat-no-repeat group-hover:scale-[1.02] duration-300 '  style={{backgroundSize:'cover',backgroundImage: `url(${image})`}}>
-                    
                 </div>
                 </div>
             </SwiperSlide>
