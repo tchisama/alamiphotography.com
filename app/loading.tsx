@@ -3,7 +3,7 @@ import React from 'react'
 
 function loading() {
   return (
-    <div className='flex items-center justify-center gap-2'>
+    <div className='flex items-center h-screen justify-center gap-2'>
         loading <Loader className='animate-spin'/>
     </div>
   )
