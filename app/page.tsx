@@ -7,6 +7,7 @@ import MyWork from "@/components/MyWork";
 import Navbar from "@/components/Navbar";
 import Testimonial from "@/components/Testimonial";
 import Video from "@/components/Video";
+import { Separator } from "@/components/ui/separator";
 import gsap from "gsap";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
@@ -60,14 +61,19 @@ export default function Home() {
 
       <div className="max-w-[1500px] mx-auto">
         <div className="nav  opacity-0 -translate-y-6">
+          <Separator/>
           <HelloSection />
+          <Separator/>
           <MyWork />
+          <Separator/>
           <Featured/>
+          <Separator/>
         </div>
       </div>
 
       <div className="max-w-[1700px] mx-auto">
           <Video/>
+          <Separator/>
       </div>
 
       <div className="max-w-[1500px] mx-auto">
