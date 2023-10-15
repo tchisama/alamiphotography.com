@@ -20,7 +20,7 @@ function HelloSection({}: Props) {
             </p>
             <Button className='shadow-xl' size={'lg'}>Learn More</Button>
         </div>
-        <img className='h-[600px] rounded-lg shadow-2xl rotate-2' src="https://www.niallscullyphotography.com/wp-content/uploads/2022/12/Me-3-596x894.jpg"></img>
+        <img className='h-[600px] rounded-lg shadow-2xl ' src="https://www.niallscullyphotography.com/wp-content/uploads/2022/12/Me-3-596x894.jpg"></img>
     </div>
   )
 }

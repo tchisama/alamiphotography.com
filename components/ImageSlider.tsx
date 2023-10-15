@@ -21,8 +21,8 @@ const ImageSlider = (props: Props) => {
       gsap
         .fromTo(
           ".mySwiper",
-          { y: 120, opacity: 0, scale: 1.05, z: 10 },
-          { y: 0, opacity: 1, scale: 1, z: 1, duration: 0.3 }
+          { y: 120, opacity: 0, z: 10 },
+          { y: 0, opacity: 1, z: 1, duration: 0.3 }
         )
         .then(() => {});
       gsap.to(".img", { y: 0, scale: 1, opacity: 1, duration: 0.3 });
@@ -32,14 +32,14 @@ const ImageSlider = (props: Props) => {
   return (
     <Swiper
       spaceBetween={10}
-      slidesPerView={3.5}
+      slidesPerView={5}
       autoCorrect="off"
       autoplay={{
-        delay: 2500,
+        delay: 5000,
         disableOnInteraction: false,
       }}
       modules={[Autoplay]}
-      className="mySwiper opacity-0 drop-shadow-xl"
+      className="mySwiper my-[10vh] scale-125 opacity-0 drop-shadow-xl"
     >
       {images.map((image, index) => (
         <SwiperSlide
@@ -48,7 +48,7 @@ const ImageSlider = (props: Props) => {
         >
           <div className="h-full  w-full overflow-hidden ">
             <div
-              className="h-[70vh]  img translate-y-[150px] w-full  bg-repeat-no-repeat group-hover:scale-[1.02] duration-300 "
+              className="h-[50vh]  img translate-y-[150px] w-full  bg-repeat-no-repeat group-hover:scale-[1.02] duration-300 "
               style={{
                 backgroundSize: "cover",
                 backgroundImage: `url(${image})`,
