@@ -1,5 +1,6 @@
 "use client";
 import Featured from "@/components/Featured";
+import Footer from "@/components/Footer";
 import HelloSection from "@/components/HelloSection";
 import ImageSlider from "@/components/ImageSlider";
 import Loading from "@/components/Loading";
@@ -32,7 +33,8 @@ export default function Home() {
     return <Loading />;
   }
   return (
-    <div className="px-6 overflow-x-hidden">
+      <>
+    <div className="px-6 bg-[#fafaf8] overflow-x-hidden">
 
       <div className="max-w-[1500px] mx-auto">
         <div className="nav  opacity-0 -translate-y-6">
@@ -80,10 +82,15 @@ export default function Home() {
         <div className="nav  opacity-0 -translate-y-6">
           <Testimonial/>
         </div>
+        <Separator/>
       </div>
-      k
-
 
     </div>
+      <div className="bg-[#fbf5f1] py-4 ">
+        <div className="max-w-[1500px] mx-auto">
+            <Footer/>
+        </div>
+      </div>
+      </>
   );
 }
