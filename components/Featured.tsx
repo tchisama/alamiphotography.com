@@ -10,7 +10,7 @@ const Featured = (props: Props) => {
     <div className='my-20'>
 
     <h1 className='text-center text-3xl my-10 uppercase '>featured by</h1>
-    <div className='flex gap-8 items-center justify-center  '>
+    <div className='flex drop-shadow-xl gap-8 items-center justify-center  '>
         <Image height={140} src={img1}   alt="" />
         <Image className='darken' height={120} src={img2}   alt="" />
     </div>
