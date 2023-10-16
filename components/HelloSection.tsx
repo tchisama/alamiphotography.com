@@ -10,7 +10,6 @@ function HelloSection({}: Props) {
             <h1 className='text-7xl font-light fontroman'>
                 Hello!<br/>
                 Thanks for stopping by
-                
             </h1>
             <p className='text-3xl fontcharm leading-relaxed max-w-4xl'>
                     A fine art film and digital wedding photographer based out Wicklow, Ireland, I am someone who takes great pride in their work. A fan of superheroes and zombie flicks, I enjoy lazy Sundays, the calm, the relaxation, the way they seem to breeze on by.
