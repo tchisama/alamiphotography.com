@@ -17,7 +17,6 @@ function HelloSection({}: Props) {
                     Always quick with a joke and ready to get down to business, I knows how to be productive and have fun at the same time. I am a family man whose wife and kids are at the centre of my world and inspiration for everyday life.
                     <br/>    
                     Please take a look around the website, and I hope we connect soon!
-                    
             </p>
             <Button className='shadow-xl' size={'lg'}>Learn More</Button>
         </div>
