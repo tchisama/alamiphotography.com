@@ -1,8 +1,17 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter,Dancing_Script,Charm } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
+const dancing = Dancing_Script({ 
+  subsets: ['latin'] ,
+  variable:"--font-dancing",
+})
+const charm = Charm({ 
+  subsets:["latin"],
+  weight:['400','700'],
+  variable:"--font-charm",
+})
 
 export const metadata: Metadata = {
   title: 'alamipohotography',
@@ -16,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={` ${charm.variable} ${dancing.variable}`}>
         <div className='text-gray-700'>
           {children}
         </div>

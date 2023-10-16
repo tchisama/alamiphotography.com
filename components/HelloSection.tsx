@@ -7,11 +7,11 @@ function HelloSection({}: Props) {
   return (
     <div className='flex gap-6 my-20 items-center justify-between'>
         <div className='flex  flex-col items-start gap-8'>
-            <h1 className='text-6xl font-light'>
+            <h1 className='text-7xl font-light fontroman'>
                 Hello!<br/>
                 Thanks for stopping by
             </h1>
-            <p className='text-xl max-w-3xl'>
+            <p className='text-2xl fontcharm leading-relaxed max-w-3xl'>
                     A fine art film and digital wedding photographer based out Wicklow, Ireland, I am someone who takes great pride in their work. A fan of superheroes and zombie flicks, I enjoy lazy Sundays, the calm, the relaxation, the way they seem to breeze on by.
                     <br/>    
                     Always quick with a joke and ready to get down to business, I knows how to be productive and have fun at the same time. I am a family man whose wife and kids are at the centre of my world and inspiration for everyday life.

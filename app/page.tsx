@@ -46,14 +46,14 @@ export default function Home() {
         <ImageSlider />
       </div>
 
-      <div className="texth opacity-0 translate-y-12 my-20">
+      <div className="texth opacity-0 fontcharm translate-y-12 my-32 mt-40">
         <div
           ref={texth}
-          className="max-w-[1500px] texth mx-auto flex flex-col items-center"
+          className="max-w-[1500px] texth mx-auto flex  flex-col items-center"
         >
-          <h1 className="text-4xl font-light text-center max-w-[800px]">
-            NATURAL & ELEGANT <br />
-            FINE ART WEDDING & LIFESTYLE PHOTOGRAPHER & VIDEOGRAPHER
+          <h1 className="text-4xl  leading-relaxed font-light text-center max-w-[800px]">
+            Natural & Elegance <br />
+            Fine Art Wedding & Lifestyle Photographer & Videographer
           </h1>
           <h2 className="text-2xl font-light  text-center my-4">
             Capturing Timeless Beauty & Emotion
@@ -73,7 +73,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="max-w-[1700px] mx-auto">
+      <div className="max-w-[2000px] mx-auto">
           <Video/>
           <Separator/>
       </div>

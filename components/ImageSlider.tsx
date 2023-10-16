@@ -4,6 +4,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
+import { Button } from "./ui/button";
+import { ArrowLeft, ArrowRight, LineChart } from "lucide-react";
 type Props = {};
 const images = [
   "https://images.pexels.com/photos/1730877/pexels-photo-1730877.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -38,6 +40,7 @@ const ImageSlider = (props: Props) => {
   }, []);
 
   return (
+    <>
     <Swiper
       spaceBetween={10}
       slidesPerView={5}
@@ -66,6 +69,23 @@ const ImageSlider = (props: Props) => {
         </SwiperSlide>
       ))}
     </Swiper>
+    <div className="flex gap-4 justify-center img">
+      <div className="flex-1 flex justify-end">
+      <button className="text-primary flex items-center p-2 group" >
+        <ArrowLeft/>
+        <div className="w-[100px] h-[2px] group-hover:w-[110px] duration-200  -translate-x-2 bg-primary">
+        </div>
+        </button>
+      </div>
+      <div className="flex-1 flex justify-start">
+      <button className="text-primary group flex items-center p-2" >
+        <div className="w-[100px] h-[2px] group-hover:w-[110px] duration-200 translate-x-2 bg-primary">
+        </div>
+        <ArrowRight/>
+      </button>
+      </div>
+    </div>
+    </>
   );
 };
 

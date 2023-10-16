@@ -79,7 +79,10 @@
   }
 }
 
+.fontcharm {
+  font-family: var(--font-charm);
+}
 
 .fontroman {
-  font-family: 'Amatic SC', sans-serif;
+  font-family: var(--font-dancing);
 }

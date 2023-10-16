@@ -10,7 +10,6 @@ function Testimonial({}: Props) {
       <div className='flex items-center'>
         <div className='relative flex-[2]'>
             <img className='w-full rounded-xl shadow-lg' src='https://www.niallscullyphotography.com/wp-content/uploads/2022/12/Eimear-Niall-277-1-scaled.jpeg?x15971'></img>
-            <h1 className='absolute top-10 left-10 drop-shadow-md text-white text-5xl'>CHECK MY PACKAGES</h1>
         </div>
         <div className='flex-[3] flex gap-12 justify-center'>
             <Link href={"/"} className='w-[300px] rotate-1 -translate-y-20 flex flex-col gap-2 items-center'>

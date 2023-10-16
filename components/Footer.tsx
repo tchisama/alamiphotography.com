@@ -28,7 +28,7 @@ const images = [
 ];
 const Footer = (props: Props) => {
   return (
-    <div className='my-20'>
+    <div className='my-20 fontroman'>
         <div className='gap-1 ' style={{display:"grid",gridTemplateColumns:"repeat("+images.length+",1fr)"}}>
             {
                 images.map((image, index) => (
