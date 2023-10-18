@@ -43,14 +43,23 @@ const ImageSlider = (props: Props) => {
     <>
     <Swiper
       spaceBetween={10}
-      slidesPerView={5}
+      breakpoints={{
+        140: {
+          slidesPerView: 3,
+          spaceBetween: 10,
+        },
+        768: {
+          slidesPerView: 5,
+          spaceBetween: 25,
+        },
+      }} 
       autoCorrect="off"
       autoplay={{
         delay: 5000,
         disableOnInteraction: false,
       }}
       modules={[Autoplay]}
-      className="mySwiper my-[10vh] scale-125 opacity-0 drop-shadow-xl"
+      className="mySwiper my-[10vh] scale-[1.8] md:scale-125 opacity-0 drop-shadow-xl"
     >
       {images.map((image, index) => (
         <SwiperSlide
@@ -59,7 +68,7 @@ const ImageSlider = (props: Props) => {
         >
           <div className="h-full  w-full overflow-hidden ">
             <div
-              className="h-[50vh]  img translate-y-[150px] w-full  bg-repeat-no-repeat group-hover:scale-[1.02] duration-300 "
+              className=" aspect-[3/4] img translate-y-[150px] w-full  bg-repeat-no-repeat group-hover:scale-[1.02] duration-300 "
               style={{
                 backgroundSize: "cover",
                 backgroundImage: `url(${image})`,

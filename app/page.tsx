@@ -42,20 +42,20 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="my-8 ">
+      <div className="md:my-8 ">
         <ImageSlider />
       </div>
 
-      <div className="texth opacity-0 fontcharm translate-y-12 my-32 mt-40">
+      <div className="texth opacity-0 fontcharm translate-y-12 mb-12 md:my-32 mt-10 md:mt-40">
         <div
           ref={texth}
           className="max-w-[1500px] texth mx-auto flex  flex-col items-center"
         >
-          <h1 className="text-4xl  leading-relaxed font-light text-center max-w-[800px]">
+          <h1 className="text-2xl md:text-4xl  leading-relaxed font-light text-center max-w-[800px]">
             Natural & Elegance <br />
             Fine Art Wedding & Lifestyle Photographer & Videographer
           </h1>
-          <h2 className="text-2xl font-light  text-center my-4">
+          <h2 className="text-lg md:text-2xl font-light  text-center my-4">
             Capturing Timeless Beauty & Emotion
           </h2>
         </div>

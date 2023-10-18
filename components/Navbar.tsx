@@ -20,11 +20,11 @@ type Props = {}
 
 function Navbar({}: Props) {
   return (
-    <div className='w-full p-4  items-center flex justify-between'>
+    <div className='w-full md:p-4 py-4  items-center flex justify-between'>
         <Link href={"/"}>
-            <Image alt='' src={blackLogo} width={160} height={100}></Image>
+            <Image alt='' className=' w-[100px] object-contain md:w-[160px] md:h-[100px]' src={blackLogo} width={160} height={100}></Image>
         </Link>
-        <NavigationMenu>
+        <NavigationMenu style={{}} className='hidden md:flex'>
             <NavigationMenuList>
                 <NavigationMenuItem>
                     <Link href="/" legacyBehavior passHref>
