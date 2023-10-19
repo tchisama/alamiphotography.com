@@ -28,7 +28,7 @@ const images = [
 ];
 const Footer = (props: Props) => {
   return (
-    <div className='my-20 '>
+    <div className='py-20 '>
         <div className='gap-1 hidden md:grid'  style={{gridTemplateColumns:"repeat("+images.length+",1fr)"}}>
             {
                 images.map((image, index) => (
@@ -48,7 +48,7 @@ const Footer = (props: Props) => {
             <div className='h-[250px] hidden md:block'>
                 <Separator orientation='vertical'/>
             </div>
-            <div className='flex-[2] md:px-4 flex gap-12 md:gap-0 pt-12 md:pt-0 h-[400px] items-center flex-col md:flex-row'>
+            <div className='flex-[2] md:px-4 flex gap-12 md:gap-0 pt-12 md:pt-0 h-[400px] md:items-center flex-col md:flex-row'>
                 <div className='flex-1'>
                     
                 <NavigationMenu >
@@ -85,7 +85,7 @@ const Footer = (props: Props) => {
                 <div className='h-[250px] md:block hidden'>
                     <Separator orientation='vertical'/>
                 </div>
-                <div className='flex flex-col gap-4 pl-4'>
+                <div className='flex flex-col gap-4 px-4'>
                     <div>
                         info@niallscullyphotography.com<br/>
                         087-0671977<br/>

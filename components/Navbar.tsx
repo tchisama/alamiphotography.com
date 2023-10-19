@@ -32,7 +32,7 @@ function Navbar({}: Props) {
                     </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <Link href="/" legacyBehavior passHref>
+                    <Link href="/about" legacyBehavior passHref>
                             <NavigationMenuLink className={"uppercase px-2"}>About</NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
@@ -47,7 +47,7 @@ function Navbar({}: Props) {
                     </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <Link href="/" legacyBehavior passHref>
+                    <Link href="/contact" legacyBehavior passHref>
                             <NavigationMenuLink className={"uppercase px-2"}>CONTACT</NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
@@ -55,7 +55,9 @@ function Navbar({}: Props) {
                     <LangButton/>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
+                    <Link href="/contact" legacyBehavior passHref>
                             <Button className={"ml-2"}>ENQUIRE</Button>
+                    </Link>
                 </NavigationMenuItem>
 
             </NavigationMenuList>
