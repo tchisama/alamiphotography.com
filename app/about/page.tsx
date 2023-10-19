@@ -38,7 +38,7 @@ function Page({}: Props) {
             </div>
         </div>
         <div className="relative nav mt-8 opacity-0 -translate-y-6">
-            <img className="h-[50vh] md:max-h-[70vh] w-full object-cover rounded-2xl mb-8 shadow-2xl" src="https://www.niallscullyphotography.com/wp-content/uploads/2019/04/Cliffs-18-of-105.jpg" alt="" />
+            <img className="h-[50vh] md:h-[70vh] w-full object-cover rounded-2xl mb-8 shadow-2xl" src="https://www.niallscullyphotography.com/wp-content/uploads/2019/04/Cliffs-18-of-105.jpg" alt="" />
             <h1 className="absolute md:text-white  top-10 left-10 drop-shadow-2xl font-bold text-4xl md:text-6xl fontroman">Capturing Timeless Beauty & Emotion</h1>
         </div>
         <div className="max-w-[1500px] mx-auto">
