@@ -27,7 +27,7 @@ const WhatClientSays = (props: Props) => {
     ])
   return (
     <div>
-        <h1 className=' text-2xl md:text-6xl my-16 fontcharm'>What Client Says</h1>
+        <h1 className=' text-4xl md:text-6xl my-16 fontcharm'>What Client Says</h1>
         {
             reviews.map((review, index) => (
                 <>
