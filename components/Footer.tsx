@@ -29,14 +29,14 @@ const images = [
 const Footer = (props: Props) => {
   return (
     <div className='my-20 '>
-        <div className='gap-1 ' style={{display:"grid",gridTemplateColumns:"repeat("+images.length+",1fr)"}}>
+        <div className='gap-1 hidden md:grid'  style={{gridTemplateColumns:"repeat("+images.length+",1fr)"}}>
             {
                 images.map((image, index) => (
                     <img src={image} key={index} className='flex-1 rounded-md object-cover w-full h-[200px]'></img>
                 ))
             }
         </div>
-        <div className='flex items-center'>
+        <div className='flex md:items-center flex-col md:flex-row'>
             <div className='flex-1 gap-4 h-full flex flex-col justify-center items-center'>
                 <Image width={300} src={logo} alt="logo"></Image>
                 <Separator/>
@@ -45,14 +45,14 @@ const Footer = (props: Props) => {
                     <Button variant={"outline"} size={"icon"} className='rounded-full '><InstagramIcon size={24}/></Button>
                 </div>
             </div>
-            <div className='h-[250px]'>
+            <div className='h-[250px] hidden md:block'>
                 <Separator orientation='vertical'/>
             </div>
-            <div className='flex-[2] px-4 flex h-[400px] items-center '>
+            <div className='flex-[2] md:px-4 flex gap-12 md:gap-0 pt-12 md:pt-0 h-[400px] items-center flex-col md:flex-row'>
                 <div className='flex-1'>
                     
                 <NavigationMenu >
-                <NavigationMenuList className='grid grid-cols-2 gap-6'>
+                <NavigationMenuList className='grid md:grid-cols-2 grid-cols-1 gap-6'>
                     <NavigationMenuItem>
                         <Link href="/" legacyBehavior passHref>
                                 <NavigationMenuLink className={"uppercase px-2 ml-1"}>Home</NavigationMenuLink>
@@ -82,7 +82,7 @@ const Footer = (props: Props) => {
                 </NavigationMenu>
 
                 </div>
-                <div className='h-[250px]'>
+                <div className='h-[250px] md:block hidden'>
                     <Separator orientation='vertical'/>
                 </div>
                 <div className='flex flex-col gap-4 pl-4'>
