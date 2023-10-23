@@ -42,12 +42,10 @@ function Page({}: Props) {
   }
   return (
     <div  className="bg-[#fafaf8]">
-        <div className="max-w-[1500px] mx-auto">
-
-            <div className="nav  opacity-0 -translate-y-6">
+        <div className="max-w-[1500px] mx-auto relative z-50">
+            <div className="nav  opacity-0 -translate-y-6 ">
             <Navbar />
             </div>
-
         </div>
         <div className="flex flex-col md:flex-row max-w-[2200px] mx-auto px-4">
             <div className="flex-1 img translate-y-10 opacity-0">

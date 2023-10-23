@@ -36,13 +36,13 @@ export default function Home() {
       <>
     <div className="px-6 bg-[#fafaf8] overflow-x-hidden">
 
-      <div className="max-w-[1500px] mx-auto">
+      <div className="max-w-[1500px] mx-auto relative z-50">
         <div className="nav  opacity-0 -translate-y-6">
           <Navbar />
         </div>
       </div>
 
-      <div className="md:my-8 ">
+      <div className="md:my-8 z-[-1]">
         <ImageSlider />
       </div>
 

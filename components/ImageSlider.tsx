@@ -31,8 +31,8 @@ const ImageSlider = (props: Props) => {
       gsap
         .fromTo(
           ".mySwiper",
-          { y: 120, opacity: 0, z: 10 },
-          { y: 0, opacity: 1, z: 1, duration: 0.3 }
+          { y: 120, opacity: 0,  },
+          { y: 0, opacity: 1, duration: 0.3 }
         )
         .then(() => {});
       gsap.to(".img", { y: 0, scale: 1, opacity: 1, duration: 0.3 });
@@ -59,7 +59,7 @@ const ImageSlider = (props: Props) => {
         disableOnInteraction: false,
       }}
       modules={[Autoplay]}
-      className="mySwiper my-[10vh] scale-[1.8] md:scale-125 opacity-0 drop-shadow-xl"
+      className="mySwiper my-[10vh] z-[-10] scale-[1.8] md:scale-125 opacity-0 drop-shadow-xl"
     >
       {images.map((image, index) => (
         <SwiperSlide

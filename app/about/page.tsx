@@ -33,7 +33,7 @@ function Page({}: Props) {
   return (
     <div className="px-4 md:px-6 bg-[#fafaf8] overflow-x-hidden">
 
-        <div className="max-w-[1500px] mx-auto">
+        <div className="max-w-[1500px] mx-auto relative z-50">
             <div className="nav  opacity-0 -translate-y-6">
                 <Navbar/>
             </div>
