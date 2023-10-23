@@ -4,7 +4,8 @@ import Loading from '@/components/Loading';
 import Navbar from '@/components/Navbar'
 import gsap from 'gsap';
 import React, { useEffect, useRef, useState } from 'react'
-
+import {motion} from "framer-motion"
+import Footer from '@/components/Footer';
 type Props = {}
 
 const Page = (props: Props) => {
@@ -18,10 +19,6 @@ const Page = (props: Props) => {
   useEffect(() => {
     let tl = gsap.timeline();
     tl.to(".nav", { y: 0, opacity: 1, duration: 1 });
-    setTimeout(() => {
-      let tl = gsap.timeline();
-      tl.to(".texth", { y: 0, opacity: 1, duration: 1 });
-    }, 1000);
   }, [loading]);
 
   if (loading) {
@@ -29,7 +26,7 @@ const Page = (props: Props) => {
   }
 
   return (
-    <div className="px-6 bg-[#fafaf8] overflow-x-hidden min-h-screen">
+    <div className="px-6 bg-[#fafaf8] overflow-x-hidden ">
 
       <div className="max-w-[1500px] mx-auto relative z-50">
         <div className="nav  opacity-0 -translate-y-6">
@@ -38,17 +35,21 @@ const Page = (props: Props) => {
       </div>
 
 
-      <div className="texth opacity-0 fontcharm translate-y-12 ">
+      <div className="fontcharm">
           <div
             ref={texth}
-            className="max-w-[1500px] texth mx-auto "
+            className="max-w-[1500px] mx-auto "
           >
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-y-8 overflow-hidden py-8'>
+            <motion.div  initial={{ y: 100 }} animate={{ y: 0 }}  className='grid grid-cols-1 overflow-hidden md:grid-cols-3 gap-4 md:gap-y-8  py-8'>
                 <BlogComp/>
                 <BlogComp/>
                 <BlogComp/>
                 <BlogComp/>
-            </div>
+                <BlogComp/>
+                <BlogComp/>
+                <BlogComp/>
+            </motion.div>
+            <Footer/>
           </div>
       </div>
 
