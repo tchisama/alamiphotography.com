@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import HelloSection from "@/components/HelloSection";
 import Loading from "@/components/Loading";
 import Navbar from "@/components/Navbar";
+import QandA from "@/components/QandA";
 import { Separator } from "@/components/ui/separator";
 import WhatClientSays from "@/components/whatClientSays";
 import gsap from "gsap";
@@ -49,7 +50,7 @@ function Page({}: Props) {
                 </div>
                 <WhatClientSays/>
                 <Separator></Separator>
-                
+                <QandA/>
                 <Footer/>
             </div>
         </div>
