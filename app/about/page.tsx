@@ -48,6 +48,8 @@ function Page({}: Props) {
                     <Separator/>
                 </div>
                 <WhatClientSays/>
+                <Separator></Separator>
+                
                 <Footer/>
             </div>
         </div>

@@ -51,7 +51,7 @@ function Page({}: Props) {
         </div>
         <div className="flex flex-col md:flex-row max-w-[2200px] mx-auto px-4">
             <div className="flex-1 img translate-y-10 opacity-0">
-                <img className="w-full rounded-2xl shadow-2xl object-cover" src="https://www.niallscullyphotography.com/wp-content/uploads/2019/03/Danielle-2.jpg"></img>
+                <img className="w-full rounded-2xl shadow-lg md:shadow-2xl object-cover" src="https://www.niallscullyphotography.com/wp-content/uploads/2019/03/Danielle-2.jpg"></img>
             </div>
             <div className="flex-1 form mt-8 md:mt-0 translate-y-10 opacity-0 flex flex-col gap-4 md:gap-8 md:p-10">
                 <h1 className="text-4xl md:text-6xl fontroman leading-relaxed">Get In Touch!</h1>
