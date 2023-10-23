@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar'
 import gsap from 'gsap';
 import React, { useEffect, useRef, useState } from 'react'
 import { motion, useScroll } from "framer-motion"
+import Footer from '@/components/Footer';
 
 type Props = {}
 
@@ -74,6 +75,7 @@ const Page = (props: Props) => {
                 </div>
             ))}
             </div>
+            <Footer/>
           </div>
       </div>
 
