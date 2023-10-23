@@ -77,6 +77,7 @@ const Page = (props: Props) => {
                 <h3 className='md:text-3xl text-center'>Wedding</h3>
                 <p className='py-4 text-sm md:py-20 md:text-xl text-center'>LoLorem ipsum dolor sit amet consectetur adipisicing elit. Cum tempore natus doloremque, ipsam magni doloribus delectus, inventore incidunt id ullam praesentium assumenda iure dolorum quidem illo, quis provident animi cumque.Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum tempore natus doloremque, ipsam magni doloribus delectus, inventore incidunt id ullam praesentium assumenda iure dolorum quidem illo, quis provident animi cumque.Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum tempore natus doloremque, ipsam magni doloribus delectus, inventore incidunt id ullam praesentium assumenda iure dolorum quidem illo, quis provident animi cumque.Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum tempore natus doloremque, ipsam magni doloribus delectus,</p>
             </motion.div>
+            
             <div className="columns-3 gap-x-1 md:gap-x-4  overflow-hidden">
             {imageUrls.map((imageUrl, index) => (
                 <div key={index} className="relative group">
