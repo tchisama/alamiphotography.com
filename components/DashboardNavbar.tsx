@@ -1,4 +1,4 @@
-import { MessageCircle, Upload, User } from 'lucide-react'
+import { Home, Layers2, LogOut, MessageCircle, Upload, User } from 'lucide-react'
 import React from 'react'
 import { Button } from './ui/button'
 import Link from 'next/link'
@@ -9,8 +9,13 @@ type Props = {}
 const iconSize = 20
 const links = [
     {
+        href: '/dashboard',
+        name: 'Dashboard',
+        icon:<Home size={iconSize}/>,
+    },
+    {
         href: '/dashboard/admin',
-        name: 'Admin',
+        name: 'Admins',
         icon:<User size={iconSize}/>,
     },
     {
@@ -20,8 +25,13 @@ const links = [
     },
     {
         href: '/dashboard/messages',
-        name: 'messages',
+        name: 'Messages',
         icon:<MessageCircle size={iconSize}/>,
+    },
+    {
+        href: '/dashboard/pages',
+        name: 'Pages',
+        icon:<Layers2 size={iconSize}/>,
     },
 ]
 function DashboardNavbar({}: Props) {
@@ -31,10 +41,11 @@ function DashboardNavbar({}: Props) {
         {
             links.map((link) => (
                 <Link href='/dashboard/admin' key={link.href}>
-                    <button className=' min-w-[200px] py-3 rounded-lg text-white  px-6 flex gap-2 items-center'>{link.icon}{link.name}</button>
+                    <button className=' min-w-[200px] py-3 hover:bg-[#fff2] duration-200 rounded-lg text-white  px-6 flex gap-2 items-center'>{link.icon}{link.name}</button>
                 </Link>
             ))
         }
+        <button className=' min-w-[200px] py-3 mt-auto hover:bg-[#fff2] duration-200 rounded-lg text-white  px-6 flex gap-2 items-center'><LogOut/>Logout</button>
     </div>
   )
 }
