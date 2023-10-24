@@ -1,7 +1,7 @@
 "use client"
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
-import { ArrowLeft, Folder, MoreVertical, Upload } from 'lucide-react'
+import { ArrowLeft, Folder, MoreVertical, Plus, Upload } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -12,8 +12,11 @@ const page = (props: Props) => {
   return (
     <div className='mx-auto container'>
         <div className='flex py-8 justify-between items-end'>
-            <Link href={"/dashboard/uploads"} className='text-2xl flex gap-5 items-center'><ArrowLeft/>folder name</Link>
-            <Button className='px-4 py-2 flex gap-2 rounded-lg shadow-md'> <Upload size={20}/> Upload</Button>
+            <Link href={"/dashboard/uploads"} className='text-2xl flex gap-5 items-center'><ArrowLeft/>Uploads / folder name</Link>
+            <div className='flex gap-2'>
+                <Button className='px-4 py-2 flex gap-2 rounded-lg shadow-md'> <Upload size={20}/> Upload</Button>
+                <Button className='px-4 py-2 flex gap-2 rounded-lg shadow-md'>New folder <Plus size={20}/></Button>
+            </div>
         </div>
         <div className='flex gap-4 justify-center border-dashed border-muted-forground w-full h-[200px] rounded-xl border-[2px] mb-4 items-center'>
             <Upload size={40}/>
@@ -53,7 +56,7 @@ const FolderComp = () => {
         // Add your button click logic here
       };
     return(
-            <Link href={"/dashboard/uploads/folder"} className='bg-[#fafaf8]  p-4 border shadow-sm rounded-xl flex gap-4 items-center'>
+            <Link href={"/dashboard/uploads/folder-1"} className='bg-[#fafaf8]  p-4 border shadow-sm rounded-xl flex gap-4 items-center'>
                 <Folder className='text-primary' size={50} strokeWidth={1}/>
                 <Separator orientation='vertical' />
                 <div className='flex-1'>
