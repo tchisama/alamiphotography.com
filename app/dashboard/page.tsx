@@ -5,10 +5,7 @@ type Props = {}
 
 function page({}: Props) {
   return (
-    <div className='flex'>
-        <DashboardNavbar/>
-        <h3>contant</h3>
-    </div>
+    "hello"
   )
 }
 

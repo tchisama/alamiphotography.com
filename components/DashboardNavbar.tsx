@@ -19,7 +19,7 @@ const links = [
         icon:<User size={iconSize}/>,
     },
     {
-        href: '/dashboard/upload',
+        href: '/dashboard/uploads',
         name: 'Uploads',
         icon:<Upload size={iconSize}/>,
     },
@@ -40,7 +40,7 @@ function DashboardNavbar({}: Props) {
         <Image width={150} alt='' className='w-[150px] mb-24 mt-8 mx-auto' src={logo}></Image>
         {
             links.map((link) => (
-                <Link href='/dashboard/admin' key={link.href}>
+                <Link href={link.href} key={link.href}>
                     <button className=' min-w-[200px] py-3 hover:bg-[#fff2] duration-200 rounded-lg text-white  px-6 flex gap-2 items-center'>{link.icon}{link.name}</button>
                 </Link>
             ))
