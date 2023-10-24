@@ -1,4 +1,4 @@
-import { Home, Layers2, LogOut, MessageCircle, Upload, User } from 'lucide-react'
+import { Home, Layers2, LogOut, Mail, MessageCircle, Upload, User } from 'lucide-react'
 import React from 'react'
 import { Button } from './ui/button'
 import Link from 'next/link'
@@ -24,9 +24,9 @@ const links = [
         icon:<Upload size={iconSize}/>,
     },
     {
-        href: '/dashboard/messages',
-        name: 'Messages',
-        icon:<MessageCircle size={iconSize}/>,
+        href: '/dashboard/orders',
+        name: 'Orders',
+        icon:<Mail size={iconSize}/>,
     },
     {
         href: '/dashboard/pages',

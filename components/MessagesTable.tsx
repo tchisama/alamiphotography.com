@@ -39,9 +39,10 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { ChevronDown, ChevronsUpDown, MoreHorizontal, SortAsc } from "lucide-react"
+import { ArrowRight, ChevronDown, ChevronsUpDown, MoreHorizontal, SortAsc } from "lucide-react"
 
-const data: Message[] = [
+const data: Message[] = new Array(15).fill(new Object(
+
   {
     id: "m5gr84i9",
     email: "ken99@yahoo.com",
@@ -49,24 +50,9 @@ const data: Message[] = [
     number:"0623456789",
     weddingDate:new Date(),
     more:"lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
-  },
-  {
-    id: "3u1reuv4",
-    email: "Abe45@gmail.com",
-    name: "Abe",
-    number:"0634012345",
-    weddingDate:new Date(),
-    more:"lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
-  },
-  {
-    id: "derv1ws0",
-    email: "Monserrat44@gmail.com",
-    name: "Monserrat",
-    number:"0639082342",
-    weddingDate:new Date(),
-    more:"lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
-  },
-]
+  }
+)
+)
 
 export type Message = {
   id: string
@@ -143,11 +129,12 @@ export const columns: ColumnDef<Message>[] = [
   },
   {
     id: "actions",
-    enableHiding: false,
+    header:"Actions",
     cell: ({ row }) => {
       const payment = row.original
 
       return (
+        <div className="flex gap-2">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="h-8 w-8 p-0">
@@ -160,23 +147,17 @@ export const columns: ColumnDef<Message>[] = [
             <DropdownMenuItem
               onClick={() => navigator.clipboard.writeText(payment.id)}
             >
-              Copy payment ID
+              Copy Order ID
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
+            <DropdownMenuItem>View Order</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
+        <Button variant={"ghost"}  className="h-8 w-8 p-0"><ArrowRight className="h-4 w-4" /></Button>
+        </div>
       )
     },
-  },
-
-  {
-    accessorKey:"id",
-    header:"More details",
-    cell: ({ row }) => (
-      <div className=""></div>
-    )
   },
 ]
 

@@ -1,7 +1,7 @@
 "use client"
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
-import { ArrowLeft, Folder, MoreVertical, Plus, Upload } from 'lucide-react'
+import { ArrowLeft, Folder, ImageIcon, MoreVertical, Plus, Upload } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -18,8 +18,8 @@ const page = (props: Props) => {
                 <Button className='px-4 py-2 flex gap-2 rounded-lg shadow-md'>New folder <Plus size={20}/></Button>
             </div>
         </div>
-        <div className='flex gap-4 justify-center border-dashed border-muted-forground w-full h-[200px] rounded-xl border-[2px] mb-4 items-center'>
-            <Upload size={40}/>
+        <div className='flex gap-4 bg-[#00000005] justify-center border-dashed border-muted-forground w-full h-[200px] rounded-xl border-[2px] mb-4 items-center'>
+            <ImageIcon  size={22}/>
             Upload
         </div>
         <Separator className='my-10'/>

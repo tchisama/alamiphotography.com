@@ -8,7 +8,7 @@ const page = (props: Props) => {
   return (
     <div className=' mx-auto container'>
         <div className='flex py-8 justify-between items-end'>
-            <h1 className='text-5xl'>Messages</h1>
+            <h1 className='text-5xl'>Orders</h1>
         </div>
         <MessagesTable/>
 
