@@ -1,21 +1,58 @@
 "use client"
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
-import { ArrowLeft, Folder, ImageIcon, MoreVertical, Plus, Upload } from 'lucide-react'
+import { ArrowLeft, Folder as FolderIcon, ImageIcon, MoreVertical, Plus, Upload } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-type Props = {}
+import { db } from '@/firebase'
+import { Folder } from '@/types'
+import { collection, getDocs, query, where } from 'firebase/firestore'
+import FolderComp from '@/components/FolderComp'
+import { useParams } from 'next/navigation'
+import CreateNewFolder from '@/components/CreateNewFolder'
 
-const page = (props: Props) => {
+type Props = {
+    param:{
+        folder: string
+    }
+}
+
+const Page = (props: Props) => {
+
+    const params = useParams()
+
+
+  const [folders, setFolders] = React.useState<Folder[]>([])
+
+  React.useEffect(() => {
+    const runit = async () => {
+      const q = query(collection(db, "folders"), where("parent", "==", params.folder));
+      const querySnapshot = await getDocs(q);
+      let fs: Folder[] = []
+      querySnapshot.forEach((doc) => {
+        fs.push({
+          id: doc.id,
+          ...doc.data()
+        }as Folder)
+      });
+      setFolders(fs)
+    }
+    return ()=>{
+      runit()
+    }
+  },[params.folder])
+
+
+
   return (
     <div className='mx-auto container'>
         <div className='flex py-8 justify-between items-end'>
             <Link href={"/dashboard/uploads"} className='text-2xl flex gap-5 items-center'><ArrowLeft/>Uploads / folder name</Link>
             <div className='flex gap-2'>
                 <Button className='px-4 py-2 flex gap-2 rounded-lg shadow-md'> <Upload size={20}/> Upload</Button>
-                <Button className='px-4 py-2 flex gap-2 rounded-lg shadow-md'>New folder <Plus size={20}/></Button>
+                <CreateNewFolder parent={params.folder as string}/>
             </div>
         </div>
         <div className='flex gap-4 bg-[#00000005] justify-center border-dashed border-muted-forground w-full h-[200px] rounded-xl border-[2px] mb-4 items-center'>
@@ -25,8 +62,18 @@ const page = (props: Props) => {
         <Separator className='my-10'/>
         <h1 className='text-2xl mb-4'>Children Folders</h1>
         <div className='grid gap-4 grid-cols-3 '>
-            <FolderComp/>
-            <FolderComp/>
+            {
+                folders.length>0 &&
+                folders.map((folder) => {
+                    return (
+                        <FolderComp folder={folder} key={folder.id}/>
+                    )
+                })
+            }
+            {
+                !(folders.length>0) &&
+                <h1>No children folders</h1>
+            }
         </div>
         <Separator className='my-10'/>
         <h1 className='text-2xl mb-4'>Images</h1>
@@ -50,21 +97,4 @@ const ImageComp = ({src}:{src:string}) => {
 }
 
 
-const FolderComp = () => {
-    const handleButtonClick = (e: React.MouseEvent) => {
-        e.preventDefault(); // Prevent the link from navigating
-        // Add your button click logic here
-      };
-    return(
-            <Link href={"/dashboard/uploads/folder-1"} className='bg-[#fafaf8]  p-4 border shadow-sm rounded-xl flex gap-4 items-center'>
-                <Folder className='text-primary' size={50} strokeWidth={1}/>
-                <Separator orientation='vertical' />
-                <div className='flex-1'>
-                    <h3 className='text-lg'>Folder name</h3>
-                    <p className='text-muted-foreground'>14 images</p>
-                </div>
-                <Button onClick={handleButtonClick} variant={"ghost"} className='text-primary' size={"icon"}><MoreVertical size={20}/></Button>
-            </Link>
-    )
-}
-export default page
+export default Page
