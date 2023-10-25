@@ -4,6 +4,12 @@ export type Folder = {
     parent: string
     id:string
 }
+export type Photo = {
+    name: string
+    parent: string
+    id:string
+    image:string
+}
 
 export type Review = {
     name: string

@@ -4,15 +4,18 @@ import { Separator } from '@/components/ui/separator'
 import { ArrowLeft, Folder as FolderIcon, ImageIcon, MoreVertical, Plus, Upload } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 
-import { db } from '@/firebase'
-import { Folder } from '@/types'
+import { db, storage } from '@/firebase'
+import { Folder, Photo } from '@/types'
 import { collection, doc, getDoc, getDocs, query, where } from 'firebase/firestore'
 import FolderComp from '@/components/FolderComp'
 import { useParams } from 'next/navigation'
 import CreateNewFolder from '@/components/CreateNewFolder'
 import Loading from '@/components/Loading'
+import { Input } from 'postcss'
+import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage'
+import UploadImage from '@/components/UploadImage'
 
 type Props = {
     param:{
@@ -26,6 +29,7 @@ const Page = (props: Props) => {
 
 
     const [folders, setFolders] = React.useState<Folder[]>([])
+    const [photos, setPhotos] = React.useState<Photo[]>([])
     const [folder, setFolder] = React.useState<Folder>()
     const [loading, setLoading] = React.useState(true)
 
@@ -43,6 +47,17 @@ const Page = (props: Props) => {
       });
       setFolders(fs)
 
+      const q2 = query(collection(db, "photos"), where("parent", "==", params.folder));
+      const querySnapshot2 = await getDocs(q2);
+      let phts: Photo[] = []
+      querySnapshot2.forEach((doc) => {
+        phts.push({
+          id: doc.id,
+          ...doc.data()
+        }as Photo)
+      });
+      setPhotos(phts)
+
       const docRef = doc(db, "folders", params.folder as string);
       const docSnap = await getDoc(docRef);
       setFolder({...docSnap.data(),id:params.folder} as Folder)
@@ -52,6 +67,8 @@ const Page = (props: Props) => {
       runit()
     }
   },[params.folder])
+
+
 
   if(loading){
       return(
@@ -64,13 +81,13 @@ const Page = (props: Props) => {
         <div className='flex py-8 justify-between items-end'>
             <Link href={"/dashboard/uploads/"+folder?.parent} className='text-2xl flex gap-5 items-center'><ArrowLeft/>{folder?.name}</Link>
             <div className='flex gap-2'>
-                <Button className='px-4 py-2 flex gap-2 rounded-lg shadow-md'> <Upload size={20}/> Upload</Button>
+                <UploadImage parent={params.folder as string}/>
                 <CreateNewFolder parent={params.folder as string}/>
             </div>
         </div>
         <div className='flex gap-4 bg-[#00000005] justify-center border-dashed border-muted-forground w-full h-[200px] rounded-xl border-[2px] mb-4 items-center'>
             <ImageIcon  size={22}/>
-            Upload
+            Select images
         </div>
         <Separator className='my-10'/>
         <h1 className='text-2xl mb-4'>Children Folders</h1>
@@ -91,7 +108,15 @@ const Page = (props: Props) => {
         <Separator className='my-10'/>
         <h1 className='text-2xl mb-4'>Images</h1>
         <div className='grid gap-4 grid-cols-3 '>
-            {/* <ImageComp src={"https://www.niallscullyphotography.com/wp-content/uploads/2019/04/Cliffs-18-of-105.jpg"}/> */}
+
+    {
+        photos.length>0 &&
+        photos.map((p) => {
+            return(
+                <ImageComp key={p.id} src={p.image}/>
+            )
+        })
+    }
         </div>
     </div>
   )
@@ -100,7 +125,7 @@ const Page = (props: Props) => {
 
 const ImageComp = ({src}:{src:string}) => {
     return (
-            <div className='bg-[#fafaf8]  aspect-square border shadow-sm rounded-xl'>
+            <div className='bg-[#fafaf8] overflow-hidden aspect-square border shadow-sm rounded-xl'>
                 <img className='w-full h-full object-contain' src={src} alt=""/>
             </div>
     )
