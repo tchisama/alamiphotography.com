@@ -1,4 +1,10 @@
 
+export type Folder = {
+    name: string
+    parent: string
+    id:string
+}
+
 export type Review = {
     name: string
     review: string
