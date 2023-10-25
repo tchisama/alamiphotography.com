@@ -1,5 +1,6 @@
 "use client"
 
+import CreateNewFolder from '@/components/CreateNewFolder'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { Folder, MoreHorizontal, MoreVertical, Plus } from 'lucide-react'
@@ -13,14 +14,11 @@ const page = (props: Props) => {
     <div className=' mx-auto container'>
         <div className='flex py-8 justify-between items-end'>
             <h1 className='text-5xl'>Uploads</h1>
-            <Button className='px-4 py-2 flex gap-2 rounded-lg shadow-md'>New folder <Plus size={20}/></Button>
+            <CreateNewFolder parent={""}/>
         </div>
         <Separator className='my-10'/>
         <div className='grid gap-4 grid-cols-3'>
-            <FolderComp/>
-            <FolderComp/>
-            <FolderComp/>
-            <FolderComp/>
+
         </div>
     </div>
   )
