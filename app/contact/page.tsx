@@ -25,7 +25,11 @@ type Props = {}
 
 function Page({}: Props) {
 
-    
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [number, setNumber] = useState("");
+    const [date, setDate] = useState("");
+    const [message, setMessage] = useState("");
 
 
 
@@ -51,16 +55,28 @@ function Page({}: Props) {
   }
 
   const addOrder = async () => {
-    try {
-        const docRef = await addDoc(collection(db, "orders"), {
-          first: "Ada",
-          last: "Lovelace",
-          born: 1815
-        });
-        console.log("Document written with ID: ", docRef.id);
-      } catch (e) {
-        console.error("Error adding document: ", e);
-      }
+    if(name && email && number && date) {
+        try {
+            const docRef = await addDoc(collection(db, "orders"), {
+                name,
+                email,
+                number,
+                date,
+                message
+            });
+            console.log("Document written with ID: ", docRef.id);
+            setDate("")
+            setEmail("")
+            setName("")
+            setNumber("")
+            setMessage("")
+            alert("Order added successfully")
+        } catch (e) {
+            console.error("Error adding document: ", e);
+        }
+    }else{
+        alert("Please fill in all fields")
+    }
   }
 
 
@@ -82,23 +98,23 @@ function Page({}: Props) {
                 <Separator></Separator>
                 <div>
                     <h3 className="my-2 text-xl fontcharm">Your Name</h3>
-                    <Input></Input>
+                    <Input value={name} onChange={(e) => setName(e.target.value)}></Input>
                 </div>
                 <div>
                     <h3 className="my-2 text-xl fontcharm">Phone Number</h3>
-                    <Input type="number"></Input>
+                    <Input value={number} onChange={(e) => setNumber(e.target.value)} type="number"></Input>
                 </div>
                 <div>
                     <h3 className="my-2 text-xl fontcharm">Email</h3>
-                    <Input type="email"></Input>
+                    <Input value={email} onChange={(e) => setEmail(e.target.value)} type="email"></Input>
                 </div>
                 <div>
                     <h3 className="my-2 text-xl fontcharm">Wedding Date & Venue</h3>
-                    <Input type="email"></Input>
+                    <Input value={date} onChange={(e) => setDate(e.target.value)} type="date"></Input>
                 </div>
                 <div className="flex-1">
                     <h3 className="my-2  text-xl fontcharm">More details</h3>
-                    <Textarea className="h-[200px] text-lg"/>
+                    <Textarea value={message} onChange={(e) => setMessage(e.target.value)} className="h-[200px] text-lg"/>
                 </div>
                 <div className="flex-1">
                     <Button onClick={addOrder} size={'lg'} className="text-xl shadow-lg flex gap-2">Send <Send/></Button>
