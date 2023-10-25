@@ -40,28 +40,10 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { ArrowRight, ChevronDown, ChevronsUpDown, MoreHorizontal, SortAsc } from "lucide-react"
+import { db } from "@/firebase";
+import { Message } from "@/types"
 
-const data: Message[] = new Array(15).fill(new Object(
 
-  {
-    id: "m5gr84i9",
-    email: "ken99@yahoo.com",
-    name: "Ken",
-    number:"0623456789",
-    weddingDate:new Date(),
-    more:"lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
-  }
-)
-)
-
-export type Message = {
-  id: string
-  email: string
-  number:string
-  name: string
-    weddingDate:Date
-    more:string
-}
 
 export const columns: ColumnDef<Message>[] = [
   {
@@ -114,17 +96,17 @@ export const columns: ColumnDef<Message>[] = [
     )
   },
   {
-    accessorKey:"weddingDate",
+    accessorKey:"date",
     header:"Date",
     cell: ({ row }) => (
-      <div className="">{(row.getValue("weddingDate") as Date).toLocaleDateString()}</div>
+      <div className="">{row.getValue("date")}</div>
     )
   },
   {
-    accessorKey:"more",
+    accessorKey:"message",
     header:"More details",
     cell: ({ row }) => (
-      <div className="">{(row.getValue("more") as string).slice(0,40)} ...</div>
+      <div className="">{(row.getValue("message") as string).slice(0,40)} ...</div>
     )
   },
   {
@@ -161,7 +143,7 @@ export const columns: ColumnDef<Message>[] = [
   },
 ]
 
-export function MessagesTable() {
+export function MessagesTable({data}:{data:Message[]}) {
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
@@ -169,6 +151,11 @@ export function MessagesTable() {
   const [columnVisibility, setColumnVisibility] =
     React.useState<VisibilityState>({})
   const [rowSelection, setRowSelection] = React.useState({})
+
+
+
+
+
 
   const table = useReactTable({
     data,
@@ -188,6 +175,12 @@ export function MessagesTable() {
       rowSelection,
     },
   })
+
+  /// fetch orders
+
+
+
+
 
   return (
     <div className="w-full">
