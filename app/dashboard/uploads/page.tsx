@@ -2,6 +2,7 @@
 
 import CreateNewFolder from '@/components/CreateNewFolder'
 import FolderComp from '@/components/FolderComp'
+import Loading from '@/components/Loading'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { db } from '@/firebase'
@@ -16,6 +17,7 @@ type Props = {}
 const Page = (props: Props) => {
 
   const [folders, setFolders] = React.useState<Folder[]>([])
+  const [loading, setLoading] = React.useState(true)
 
   React.useEffect(() => {
     const runit = async () => {
@@ -29,11 +31,18 @@ const Page = (props: Props) => {
         }as Folder)
       });
       setFolders(fs)
+      setLoading(false)
     }
     return ()=>{
       runit()
     }
   },[])
+
+  if(loading){
+      return(
+        <Loading/>
+      )
+  }
 
   return (
     <div className=' mx-auto container'>
