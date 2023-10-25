@@ -18,10 +18,19 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Send } from "lucide-react";
+import { db } from "@/firebase";
+import { collection, addDoc } from "firebase/firestore";
 
 type Props = {}
 
 function Page({}: Props) {
+
+    
+
+
+
+
+
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setTimeout(() => {
@@ -40,6 +49,22 @@ function Page({}: Props) {
   if (loading) {
     return <Loading />;
   }
+
+  const addOrder = async () => {
+    try {
+        const docRef = await addDoc(collection(db, "orders"), {
+          first: "Ada",
+          last: "Lovelace",
+          born: 1815
+        });
+        console.log("Document written with ID: ", docRef.id);
+      } catch (e) {
+        console.error("Error adding document: ", e);
+      }
+  }
+
+
+
   return (
     <div  className="bg-[#fafaf8]">
         <div className="max-w-[1500px] mx-auto relative z-50">
@@ -76,7 +101,7 @@ function Page({}: Props) {
                     <Textarea className="h-[200px] text-lg"/>
                 </div>
                 <div className="flex-1">
-                    <Button size={'lg'} className="text-xl shadow-lg flex gap-2">Send <Send/></Button>
+                    <Button onClick={addOrder} size={'lg'} className="text-xl shadow-lg flex gap-2">Send <Send/></Button>
                 </div>
             </div>
         </div>
