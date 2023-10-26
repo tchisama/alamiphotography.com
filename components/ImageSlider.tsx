@@ -59,11 +59,11 @@ const ImageSlider = (props: Props) => {
         disableOnInteraction: false,
       }}
       modules={[Autoplay]}
-      className="mySwiper my-[10vh] z-[-10] scale-[1.8] md:scale-125 opacity-0 drop-shadow-xl"
+      className="mySwiper my-[16vh] z-[-10] scale-[1.8] md:scale-[1.5] opacity-0 "
     >
       {images.map((image, index) => (
         <SwiperSlide
-          className="w-full h-full rounded-md overflow-hidden group"
+          className="w-full h-full overflow-hidden group"
           key={index}
         >
           <div className="h-full  w-full overflow-hidden ">
