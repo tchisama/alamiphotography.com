@@ -7,7 +7,7 @@ const MyWork = (props: Props) => {
   return (
     <div className='my-20 fontcharm'>
         <h1 className='text-center text-3xl md:text-5xl my-20 '>Check out my work</h1>
-        <div className='flex md:flex-row flex-col gap-8  fontroman'>
+        <div className='flex md:flex-row flex-col gap-8  fontcharm'>
 
             <Link href={'/weddings'} className='flex-1   group flex flex-col items-center gap-4 text-2xl '>
                 <div className='relative  overflow-hidden'>

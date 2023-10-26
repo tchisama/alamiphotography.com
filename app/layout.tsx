@@ -1,13 +1,14 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter,Dancing_Script,Charm } from 'next/font/google'
+import { Inter,Dancing_Script,Charm,WindSong,Cormorant_Garamond  } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
-const dancing = Dancing_Script({ 
-  subsets: ['latin'] ,
+const dancing = WindSong({ 
+  weight:['400','500'],
+  subsets:["latin"],
   variable:"--font-dancing",
 })
-const charm = Charm({ 
+const charm = Cormorant_Garamond({ 
   subsets:["latin"],
   weight:['400','700'],
   variable:"--font-charm",

@@ -50,7 +50,7 @@ const ImageSlider = (props: Props) => {
         },
         768: {
           slidesPerView: 5,
-          spaceBetween: 25,
+          spaceBetween: 15,
         },
       }} 
       autoCorrect="off"
@@ -59,7 +59,7 @@ const ImageSlider = (props: Props) => {
         disableOnInteraction: false,
       }}
       modules={[Autoplay]}
-      className="mySwiper my-[16vh] z-[-10] scale-[1.8] md:scale-[1.5] opacity-0 "
+      className="mySwiper my-[16vh] z-[-10] scale-[2.4] md:scale-[1.5] opacity-0 "
     >
       {images.map((image, index) => (
         <SwiperSlide

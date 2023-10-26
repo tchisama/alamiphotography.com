@@ -23,10 +23,10 @@ function Navbar({}: Props) {
     <div className='w-full md:p-4 py-4  items-center flex justify-center  md:justify-between'>
 
         <Link href={"/"}>
-            <Image alt='' className=' w-[100px] object-contain md:w-[160px] md:h-[100px]' src={blackLogo} width={160} height={100}></Image>
+            <Image alt='' className=' w-[100px] object-contain md:w-[200px] ' src={blackLogo} width={160} height={100}></Image>
         </Link>
 
-        <NavigationMenu style={{}} className='hidden  flex-1 md:flex  z-50'>
+        <NavigationMenu style={{}} className='hidden  flex-1 md:flex text-xl z-50'>
             <NavigationMenuList>
                 <NavigationMenuItem>
                     <Link href="/" legacyBehavior passHref>
@@ -40,7 +40,7 @@ function Navbar({}: Props) {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className={"uppercase px-2 bg-transparent"}>PORTFOLIO</NavigationMenuTrigger>
+                    <NavigationMenuTrigger className={"uppercase px-2 text-xl bg-transparent"}>PORTFOLIO</NavigationMenuTrigger>
                     <NavigationMenuContent className='z-50 relative'>
                         <div className='w-[250px] bg-[#fafaf8] flex flex-col gap-4 p-8 uppercase'>
                             <Link href="/wedding" legacyBehavior passHref>
@@ -72,10 +72,10 @@ function Navbar({}: Props) {
             </NavigationMenuList>
         </NavigationMenu>
 
-        <NavigationMenu>
+        <NavigationMenu className='hidden md:flex '>
             <NavigationMenuList>
                 <NavigationMenuItem >
-                    <LangButton/>
+                    <LangButton />
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                     <Link href="/contact" legacyBehavior passHref>

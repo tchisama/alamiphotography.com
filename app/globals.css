@@ -86,3 +86,7 @@
 .fontroman {
   font-family: var(--font-dancing);
 }
+
+*{
+  font-family: var(--font-charm);
+}

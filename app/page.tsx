@@ -51,11 +51,11 @@ export default function Home() {
           ref={texth}
           className="max-w-[1500px] texth mx-auto flex  flex-col items-center"
         >
-          <h1 className="text-2xl md:text-4xl  leading-relaxed font-light text-center max-w-[800px]">
+          <h1 className="text-2xl md:text-5xl  leading-relaxed font-light text-center max-w-[800px]">
             Natural & Elegance <br />
             Fine Art Wedding & Lifestyle Photographer & Videographer
           </h1>
-          <h2 className="text-lg md:text-2xl font-light  text-center my-4">
+          <h2 className="text-xl md:text-4xl font-light fontroman text-primary  text-center my-4">
             Capturing Timeless Beauty & Emotion
           </h2>
         </div>
@@ -63,26 +63,20 @@ export default function Home() {
 
       <div className="max-w-[1500px] mx-auto">
         <div className="nav  opacity-0 -translate-y-6">
-          <Separator/>
           <HelloSection />
-          <Separator/>
           <MyWork />
-          <Separator/>
           <Featured/>
-          <Separator/>
         </div>
       </div>
 
       <div className="max-w-[2000px] mx-auto">
           <Video/>
-          <Separator/>
       </div>
 
       <div className="max-w-[1500px] mx-auto">
         <div className="nav  opacity-0 -translate-y-6">
           <Testimonial/>
         </div>
-        <Separator/>
       </div>
 
     </div>
