@@ -85,7 +85,7 @@ const Page = (props: Props) => {
                 <CreateNewFolder parent={params.folder as string}/>
             </div>
         </div>
-        <div className='flex gap-4 bg-[#00000005] justify-center border-dashed border-muted-forground w-full h-[200px] rounded-xl border-[2px] mb-4 items-center'>
+        <div className='flex gap-4 bg-[#00000005] justify-center border-dashed border-muted-forground w-full h-[200px]  border-[2px] mb-4 items-center'>
             <ImageIcon  size={22}/>
             Select images
         </div>
@@ -125,7 +125,7 @@ const Page = (props: Props) => {
 
 const ImageComp = ({src}:{src:string}) => {
     return (
-            <div className='bg-[#fafaf8] overflow-hidden aspect-square border shadow-sm rounded-xl'>
+            <div className='bg-[#fafaf8] overflow-hidden aspect-square border '>
                 <img className='w-full h-full object-contain' src={src} alt=""/>
             </div>
     )

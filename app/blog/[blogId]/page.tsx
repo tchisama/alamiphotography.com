@@ -82,7 +82,7 @@ const Page = (props: Props) => {
             <div className="columns-3 gap-x-1 md:gap-x-4  overflow-hidden">
             {imageUrls.map((imageUrl, index) => (
                 <div key={index} className="relative group">
-                    <motion.img initial={{ y: 100 }} animate={{ y: 0 }} src={imageUrl} alt={`Photo ${index + 1}`} className="object-cover rounded-md md:rounded-xl md:mb-4 mb-1 w-full h-full" />
+                    <motion.img initial={{ y: 100 }} animate={{ y: 0 }} src={imageUrl} alt={`Photo ${index + 1}`} className="object-cover md:mb-4 mb-1 w-full h-full" />
                 </div>
             ))}
             </div>

@@ -13,7 +13,7 @@ const FolderComp = ({folder}:{folder: Folder}) => {
         // Add your button click logic here
       };
     return(
-            <Link href={"/dashboard/uploads/"+folder.id} className='bg-[#fafaf8]  p-4 border shadow-sm rounded-xl flex gap-4 items-center'>
+            <Link href={"/dashboard/uploads/"+folder.id} className='bg-[#fafaf8]  p-4 border  flex gap-4 items-center'>
                 <FolderIcon className='text-primary' size={50} strokeWidth={1}/>
                 <Separator orientation='vertical' />
                 <div className='flex-1'>

@@ -1,4 +1,5 @@
 "use client";
+import CheckYouLater from "@/components/CheckYouLater";
 import Footer from "@/components/Footer";
 import HelloSection from "@/components/HelloSection";
 import Loading from "@/components/Loading";
@@ -49,6 +50,15 @@ function Page({}: Props) {
                 </div>
                 <WhatClientSays/>
                 <QandA/>
+            </div>
+        </div>
+
+        <div className="px-[-20px]">
+          <CheckYouLater/>
+        </div>
+
+        <div className="max-w-[1500px] mx-auto">
+            <div className="nav  opacity-0 -translate-y-6">
                 <Footer/>
             </div>
         </div>

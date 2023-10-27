@@ -78,7 +78,7 @@ const ImageSlider = (props: Props) => {
         </SwiperSlide>
       ))}
     </Swiper>
-    <div className="flex gap-4 justify-center img">
+    <div className="flex gap-4 items-center justify-center img">
       <div className="flex-1 flex justify-end">
       <button className="text-primary flex items-center p-2 group" >
         <ArrowLeft/>
@@ -86,6 +86,7 @@ const ImageSlider = (props: Props) => {
         </div>
         </button>
       </div>
+      <div className="text-lg md:text-xl">1 / 3</div>
       <div className="flex-1 flex justify-start">
       <button className="text-primary group flex items-center p-2" >
         <div className="w-[100px] h-[2px] group-hover:w-[110px] duration-200 translate-x-2 bg-primary">

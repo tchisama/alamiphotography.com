@@ -1,8 +1,9 @@
-import React from 'react'
+"use client"
+import React, { useEffect } from 'react'
 import logo from "@/public/blacklogo.png"
 import Image from 'next/image';
 import { Button } from './ui/button';
-import { FacebookIcon, InstagramIcon } from 'lucide-react';
+import { ArrowUpIcon, FacebookIcon, InstagramIcon } from 'lucide-react';
 import { Separator } from './ui/separator';
 import {
     NavigationMenu,
@@ -27,6 +28,14 @@ const images = [
   "https://images.pexels.com/photos/1439261/pexels-photo-1439261.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 ];
 const Footer = (props: Props) => {
+
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    };
+
   return (
     <div className='py-20 '>
         <div className='gap-1 hidden md:grid'  style={{gridTemplateColumns:"repeat("+images.length+",1fr)"}}>
@@ -92,11 +101,13 @@ const Footer = (props: Props) => {
                         WICKLOW, IRELAND<br/>
                     </div>
                     <Separator/>
-                    <Button size={"lg"}>Contact me </Button>
+                    <Button  className='text-xl' size={"lg"}>Contact me </Button>
                 </div>
             </div>
         </div>
-
+            <div className='flex justify-end px-8'>
+                <Button className='flex gap-2 text-xl' onClick={scrollToTop}>scroll up<ArrowUpIcon size={24}/></Button>
+            </div>
     </div>
   )
 }

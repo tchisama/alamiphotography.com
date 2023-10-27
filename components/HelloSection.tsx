@@ -7,7 +7,7 @@ function HelloSection({}: Props) {
   return (
     <div className='flex gap-6 my-20 flex-col-reverse md:flex-row items-center justify-between'>
         <div className='flex  flex-col items-start gap-8'>
-            <h1 className='text-4xl md:text-7xl font-light fontroman'>
+            <h1 className='text-4xl md:text-7xl font-light'>
                 Hello!<br/>
                 Thanks for stopping by
             </h1>
@@ -18,7 +18,7 @@ function HelloSection({}: Props) {
                     <br/>    
                     Please take a look around the website, and I hope we connect soon!
             </p>
-            <Button className='' size={'lg'}>Learn More</Button>
+            <Button className='text-xl' size={'lg'}>Learn More</Button>
         </div>
         <img className='espect-[3/4] w-full max-h-[50vh] md:max-h-[70vh] max-w-[500px] object-cover  rounded-lg ' src="https://www.niallscullyphotography.com/wp-content/uploads/2022/12/Me-3-596x894.jpg"></img>
     </div>

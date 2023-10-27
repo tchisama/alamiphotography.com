@@ -90,10 +90,10 @@ function Page({}: Props) {
         </div>
         <div className="flex flex-col md:flex-row max-w-[2200px] mx-auto px-4">
             <div className="flex-1 img translate-y-10 opacity-0">
-                <img className="w-full  object-cover" src="https://www.niallscullyphotography.com/wp-content/uploads/2019/03/Danielle-2.jpg"></img>
+                <img className="w-full object-cover" src="https://www.niallscullyphotography.com/wp-content/uploads/2019/03/Danielle-2.jpg"></img>
             </div>
             <div className="flex-1 form mt-8 md:mt-0 translate-y-10 opacity-0 flex flex-col gap-4 md:gap-8 md:p-10">
-                <h1 className="text-4xl md:text-6xl fontroman leading-relaxed">Get In Touch!</h1>
+                <h1 className="text-4xl md:text-6xl  leading-relaxed">Get In Touch!</h1>
                 <p className="text-md md:text-2xl leading-relaxed fontcharm">Thank you so much for your interest in my photography, I would love to hear more about your big day! I am located in Wicklow Ireland, but travel worldwide for weddings. I am excited to hear about your plans and will gladly travel to wherever your adventure takes us. I reply to emails within 24 hours. If you do not hear back from me within that timeframe, please check your spam folder and/or email me directly. Thank you!</p>
                 <Separator></Separator>
                 <div>
