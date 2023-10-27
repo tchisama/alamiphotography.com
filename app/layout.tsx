@@ -1,3 +1,4 @@
+import ButtonScrollUpProvider from '@/components/ButtonScrollUpProvider'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter,Dancing_Script,Charm,WindSong,Cormorant_Garamond  } from 'next/font/google'
@@ -28,7 +29,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={` ${charm.variable} ${dancing.variable}`}>
         <div className='text-gray-700'>
-          {children}
+          <ButtonScrollUpProvider>
+            {children}
+          </ButtonScrollUpProvider>
         </div>
       </body>
     </html>

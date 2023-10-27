@@ -49,7 +49,6 @@ function Page({}: Props) {
                 <div className="my-8 max-w-3xl mx-auto">
                 </div>
                 <WhatClientSays/>
-                <QandA/>
             </div>
         </div>
 
@@ -59,6 +58,7 @@ function Page({}: Props) {
 
         <div className="max-w-[1500px] mx-auto">
             <div className="nav  opacity-0 -translate-y-6">
+                <QandA/>
                 <Footer/>
             </div>
         </div>
