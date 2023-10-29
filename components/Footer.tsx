@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from "@/public/blacklogo.png"
 import Image from 'next/image';
 import { Button } from './ui/button';
@@ -28,15 +28,17 @@ const images = [
   "https://images.pexels.com/photos/1439261/pexels-photo-1439261.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 ];
 const Footer = (props: Props) => {
-
-    const scrollToTop = () => {
-        if (typeof window !== "undefined") {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth',
-            });
-          }
-    };
+    const [up,setUp] = useState(0)
+    useEffect(
+        ()=>{
+            if (typeof window !== "undefined") {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth',
+                });
+            }
+        },[up]
+    )
 
   return (
     <div className='py-20 '>
@@ -108,7 +110,7 @@ const Footer = (props: Props) => {
             </div>
         </div>
             <div className='flex justify-end px-8'>
-                <Button className='flex gap-2 text-xl' onClick={scrollToTop}>scroll up<ArrowUpIcon size={24}/></Button>
+                <Button className='flex gap-2 text-xl' onClick={()=>setUp(p=>p+1)}>scroll up<ArrowUpIcon size={24}/></Button>
             </div>
     </div>
   )
