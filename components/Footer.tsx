@@ -30,10 +30,12 @@ const images = [
 const Footer = (props: Props) => {
 
     const scrollToTop = () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      });
+        if (typeof window !== "undefined") {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+            });
+          }
     };
 
   return (
