@@ -14,7 +14,7 @@ const ButtonScrollUpProvider = (props: Props) => {
     const toggleVisibility = () => {
         const pageHeight = document.body.scrollHeight;
         if (window.pageYOffset > 300) {
-            if (window.pageYOffset > (pageHeight - 1400)) {
+            if (window.pageYOffset > (pageHeight - 1200)) {
                 setIsVisible(false);
             }else{
                 setIsVisible(true);

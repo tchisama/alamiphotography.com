@@ -18,9 +18,6 @@ import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage'
 import UploadImage from '@/components/UploadImage'
 
 type Props = {
-    param:{
-        folder: string
-    }
 }
 
 const Page = (props: Props) => {
