@@ -10,38 +10,6 @@ type Props = {
 const ButtonScrollUpProvider = (props: Props) => {
     const [isVisible, setIsVisible] = useState(false);
 
-    // Show the button when the user scrolls down
-    // const toggleVisibility = () => {
-
-    //   if (typeof window !== "undefined") {
-    //         const pageHeight = document.body.scrollHeight;
-    //         if (window.pageYOffset > 300) {
-    //             if (window.pageYOffset > (pageHeight - 1200)) {
-    //                 setIsVisible(false);
-    //             }else{
-    //                 setIsVisible(true);
-    //             }
-    //         }  else {
-    //           setIsVisible(false);
-    //         }
-    //     }
-    //   };
-  
-    // // Scroll to the top when the button is clicked
-    // const scrollToTop = () => {
-    //   window.scrollTo({
-    //     top: 0,
-    //     behavior: 'smooth',
-    //   });
-    // };
-  
-    // useEffect(() => {
-    //   window.addEventListener('scroll', toggleVisibility);
-    //   return () => {
-    //     window.removeEventListener('scroll', toggleVisibility);
-    //   };
-    // }, []);
-  
   return (
     <div>
         {props.children}
