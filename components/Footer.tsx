@@ -31,6 +31,12 @@ const Footer = (props: Props) => {
     const [up,setUp] = useState(0)
     useEffect(
         ()=>{
+            if (typeof window !== "undefined") {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth',
+                });
+            }
         },[up]
     )
 
