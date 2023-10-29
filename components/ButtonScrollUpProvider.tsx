@@ -13,7 +13,7 @@ const ButtonScrollUpProvider = (props: Props) => {
     // Show the button when the user scrolls down
     const toggleVisibility = () => {
 
-        if (typeof window !== "undefined") {
+      if (typeof window !== "undefined") {
             const pageHeight = document.body.scrollHeight;
             if (window.pageYOffset > 300) {
                 if (window.pageYOffset > (pageHeight - 1200)) {
