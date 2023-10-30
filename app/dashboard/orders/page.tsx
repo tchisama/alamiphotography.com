@@ -1,7 +1,6 @@
 "use client"
 import { collection, query, where, getDocs, onSnapshot, orderBy } from "firebase/firestore";
 import { MessagesTable } from '@/components/MessagesTable'
-import { Button } from '@/components/ui/button'
 import React from 'react'
 import { db } from "@/firebase";
 import { Message } from "@/types";
@@ -12,9 +11,8 @@ const Page = (props: Props) => {
   const [data, setData] = React.useState<Message[]>([])
 
   React.useEffect(() => {
-    const runit = async () => {
       const q = query(collection(db, "orders"),orderBy("createdAt","desc"));
-      onSnapshot(collection(db, "orders"),(snapshot)=>{
+      onSnapshot(q,(snapshot)=>{
 
       let orders: Message[] = []
       snapshot.forEach((doc) => {
@@ -25,10 +23,6 @@ const Page = (props: Props) => {
       });
       setData(orders)
       });
-    }
-    return ()=>{
-      runit()
-    }
   },[])
 
   return (

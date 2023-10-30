@@ -30,9 +30,7 @@ const Page = (props: Props) => {
     const [folder, setFolder] = React.useState<Folder>()
     const [loading, setLoading] = React.useState(true)
 
-  React.useEffect(() => {
-    const runit = async () => {
-
+  React.useEffect( () => {
       const q = query(collection(db, "folders"), where("parent", "==", params.folder),orderBy("createdAt","desc"));
       onSnapshot(q,(querySnapshot)=>{
       let fs: Folder[] = []
@@ -59,13 +57,15 @@ const Page = (props: Props) => {
       })
 
       const docRef = doc(db, "folders", params.folder as string);
-      const docSnap = await getDoc(docRef);
-      setFolder({...docSnap.data(),id:params.folder} as Folder)
-      setLoading(false)
-    }
-    return ()=>{
-      runit()
-    }
+      getDoc(docRef).then((docSnap) => {
+        if (docSnap.exists()) {
+          setFolder({...docSnap.data(),id:params.folder} as Folder)
+        } else {
+          // doc.data() will be undefined in this case
+          console.log("No such document!");
+        }
+        setLoading(false)
+      })
   },[params.folder])
 
 
