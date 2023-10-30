@@ -117,6 +117,10 @@ const Page = (props: Props) => {
             )
         })
     }
+    {
+        !(photos.length>0) &&
+        <h1>No images</h1>
+    }
         </div>
     </div>
   )
