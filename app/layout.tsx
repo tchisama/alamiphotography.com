@@ -28,6 +28,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+      <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png"/>
+      </head>
       <body className={` ${charm.variable} ${dancing.variable}`}>
         <div className='text-gray-700'>
           <ButtonScrollUpProvider>
