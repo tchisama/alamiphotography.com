@@ -1,5 +1,5 @@
 "use client"
-import { collection, query, where, getDocs } from "firebase/firestore";
+import { collection, query, where, getDocs, onSnapshot, orderBy } from "firebase/firestore";
 import { MessagesTable } from '@/components/MessagesTable'
 import { Button } from '@/components/ui/button'
 import React from 'react'
@@ -13,15 +13,18 @@ const Page = (props: Props) => {
 
   React.useEffect(() => {
     const runit = async () => {
-      const querySnapshot = await getDocs(collection(db, "orders"));
+      const q = query(collection(db, "orders"),orderBy("createdAt","desc"));
+      onSnapshot(collection(db, "orders"),(snapshot)=>{
+
       let orders: Message[] = []
-      querySnapshot.forEach((doc) => {
+      snapshot.forEach((doc) => {
         orders.push({
           id: doc.id,
           ...doc.data()
         }as Message)
       });
       setData(orders)
+      });
     }
     return ()=>{
       runit()

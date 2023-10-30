@@ -19,7 +19,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Send } from "lucide-react";
 import { db } from "@/firebase";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 type Props = {}
 
@@ -62,7 +62,8 @@ function Page({}: Props) {
                 email,
                 number,
                 date,
-                message
+                message,
+                createdAt:serverTimestamp()
             });
             console.log("Document written with ID: ", docRef.id);
             setDate("")
