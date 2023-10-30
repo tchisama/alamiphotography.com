@@ -33,7 +33,7 @@ function Navbar({}: Props) {
         <Link href={"/"}>
             <Image alt='' className=' w-[100px] object-contain md:w-[200px] ' src={blackLogo} width={160} height={100}></Image>
         </Link>
-        <Button size={"icon"} onClick={()=>setOpen(true)} variant={"ghost"} className=''><Menu/></Button>
+        <Button size={"icon"} onClick={()=>setOpen(true)} variant={"ghost"} className='block md:hidden'><Menu/></Button>
 
         <NavigationMenu style={{}} className='hidden  flex-1 md:flex text-xl z-50'>
             <NavigationMenuList>
