@@ -9,11 +9,11 @@ import {
     DialogTrigger,
   } from "@/components/ui/dialog"
 import { Button } from './ui/button'
-import { Image, ImageIcon, Upload } from 'lucide-react'
+import { Image, ImageIcon, Loader, Upload } from 'lucide-react'
 
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage'
 import { db, storage } from '@/firebase'
-import { addDoc, collection } from 'firebase/firestore'
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
   
 type Props = {
     parent:string
@@ -32,7 +32,7 @@ const UploadImage = (props: Props) => {
   }
 
   useEffect(() => {
-    if (file) {
+    if (file && percent === 0) {
         const storageRef = ref(storage, `/files/${file?.name}`)
         const uploadTask = uploadBytesResumable(storageRef, file);
         uploadTask.on(
@@ -52,8 +52,10 @@ const UploadImage = (props: Props) => {
                     const docRef = await addDoc(collection(db, "photos"), {
                         name:file.name,
                         image:url,
-                        parent:props.parent
+                        parent:props.parent,
+                        createdAt:serverTimestamp()
                     });
+                    setPercent(0)
                 });
             }
         ); 
@@ -63,7 +65,14 @@ const UploadImage = (props: Props) => {
   return (
     <div>
         <label htmlFor="fileInput">
-                <div className='px-4 cursor-pointer bg-primary text-white py-2 flex gap-2 rounded-lg shadow-md'><ImageIcon size={20}/> Add Image</div>
+                <div className='px-4 cursor-pointer bg-primary text-white py-2 flex gap-2 rounded-lg shadow-md'>
+                    {
+                        percent === 0 ?
+                    <><ImageIcon size={20}/> Add Image</>
+                    :
+                    <><Loader className='animate-spin' size={20}/> Uploading ( {percent} % )</>
+                    }
+                </div>
         </label>
         <input id="fileInput" accept="image/*" className='hidden' onChange={handleChange} type={"file"}/>
     </div>

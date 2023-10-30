@@ -44,7 +44,7 @@ const Page = (props: Props) => {
       setLoading(false)
       });
 
-      const q2 = query(collection(db, "photos"), where("parent", "==", params.folder));
+      const q2 = query(collection(db, "photos") ,orderBy("createdAt","desc"), where("parent", "==", params.folder));
       onSnapshot(q2,(querySnapshot2)=>{
         let phts: Photo[] = []
         querySnapshot2.forEach((doc) => {
