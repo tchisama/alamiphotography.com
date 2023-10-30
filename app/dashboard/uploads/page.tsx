@@ -21,7 +21,6 @@ const Page = (props: Props) => {
 
   useEffect(() => {
     console.log("use effect")
-    const runit = () => {
       try {
        console.log("try to fetch") 
       const q = query(collection(db, "folders"), where("parent", "==", ""),orderBy("createdAt","desc"));
@@ -39,10 +38,6 @@ const Page = (props: Props) => {
     }catch(error) {
       console.log(error)
       setLoading(false)
-    }
-    }
-    return ()=>{
-      runit()
     }
   },[])
 
