@@ -22,7 +22,7 @@ const Page = (props: Props) => {
   React.useEffect(() => {
     const runit = async () => {
       try {
-        
+       console.log("try to fetch") 
       const q = query(collection(db, "folders"), where("parent", "==", ""),orderBy("createdAt","desc"));
       onSnapshot(q,(querySnapshot)=>{
       let fs: Folder[] = []
@@ -37,6 +37,7 @@ const Page = (props: Props) => {
       });
     }catch(error) {
       console.log(error)
+      setLoading(false)
     }
     }
     return ()=>{
