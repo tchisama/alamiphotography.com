@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { db } from '@/firebase'
 import { Folder } from '@/types'
-import { collection, getDocs, query, where } from 'firebase/firestore'
+import { QuerySnapshot, collection, getDocs, onSnapshot, orderBy, query, where } from 'firebase/firestore'
 import { Folder as FolderIcon, MoreHorizontal, MoreVertical, Plus } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
@@ -21,8 +21,8 @@ const Page = (props: Props) => {
 
   React.useEffect(() => {
     const runit = async () => {
-      const q = query(collection(db, "folders"), where("parent", "==", ""));
-      const querySnapshot = await getDocs(q);
+      const q = query(collection(db, "folders"), where("parent", "==", ""),orderBy("createdAt","desc"));
+      onSnapshot(q,(querySnapshot)=>{
       let fs: Folder[] = []
       querySnapshot.forEach((doc) => {
         fs.push({
@@ -32,6 +32,7 @@ const Page = (props: Props) => {
       });
       setFolders(fs)
       setLoading(false)
+      });
     }
     return ()=>{
       runit()

@@ -12,7 +12,7 @@ import { Button } from './ui/button'
 import { Plus } from 'lucide-react'
 import { Input } from './ui/input'
 import { DialogClose } from '@radix-ui/react-dialog'
-import { addDoc, collection } from 'firebase/firestore'
+import { Timestamp, addDoc, collection, serverTimestamp } from 'firebase/firestore'
 import { db } from '@/firebase'
   
 type Props = {
@@ -27,7 +27,8 @@ function CreateNewFolder({parent}: Props) {
         try {
             const docRef = await addDoc(collection(db, "folders"), {
                 name,
-                parent: parent
+                parent: parent,
+                createdAt:serverTimestamp()
             });
             console.log("Document written with ID: ", docRef.id);
             setName("")
@@ -40,6 +41,7 @@ function CreateNewFolder({parent}: Props) {
   }
 
   return (
+
 <Dialog>
     <DialogTrigger asChild>
             <Button className='px-4 py-2 flex gap-2 rounded-lg shadow-md'>New folder <Plus size={20}/></Button>
@@ -56,7 +58,7 @@ function CreateNewFolder({parent}: Props) {
             <Button variant={"outline"} className='px-4 py-2'>Close</Button>
         </DialogClose>
         <DialogClose>
-            <Button onClick={addFolder} className='px-4 py-2'>Create</Button>
+            <Button  onClick={addFolder} className='px-4 py-2'>Create</Button>
         </DialogClose>
     </DialogFooter>
   </DialogContent>

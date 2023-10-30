@@ -8,7 +8,7 @@ import React, { useState } from 'react'
 
 import { db, storage } from '@/firebase'
 import { Folder, Photo } from '@/types'
-import { collection, doc, getDoc, getDocs, query, where } from 'firebase/firestore'
+import { collection, doc, getDoc, getDocs, onSnapshot, orderBy, query, where } from 'firebase/firestore'
 import FolderComp from '@/components/FolderComp'
 import { useParams } from 'next/navigation'
 import CreateNewFolder from '@/components/CreateNewFolder'
@@ -33,8 +33,8 @@ const Page = (props: Props) => {
   React.useEffect(() => {
     const runit = async () => {
 
-      const q = query(collection(db, "folders"), where("parent", "==", params.folder));
-      const querySnapshot = await getDocs(q);
+      const q = query(collection(db, "folders"), where("parent", "==", params.folder),orderBy("createdAt","desc"));
+      onSnapshot(q,(querySnapshot)=>{
       let fs: Folder[] = []
       querySnapshot.forEach((doc) => {
         fs.push({
@@ -43,17 +43,20 @@ const Page = (props: Props) => {
         }as Folder)
       });
       setFolders(fs)
+      setLoading(false)
+      });
 
       const q2 = query(collection(db, "photos"), where("parent", "==", params.folder));
-      const querySnapshot2 = await getDocs(q2);
-      let phts: Photo[] = []
-      querySnapshot2.forEach((doc) => {
-        phts.push({
-          id: doc.id,
-          ...doc.data()
-        }as Photo)
-      });
-      setPhotos(phts)
+      onSnapshot(q2,(querySnapshot2)=>{
+        let phts: Photo[] = []
+        querySnapshot2.forEach((doc) => {
+          phts.push({
+            id: doc.id,
+            ...doc.data()
+          }as Photo)
+        });
+        setPhotos(phts)
+      })
 
       const docRef = doc(db, "folders", params.folder as string);
       const docSnap = await getDoc(docRef);
@@ -82,10 +85,10 @@ const Page = (props: Props) => {
                 <CreateNewFolder parent={params.folder as string}/>
             </div>
         </div>
-        <div className='flex gap-4 bg-[#00000005] justify-center border-dashed border-muted-forground w-full h-[200px]  border-[2px] mb-4 items-center'>
+        {/* <div className='flex gap-4 bg-[#00000005] justify-center border-dashed border-muted-forground w-full h-[200px]  border-[2px] mb-4 items-center'>
             <ImageIcon  size={22}/>
             Select images
-        </div>
+        </div> */}
         <Separator className='my-10'/>
         <h1 className='text-2xl mb-4'>Children Folders</h1>
         <div className='grid gap-4 grid-cols-3 '>
