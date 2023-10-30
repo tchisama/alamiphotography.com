@@ -10,7 +10,7 @@ import { Folder } from '@/types'
 import { QuerySnapshot, collection, getDocs, onSnapshot, orderBy, query, where } from 'firebase/firestore'
 import { Folder as FolderIcon, MoreHorizontal, MoreVertical, Plus } from 'lucide-react'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 type Props = {}
 
@@ -19,8 +19,9 @@ const Page = (props: Props) => {
   const [folders, setFolders] = React.useState<Folder[]>([])
   const [loading, setLoading] = React.useState(true)
 
-  React.useEffect(() => {
-    const runit = async () => {
+  useEffect(() => {
+    console.log("use effect")
+    const runit = () => {
       try {
        console.log("try to fetch") 
       const q = query(collection(db, "folders"), where("parent", "==", ""),orderBy("createdAt","desc"));
