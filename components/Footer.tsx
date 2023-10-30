@@ -109,8 +109,8 @@ const Footer = (props: Props) => {
                 </div>
             </div>
         </div>
-            <div className='flex justify-end px-8'>
-                <Button className='flex gap-2 text-xl' onClick={()=>setUp(p=>p+1)}>scroll up<ArrowUpIcon size={24}/></Button>
+            <div className='flex justify-end px-4 pt-4 md:pt-0 md:px-8'>
+                <Button variant={"outline"} className='flex gap-2 text-xl' onClick={()=>setUp(p=>p+1)}>scroll up<ArrowUpIcon size={20}/></Button>
             </div>
     </div>
   )

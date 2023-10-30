@@ -1,6 +1,6 @@
 "use client"
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect } from 'react'
 import blackLogo from "@/public/blacklogo.png"
 import Link from 'next/link'
 import {
@@ -15,16 +15,25 @@ import {
   } from "@/components/ui/navigation-menu"
 import { Button } from './ui/button'
 import LangButton from './LangButton'
+import { Menu } from 'lucide-react'
+import useNavbarStore from '@/store/navbarStore'
 
 type Props = {}
 
 function Navbar({}: Props) {
-  return (
-    <div className='w-full md:p-4 py-4  items-center flex justify-center  md:justify-between'>
+    const {setOpen} = useNavbarStore()
 
+  useEffect(()=>{
+    setOpen(false)
+  },[])
+  return (
+
+    <>
+    <div className='w-full md:p-4 py-4  items-center flex justify-between  md:justify-between'>
         <Link href={"/"}>
             <Image alt='' className=' w-[100px] object-contain md:w-[200px] ' src={blackLogo} width={160} height={100}></Image>
         </Link>
+        <Button size={"icon"} onClick={()=>setOpen(true)} variant={"ghost"} className=''><Menu/></Button>
 
         <NavigationMenu style={{}} className='hidden  flex-1 md:flex text-xl z-50'>
             <NavigationMenuList>
@@ -85,7 +94,10 @@ function Navbar({}: Props) {
             </NavigationMenuList>
         </NavigationMenu>
 
+
+
     </div>
+    </>
   )
 }
 

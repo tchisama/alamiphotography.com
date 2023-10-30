@@ -6,9 +6,11 @@ import ImageSlider from "@/components/ImageSlider";
 import Loading from "@/components/Loading";
 import MyWork from "@/components/MyWork";
 import Navbar from "@/components/Navbar";
+import NavbarMobile from "@/components/NavbarMobile";
 import Testimonial from "@/components/Testimonial";
 import Video from "@/components/Video";
 import { Separator } from "@/components/ui/separator";
+import useNavbarStore from "@/store/navbarStore";
 import gsap from "gsap";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
@@ -16,6 +18,7 @@ import { useEffect, useRef, useState } from "react";
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const texth = useRef(null);
+  const {open} = useNavbarStore()
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);

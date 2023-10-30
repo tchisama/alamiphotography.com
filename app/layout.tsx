@@ -2,6 +2,7 @@ import ButtonScrollUpProvider from '@/components/ButtonScrollUpProvider'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter,Dancing_Script,Charm,WindSong,Cormorant_Garamond  } from 'next/font/google'
+import NavbarProvider from '@/components/NavbarProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 const dancing = WindSong({ 
@@ -30,7 +31,9 @@ export default function RootLayout({
       <body className={` ${charm.variable} ${dancing.variable}`}>
         <div className='text-gray-700'>
           <ButtonScrollUpProvider>
+            <NavbarProvider>
             {children}
+            </NavbarProvider>
           </ButtonScrollUpProvider>
         </div>
       </body>
