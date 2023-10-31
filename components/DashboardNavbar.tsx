@@ -1,4 +1,4 @@
-import { Home, Layers2, LogOut, Mail, MessageCircle, Upload, User } from 'lucide-react'
+import { Book, FolderIcon, Home, Layers2, LogOut, Mail, MessageCircle, Upload, User } from 'lucide-react'
 import React from 'react'
 import { Button } from './ui/button'
 import Link from 'next/link'
@@ -20,8 +20,8 @@ const links = [
     },
     {
         href: '/dashboard/uploads',
-        name: 'Uploads',
-        icon:<Upload size={iconSize}/>,
+        name: 'File System',
+        icon:<FolderIcon size={iconSize}/>,
     },
     {
         href: '/dashboard/orders',
@@ -33,10 +33,15 @@ const links = [
         name: 'Pages',
         icon:<Layers2 size={iconSize}/>,
     },
+    {
+        href: '/dashboard/blogs',
+        name: 'blogs',
+        icon:<Book size={iconSize}/>,
+    },
 ]
 function DashboardNavbar({}: Props) {
   return (
-    <div className='bg-primary p-4 flex flex-col gap-2 min-h-screen'>
+    <div className='bg-primary p-4 flex flex-col  min-h-screen'>
         <Image width={150} alt='' className='w-[150px] mb-24 mt-8 mx-auto' src={logo}></Image>
         {
             links.map((link) => (

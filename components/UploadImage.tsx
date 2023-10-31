@@ -60,7 +60,7 @@ const UploadImage = (props: Props) => {
             }
         ); 
     }
-  },[file])
+  },[file, percent, props.parent])
 
   return (
     <div>
