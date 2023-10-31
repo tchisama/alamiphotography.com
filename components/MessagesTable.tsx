@@ -221,7 +221,7 @@ export function MessagesTable({data}:{data:Message[]}) {
         </DropdownMenu>
       </div>
       <div className="rounded-md border">
-        <Table>
+        <Table className="bg-[#fafaf8]">
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
