@@ -13,7 +13,7 @@ function page({}: Props) {
 
             <h1 className='text-5xl my-8'>Pages</h1>
             <Tabs defaultValue="home" className="w-full ">
-            <TabsList className=''>
+            <TabsList className=' grid grid-cols-3 w-[300px]'>
                 <TabsTrigger value="home" className=''>Home</TabsTrigger>
                 <TabsTrigger value="about" className=''>About</TabsTrigger>
                 <TabsTrigger value="wedding" className=''>Wedding</TabsTrigger>
