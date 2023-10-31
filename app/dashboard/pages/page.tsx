@@ -1,6 +1,8 @@
 import React from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import DashboardHomePage from '@/components/DashboardHomePage'
+import DashboardAboutPage from '@/components/DashboardAboutPage'
+import DashboardWeddingPage from '@/components/DashboardWeddingPage'
 
 type Props = {}
 
@@ -13,13 +15,17 @@ function page({}: Props) {
             <Tabs defaultValue="home" className="w-full ">
             <TabsList className=''>
                 <TabsTrigger value="home" className=''>Home</TabsTrigger>
-                <TabsTrigger value="About" className='                                                                                                                                                                                                          '>About</TabsTrigger>
+                <TabsTrigger value="about" className=''>About</TabsTrigger>
+                <TabsTrigger value="wedding" className=''>Wedding</TabsTrigger>
             </TabsList>
             <TabsContent value="home">
                 <DashboardHomePage/>
             </TabsContent>
             <TabsContent value="about">
-
+                <DashboardAboutPage/>
+            </TabsContent>
+            <TabsContent value="wedding">
+                <DashboardWeddingPage/>
             </TabsContent>
             </Tabs>
 
