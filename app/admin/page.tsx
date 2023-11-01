@@ -4,11 +4,16 @@ import logo from "@/public/blacklogo.png"
 import Image from 'next/image'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-import { LogIn } from 'lucide-react'
+import { Loader, LogIn } from 'lucide-react'
 import { useRouter } from 'next/navigation'
-import {AiOutlineGoogle} from "react-icons/ai"
+import {AiFillWarning} from "react-icons/ai"
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '@/firebase'
+import {
+  Alert,
+  AlertDescription,
+  AlertTitle,
+} from "@/components/ui/alert"
 
 
 type Props = {}
@@ -23,6 +28,9 @@ function Page({}: Props) {
 
   const SignIn = () => {
     setLoading(true);
+    setError("")
+    if(!email) return setError("Email is required")
+    if(!password) return setError("Password is required")
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in 
@@ -53,9 +61,26 @@ function Page({}: Props) {
             </div>
             <div className='flex w-full mt-4 space-x-2'>
               {/* <Button ><AiOutlineGoogle size={20}/></Button> */}
-              <Button type='submit' onClick={SignIn} className=' flex-1 text-lg flex gap-2'>Login<LogIn size={20}/></Button>
+              <Button type='submit' onClick={SignIn} className=' flex-1 text-lg flex gap-2'>
+                {
+                  loading ? 
+                  <>Loading<Loader className='animate-spin' size={20}/></>:
+                  <>Login<LogIn size={20}/></>
+                }
+              </Button>
             </div>
-            
+           {
+            error &&
+            <Alert variant="destructive">
+              <AiFillWarning></AiFillWarning>
+            <AlertTitle>Error</AlertTitle>
+            <AlertDescription>
+              {
+                error
+              }
+            </AlertDescription>
+          </Alert>
+           } 
         </div>
     </form>
   )

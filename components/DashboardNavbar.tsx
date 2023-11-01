@@ -1,9 +1,11 @@
+"use client"
 import { Book, FolderIcon, Home, Layers2, LogOut, Mail, MessageCircle, Upload, User } from 'lucide-react'
 import React from 'react'
 import { Button } from './ui/button'
 import Link from 'next/link'
 import logo from "@/public/logo pictime W.png"
 import Image from 'next/image'
+import { auth } from '@/firebase'
 type Props = {}
 
 const iconSize = 20
@@ -50,7 +52,7 @@ function DashboardNavbar({}: Props) {
                 </Link>
             ))
         }
-        <button className=' min-w-[200px] py-3 mt-auto hover:bg-[#fff2] duration-200 rounded-lg text-white  px-6 flex gap-2 items-center'><LogOut/>Logout</button>
+        <button onClick={() => {auth.signOut();window.location.reload()}} className=' min-w-[200px] py-3 mt-auto hover:bg-[#fff2] duration-200 rounded-lg text-white  px-6 flex gap-2 items-center' ><LogOut/>Logout</button>
     </div>
   )
 }
