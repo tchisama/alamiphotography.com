@@ -16,7 +16,7 @@ type Props = {}
     'https://www.niallscullyphotography.com/wp-content/uploads/2023/03/Eimear-Conor-434-595x894.jpeg?x15971',
     'https://www.niallscullyphotography.com/wp-content/uploads/2023/03/Confetti-1st-Edits-8-597x894.jpeg?x15971',
   ];
-const DashboardWeddingPage = (props: Props) => {
+const DashboardEngagedPage = (props: Props) => {
   return (
     <div className='flex flex-col gap-4 pb-8'>
         <Images/>
@@ -43,4 +43,4 @@ const Images = () => {
     )
 }
 
-export default DashboardWeddingPage
+export default DashboardEngagedPage
