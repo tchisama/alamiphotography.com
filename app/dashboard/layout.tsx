@@ -11,7 +11,7 @@ const layout = ({children}: Props) => {
     <Provider>
     <div className='flex bg-primary h-screen '>
         <DashboardNavbar/>
-        <div className='flex-1 m-2 py-2 bg-white  overflow-y-auto'>
+        <div className='flex-1  py-2 bg-white  overflow-y-auto'>
             {children}
         </div>
     </div>
