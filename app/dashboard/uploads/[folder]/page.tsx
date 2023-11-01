@@ -128,9 +128,12 @@ const Page = (props: Props) => {
 
 
 const ImageComp = ({src}:{src:string}) => {
+  const copySrc = () => {
+    navigator.clipboard.writeText(src)
+  }
     return (
             <div className='bg-[#fafaf8] relative overflow-hidden aspect-square border '>
-                <Button size={"icon"} variant={"outline"} className='absolute right-0 top-0'><Copy/></Button>
+                <Button onClick={copySrc} size={"icon"} variant={"outline"} className='absolute right-0 top-0'><Copy/></Button>
                 <img className='w-full h-full object-contain' src={src} alt=""/>
             </div>
     )
