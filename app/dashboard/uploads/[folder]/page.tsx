@@ -1,7 +1,7 @@
 "use client"
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
-import { ArrowLeft, Folder as FolderIcon, ImageIcon, MoreVertical, Plus, Upload } from 'lucide-react'
+import { ArrowLeft, Copy, Folder as FolderIcon, ImageIcon, MoreVertical, Plus, Upload } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
@@ -129,7 +129,8 @@ const Page = (props: Props) => {
 
 const ImageComp = ({src}:{src:string}) => {
     return (
-            <div className='bg-[#fafaf8] overflow-hidden aspect-square border '>
+            <div className='bg-[#fafaf8] relative overflow-hidden aspect-square border '>
+                <Button size={"icon"} variant={"outline"} className='absolute right-0 top-0'><Copy/></Button>
                 <img className='w-full h-full object-contain' src={src} alt=""/>
             </div>
     )

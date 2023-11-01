@@ -6,15 +6,17 @@ import Link from 'next/link'
 import logo from "@/public/logo pictime W.png"
 import Image from 'next/image'
 import { auth } from '@/firebase'
+import classNames from 'classnames'
+import { usePathname } from 'next/navigation'
 type Props = {}
 
 const iconSize = 20
 const links = [
-    {
-        href: '/dashboard',
-        name: 'Dashboard',
-        icon:<Home size={iconSize}/>,
-    },
+    // {
+    //     href: '/dashboard',
+    //     name: 'Dashboard',
+    //     icon:<Home size={iconSize}/>,
+    // },
     {
         href: '/dashboard/admin',
         name: 'Admins',
@@ -42,13 +44,23 @@ const links = [
     },
 ]
 function DashboardNavbar({}: Props) {
+    const currentPath = usePathname();
   return (
     <div className='bg-primary p-4 flex flex-col  min-h-screen'>
         <Image width={150} alt='' className='w-[150px] mb-24 mt-8 mx-auto' src={logo}></Image>
         {
             links.map((link) => (
                 <Link href={link.href} key={link.href}>
-                    <button className=' min-w-[200px] py-3 hover:bg-[#fff2] duration-200 rounded-lg text-white  px-6 flex gap-2 items-center'>{link.icon}{link.name}</button>
+                    <button className={
+                        classNames(
+                            {
+                            'min-w-[200px] py-3 hover:bg-[#fff2] duration-200 rounded-lg text-white  px-6 flex gap-2 items-center':true,
+                            },
+                            {
+                                'bg-[#fff3]': currentPath === link.href
+                            }
+                        )
+                    }>{link.icon}{link.name}</button>
                 </Link>
             ))
         }

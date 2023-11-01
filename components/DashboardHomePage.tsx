@@ -1,7 +1,11 @@
-import React from 'react'
+"use client"
+import React, { useEffect, useState } from 'react'
 import { Button } from './ui/button';
 import { Check, Plus, Replace, X } from 'lucide-react';
 import { Separator } from './ui/separator';
+import { doc, getDoc, updateDoc } from 'firebase/firestore';
+import { db } from '@/firebase';
+import HomeSliderDashboard from './homeSliderDashboard';
 
 type Props = {}
 
@@ -19,7 +23,7 @@ const images = [
 const DashboardHomePage = (props: Props) => {
   return (
     <div className='flex flex-col gap-4 pb-8'>
-        <HomeSlider/>
+        <HomeSliderDashboard/>
         <Separator/>
         <CheckOutMyWork/>
         <Separator/>
@@ -28,24 +32,6 @@ const DashboardHomePage = (props: Props) => {
   )
 }
 
-const HomeSlider = () => {
-    return(
-        <>
-      <h1 className='text-4xl my-4'>Home Page Slider</h1>
-      <div className='flex  gap-4 h-[330px] w-full overflow-x-scroll'>
-        <button className='h-[300px] border aspect-[3/4] bg-[#fafaf8] flex gap-2 justify-center items-center'>
-            <Plus/> Add image
-        </button>
-        {images.map((img, index) => (
-            <div className='w-fit h-[300px] relative aspect-[3/4]' key={index}>
-                <img className='w-full h-full object-cover' src={img} alt="" />
-                <Button size={"icon"} variant={"outline"} className='absolute right-0 top-0'><X/></Button>
-            </div>
-        ))}
-      </div>
-        </>
-    )
-}
 
 const CheckOutMyWork = () => {
     return(
