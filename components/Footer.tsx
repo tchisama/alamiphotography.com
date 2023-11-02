@@ -54,8 +54,12 @@ const Footer = (props: Props) => {
                 <Image width={300} src={logo} alt="logo"></Image>
                 <Separator/>
                 <div className='flex gap-3 '>
-                    <Button variant={"outline"} size={"icon"} className='rounded-full '><FacebookIcon size={24}/></Button>
-                    <Button variant={"outline"} size={"icon"} className='rounded-full '><InstagramIcon size={24}/></Button>
+                    <Link href={"https://www.facebook.com/Alamiphotography/"}>
+                        <Button variant={"outline"} size={"icon"} className='rounded-full '><FacebookIcon size={24}/></Button>
+                    </Link >
+                    <Link href={"https://www.instagram.com/alami_photography/"}>
+                        <Button variant={"outline"} size={"icon"} className='rounded-full '><InstagramIcon size={24}/></Button>
+                    </Link>
                 </div>
             </div>
             <div className='h-[250px] hidden md:block'>

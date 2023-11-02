@@ -99,30 +99,45 @@ function Page({}: Props) {
                 <Separator></Separator>
                 <div>
                     <h3 className="my-2 text-xl fontcharm">Your Name</h3>
-                    <Input value={name} onChange={(e) => setName(e.target.value)}></Input>
+                    <Input className="border-[#999]" value={name} onChange={(e) => setName(e.target.value)}></Input>
                 </div>
                 <div>
                     <h3 className="my-2 text-xl fontcharm">Phone Number</h3>
-                    <Input value={number} onChange={(e) => setNumber(e.target.value)} type="number"></Input>
+                    <Input  className="border-[#999]" value={number} onChange={(e) => setNumber(e.target.value)} type="number"></Input>
                 </div>
                 <div>
                     <h3 className="my-2 text-xl fontcharm">Email</h3>
-                    <Input value={email} onChange={(e) => setEmail(e.target.value)} type="email"></Input>
+                    <Input  className="border-[#999]" value={email} onChange={(e) => setEmail(e.target.value)} type="email"></Input>
                 </div>
                 <div>
                     <h3 className="my-2 text-xl fontcharm">Wedding Date & Venue</h3>
-                    <Input value={date} onChange={(e) => setDate(e.target.value)} type="date"></Input>
+                    <Input  className="border-[#999]" value={date} onChange={(e) => setDate(e.target.value)} type="date"></Input>
                 </div>
                 <div className="flex-1">
                     <h3 className="my-2  text-xl fontcharm">More details</h3>
-                    <Textarea value={message} onChange={(e) => setMessage(e.target.value)} className="h-[200px] text-lg"/>
+                    <Textarea  className="border-[#999] h-[200px] text-lg" value={message} onChange={(e) => setMessage(e.target.value)} />
                 </div>
                 <div className="flex-1">
                     <Button onClick={addOrder} size={'lg'} className="text-xl shadow-lg flex gap-2">Send <Send/></Button>
                 </div>
             </div>
         </div>
-
+        <div className="max-w-[1500px] md:flex-row flex-col items-center py-20 mt-8 mx-auto flex gap-8">
+            <div className="flex-1 flex flex-col items-center">
+                <p className="text-2xl">Read more</p>
+                <h2 className="md:text-5xl text-4xl uppercase">About Me</h2>
+            </div>
+            <div className="md:h-[100px] md:w-[2px] w-[100px] h-[1px] bg-primary"></div>
+            <div className="flex-1 flex flex-col items-center">
+                <p className="text-2xl">View</p>
+                <h2 className="md:text-5xl text-4xl uppercase">REAL WEDDINGS</h2>
+            </div>
+            <div className="md:h-[100px] md:w-[2px] w-[100px] h-[1px] bg-primary"></div>
+            <div className="flex-1 flex flex-col items-center">
+                <p className="text-2xl">Details In</p>
+                <h2 className="md:text-5xl text-4xl uppercase">Investment</h2>
+            </div>
+        </div>
         <div className="max-w-[1500px] mx-auto">
             <Footer />
         </div>
