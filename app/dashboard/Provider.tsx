@@ -2,7 +2,7 @@
 import Loading from '@/components/Loading'
 import { auth } from '@/firebase'
 import { useRouter } from 'next/navigation'
-import React, { useEffect } from 'react'
+import React, { useEffect, useLayoutEffect } from 'react'
 
 type Props = {
     children: React.ReactNode
@@ -11,7 +11,7 @@ type Props = {
 const Provider = ({children}: Props) => {
     const router = useRouter()
     const [loading, setLoading] = React.useState(true)
-    useEffect(() => {
+    useLayoutEffect(() => {
         setTimeout(() => {
             if(!auth.currentUser?.uid){
                 router.push("/admin")

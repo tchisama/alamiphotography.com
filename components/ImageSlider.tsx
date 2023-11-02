@@ -48,7 +48,7 @@ const ImageSlider = (props: Props) => {
         disableOnInteraction: false,
       }}
       modules={[Autoplay]}
-      className="mySwiper my-[16vh] z-[-10] scale-[2.4] md:scale-[1.5]  "
+      className="mySwiper my-[15vh] z-[-10] scale-[2.4] md:scale-[1.5]  "
     >
       {[...images,...images,...images].map((image, index) => (
         <SwiperSlide

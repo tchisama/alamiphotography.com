@@ -51,19 +51,19 @@ function Navbar({}: Props) {
                 <NavigationMenuItem>
                     <NavigationMenuTrigger className={"uppercase px-2 text-xl bg-transparent"}>PORTFOLIO</NavigationMenuTrigger>
                     <NavigationMenuContent className='z-50 relative'>
-                        <div className='w-[250px] bg-[#fafaf8] flex flex-col gap-4 p-8 uppercase'>
+                        <div className='w-[280px] bg-[#fafaf8] flex flex-col gap-4 p-8 uppercase'>
                             <Link href="/wedding" legacyBehavior passHref>
-                                <NavigationMenuLink className=' '>I - Wedding</NavigationMenuLink>
+                                <NavigationMenuLink className=' '>I - Wedding stories</NavigationMenuLink>
                             </Link>
                             <Link href="/engaged" legacyBehavior passHref>
-                                <NavigationMenuLink className=' '>II - Engaged</NavigationMenuLink>
+                                <NavigationMenuLink className=' '>II - WEDDING FILMS</NavigationMenuLink>
                             </Link>
                             <Link href="/blog" legacyBehavior passHref>
                                 <NavigationMenuLink className=' '>III - Blog</NavigationMenuLink>
                             </Link>
-                            <Link href="/editorial" legacyBehavior passHref>
+                            {/* <Link href="/editorial" legacyBehavior passHref>
                                 <NavigationMenuLink className=' '>IV - Editorial</NavigationMenuLink>
-                            </Link>
+                            </Link> */}
                         </div>
                     </NavigationMenuContent>
                 </NavigationMenuItem>

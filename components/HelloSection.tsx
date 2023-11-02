@@ -19,6 +19,7 @@ function HelloSection({}: Props) {
                     Please take a look around the website, and I hope we connect soon!
             </p>
             <Button className='text-xl' size={'lg'}>Learn More</Button>
+            <p className='text-6xl text-end w-full fontroman'>Alami</p>
         </div>
         <img className='espect-[3/4] w-full max-h-[50vh] md:max-h-[70vh] max-w-[500px] object-cover  rounded-lg ' src="https://www.niallscullyphotography.com/wp-content/uploads/2022/12/Me-3-596x894.jpg"></img>
     </div>

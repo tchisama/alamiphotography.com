@@ -47,7 +47,9 @@ function DashboardNavbar({}: Props) {
     const currentPath = usePathname();
   return (
     <div className='bg-primary p-4 flex flex-col  min-h-screen'>
-        <Image width={150} alt='' className='w-[150px] mb-24 mt-8 mx-auto' src={logo}></Image>
+        <Link href={'/'}>
+            <Image width={150} alt='' className='w-[150px] mb-24 mt-8 mx-auto' src={logo}></Image>
+        </Link>
         {
             links.map((link) => (
                 <Link href={link.href} key={link.href}>

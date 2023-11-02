@@ -76,7 +76,7 @@ export default function Home() {
           <Video/>
       </div>
 
-      <div className="max-w-[1500px] mx-auto">
+      <div className="max-w-[2500px] mx-auto">
         <div className="nav  opacity-0 -translate-y-6">
           <Testimonial/>
         </div>
