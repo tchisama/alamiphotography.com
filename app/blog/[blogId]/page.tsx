@@ -7,6 +7,7 @@ import gsap from 'gsap';
 import React, { useEffect, useRef, useState } from 'react'
 import { motion, useScroll } from "framer-motion"
 import Footer from '@/components/Footer';
+import ImageViewer from '@/components/ImageViewer';
 
 type Props = {}
 
@@ -81,9 +82,9 @@ const Page = (props: Props) => {
 
             <div className="columns-3 gap-x-1 md:gap-x-4  overflow-hidden">
             {imageUrls.map((imageUrl, index) => (
-                <div key={index} className="relative group">
-                    <motion.img initial={{ y: 100 }} animate={{ y: 0 }} src={imageUrl} alt={`Photo ${index + 1}`} className="object-cover md:mb-4 mb-1 w-full h-full" />
-                </div>
+                <motion.div initial={{ y: 100 }} animate={{ y: 0 }}  key={index} className="relative group">
+                    <ImageViewer src={imageUrl} alt={`Photo ${index + 1}`} className="object-cover  md:mb-4 mb-1 w-full h-full"/>
+                </motion.div>
             ))}
             </div>
             <Footer/>
