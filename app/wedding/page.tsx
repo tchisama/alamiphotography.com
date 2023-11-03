@@ -6,20 +6,10 @@ import gsap from 'gsap';
 import React, { useEffect, useRef, useState } from 'react'
 import { motion, useScroll } from "framer-motion"
 import Footer from '@/components/Footer';
+import WeddingStoryComp from '@/components/WeddingStoryComp';
 
 type Props = {}
 
-  const imageUrls = [
-    'https://www.niallscullyphotography.com/wp-content/uploads/2023/03/Eimear-Conor-434-595x894.jpeg?x15971',
-    'https://www.niallscullyphotography.com/wp-content/uploads/2019/04/Cliffs-18-of-105.jpg',
-    'https://www.niallscullyphotography.com/wp-content/uploads/2023/03/Screen-Shot-2023-03-15-at-16.49.15-600x657.png?x15971',
-    'https://www.niallscullyphotography.com/wp-content/uploads/2023/03/Faye-Evan-270-596x894.jpg?x15971',
-    'https://www.niallscullyphotography.com/wp-content/uploads/2023/03/Confetti-1st-Edits-33-597x894.jpeg?x15971',
-    'https://www.niallscullyphotography.com/wp-content/uploads/2023/03/fiona-1-3-597x894.jpg?x15971',
-    'https://www.niallscullyphotography.com/wp-content/uploads/2023/03/Karla-Jack-291-595x894.jpeg?x15971',
-    'https://www.niallscullyphotography.com/wp-content/uploads/2023/03/Eimear-Conor-434-595x894.jpeg?x15971',
-    'https://www.niallscullyphotography.com/wp-content/uploads/2023/03/Confetti-1st-Edits-8-597x894.jpeg?x15971',
-  ];
 
 const Page = (props: Props) => {
   const [loading, setLoading] = useState(true);
@@ -67,14 +57,16 @@ const Page = (props: Props) => {
             ref={texth}
             className="max-w-[1500px]  mx-auto "
           >
-            
-            <div className="columns-2 md:columns-3 mt-12 gap-x-1 md:gap-x-4  overflow-hidden">
-            {imageUrls.map((imageUrl, index) => (
-                <div key={index} className="relative group">
-                    <motion.img initial={{ y: 100 }} animate={{ y: 0 }} src={imageUrl} alt={`Photo ${index + 1}`} className="object-cover   md:mb-4 mb-1 w-full h-full" />
-                </div>
-            ))}
+            <div className='flex items-center gap-4 py-8 flex-col my-20'>
+              <h1 className='text-5xl text-center'>Wedding Photographer</h1>
+              <p className='text-center'>GET A GLIMPSE OF MY THOUGHTS</p>
             </div>
+            
+            {
+              new Array(5).fill(0).map((_, i) => (
+                <WeddingStoryComp i={i} key={i}/>
+              ))
+            }
             <Footer/>
           </div>
       </div>

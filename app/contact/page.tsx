@@ -122,6 +122,7 @@ function Page({}: Props) {
                 </div>
             </div>
         </div>
+
         <div className="max-w-[1500px] md:flex-row flex-col items-center py-20 mt-8 mx-auto flex gap-8">
             <div className="flex-1 flex flex-col items-center">
                 <p className="text-2xl">Read more</p>
