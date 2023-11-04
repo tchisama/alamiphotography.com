@@ -14,10 +14,12 @@ import useNavbarStore from "@/store/navbarStore";
 import gsap from "gsap";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import {useTranslations} from 'next-intl';
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const texth = useRef(null);
+  const t = useTranslations('Index');
   const {open} = useNavbarStore()
   useEffect(() => {
     setTimeout(() => {
