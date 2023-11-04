@@ -4,5 +4,13 @@
     },
     "Index":{
         "title":"alamiphotography-en"
+    },
+    "navbar":{
+        "home":"Home",
+        "about":"About",
+        "portfolio":"Portfolio",
+        "for photographers":"For Photographers",
+        "contact":"Contact",
+        "enquire":"Enquire"
     }
 }

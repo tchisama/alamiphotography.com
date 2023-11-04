@@ -17,11 +17,13 @@ import { Button } from './ui/button'
 import LangButton from './LangButton'
 import { Menu } from 'lucide-react'
 import useNavbarStore from '@/store/navbarStore'
+import { useTranslations } from 'next-intl'
 
 type Props = {}
 
 function Navbar({}: Props) {
     const {setOpen} = useNavbarStore()
+    const t = useTranslations('navbar');
 
   useEffect(()=>{
     setOpen(false)
@@ -39,17 +41,17 @@ function Navbar({}: Props) {
             <NavigationMenuList>
                 <NavigationMenuItem>
                     <Link href="/" legacyBehavior passHref>
-                            <NavigationMenuLink className={"uppercase px-2"}>Home</NavigationMenuLink>
+                            <NavigationMenuLink className={"uppercase px-2"}>{t('home')}</NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                     <Link href="/about" legacyBehavior passHref>
-                            <NavigationMenuLink className={"uppercase px-2"}>About</NavigationMenuLink>
+                            <NavigationMenuLink className={"uppercase px-2"}>{t('about')}</NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className={"uppercase px-2 text-xl bg-transparent"}>PORTFOLIO</NavigationMenuTrigger>
+                    <NavigationMenuTrigger className={"uppercase px-2 text-xl bg-transparent"}>{t('portfolio')}</NavigationMenuTrigger>
                     <NavigationMenuContent className='z-50 relative'>
                         <div className='w-[280px] bg-[#fafaf8] flex flex-col gap-4 p-8 uppercase'>
                             <Link href="/wedding" legacyBehavior passHref>
@@ -70,12 +72,12 @@ function Navbar({}: Props) {
 
                 <NavigationMenuItem>
                     <Link href="/" legacyBehavior passHref>
-                            <NavigationMenuLink className={"uppercase px-2"}>FOR PHOTOGRAPHERS</NavigationMenuLink>
+                            <NavigationMenuLink className={"uppercase px-2"}>{t("for photographers")}</NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                     <Link href="/contact" legacyBehavior passHref>
-                            <NavigationMenuLink className={"uppercase px-2"}>CONTACT</NavigationMenuLink>
+                            <NavigationMenuLink className={"uppercase px-2"}>{t('contact')}</NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
             </NavigationMenuList>
@@ -88,7 +90,7 @@ function Navbar({}: Props) {
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                     <Link href="/contact" legacyBehavior passHref>
-                            <Button className={"ml-2"}>ENQUIRE</Button>
+                            <Button className={"ml-2 uppercase text-lg"}>{t("enquire")}</Button>
                     </Link>
                 </NavigationMenuItem>
             </NavigationMenuList>
