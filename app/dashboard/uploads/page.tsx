@@ -8,7 +8,6 @@ import { Separator } from '@/components/ui/separator'
 import { db } from '@/firebase'
 import { Folder } from '@/types'
 import { QuerySnapshot, collection, getDocs, onSnapshot, orderBy, query, where } from 'firebase/firestore'
-import { Folder as FolderIcon, MoreHorizontal, MoreVertical, Plus } from 'lucide-react'
 import Link from 'next/link'
 import React, { useEffect } from 'react'
 
