@@ -1,7 +1,7 @@
 "use client";
 import gsap from "gsap";
 import React, { useEffect, useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide,useSwiper } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import { Button } from "./ui/button";
@@ -11,6 +11,8 @@ import { db } from "@/firebase";
 type Props = {};
 const ImageSlider = (props: Props) => {
   const [images, setImages] = useState<string[]>([]);
+  const swiper = useSwiper();
+
   // useEffect(() => {
   //   setTimeout(() => {
   //     gsap
@@ -32,6 +34,7 @@ const ImageSlider = (props: Props) => {
     <>
     <Swiper
       spaceBetween={10}
+      navigation
       breakpoints={{
         140: {
           slidesPerView: 3,
@@ -48,7 +51,7 @@ const ImageSlider = (props: Props) => {
         disableOnInteraction: false,
       }}
       modules={[Autoplay]}
-      className="mySwiper my-[15vh] z-[-10] scale-[2.4] md:scale-[1.5]  "
+      className="mySwiper my-[10vh] z-[-10] scale-[2.4] md:scale-[1.2]  "
     >
       {[...images,...images,...images].map((image, index) => (
         <SwiperSlide
@@ -57,7 +60,7 @@ const ImageSlider = (props: Props) => {
         >
           <div className="h-full  w-full overflow-hidden ">
             <div
-              className=" aspect-[3/4] img w-full  bg-repeat-no-repeat group-hover:scale-[1.02] duration-300 "
+              className=" aspect-[2/3] img w-full  bg-repeat-no-repeat group-hover:scale-[1.02] duration-300 "
               style={{
                 backgroundSize: "cover",
                 backgroundImage: `url(${image})`,
@@ -67,23 +70,6 @@ const ImageSlider = (props: Props) => {
         </SwiperSlide>
       ))}
     </Swiper>
-    <div className="flex gap-4 items-center justify-center img">
-      <div className="flex-1 flex justify-end">
-      <button className="text-primary flex items-center p-2 group" >
-        <ArrowLeft/>
-        <div className="w-[70px] md:w-[100px] h-[2px]  duration-200  -translate-x-2 bg-primary">
-        </div>
-        </button>
-      </div>
-      <div className="text-lg md:text-xl">1 / {images.length}</div>
-      <div className="flex-1 flex justify-start">
-      <button className="text-primary group flex items-center p-2" >
-        <div className="w-[70px] md:w-[100px] h-[2px]  duration-200 translate-x-2 bg-primary">
-        </div>
-        <ArrowRight/>
-      </button>
-      </div>
-    </div>
     </>
   );
 };

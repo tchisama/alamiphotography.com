@@ -33,7 +33,7 @@ function Navbar({}: Props) {
     <>
     <div className='w-full md:p-4 py-4  items-center flex justify-between  md:justify-between'>
         <Link href={"/"}>
-            <Image alt='' className=' w-[100px] object-contain md:w-[200px] ' src={blackLogo} width={160} height={100}></Image>
+            <Image alt='' className=' w-[100px] object-contain md:w-[250px] ' src={blackLogo} width={160} height={100}></Image>
         </Link>
         <Button size={"icon"} onClick={()=>setOpen(true)} variant={"ghost"} className='block md:hidden'><Menu/></Button>
 
