@@ -27,12 +27,13 @@ function LangButton({}: Props) {
             <DropdownMenuSeparator />
             <DropdownMenuItem asChild>
               <Link href={"/en"+pathName} locale="en">
+                
                 English
               </Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
               <Link href={"/fr"+pathName} locale="fr">
-              French
+                French
               </Link>
             </DropdownMenuItem>
         </DropdownMenuContent>
