@@ -15,6 +15,7 @@ import gsap from "gsap";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import {useTranslations} from 'next-intl';
+import WeAreCinematicStyle from "@/components/WeAreCinematicStyle";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -76,8 +77,8 @@ export default function Home() {
 
       <div className="max-w-[2000px] mx-auto">
           <Video/>
+          <WeAreCinematicStyle/>
       </div>
-
       <div className="max-w-[2500px] mx-auto">
         <div className="nav  opacity-0 -translate-y-6">
           <Testimonial/>
