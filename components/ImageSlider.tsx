@@ -8,6 +8,7 @@ import { Button } from "./ui/button";
 import { ArrowLeft, ArrowRight, LineChart } from "lucide-react";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "@/firebase";
+import SliderButtons from "./SliderButtons";
 type Props = {};
 const ImageSlider = (props: Props) => {
   const [images, setImages] = useState<string[]>([]);
@@ -69,6 +70,7 @@ const ImageSlider = (props: Props) => {
           </div>
         </SwiperSlide>
       ))}
+      <SliderButtons/>
     </Swiper>
     </>
   );
