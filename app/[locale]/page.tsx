@@ -57,8 +57,8 @@ export default function Home() {
           ref={texth}
           className="max-w-[1500px] texth mx-auto flex  flex-col items-center"
         >
-          <h1 className="text-2xl md:text-5xl  leading-relaxed font-light text-center max-w-[800px]">
-            Natural & Elegance <br />
+          <h1 className="text-2xl uppercase font-thin md:text-5xl  leading-relaxed text-center max-w-[800px]">
+          Natural & Elegance <br/>
             Fine Art Wedding & Lifestyle Photographer & Videographer
           </h1>
           <h2 className="text-xl md:text-4xl font-light fontroman text-primary  text-center my-4">

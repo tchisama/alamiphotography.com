@@ -22,8 +22,8 @@ function ImageViewer({className,src,alt}: Props) {
   <DialogTrigger >
     <img src={src} className={className} alt={alt}></img>
   </DialogTrigger>
-  <DialogContent className='p-0 w-full h-full  max-h-none max-w-none'>
-        <img src={src} className={"w-full h-full object-contain"} alt={alt}></img>
+  <DialogContent className='p-0 w-screen h-screen  max-h-none max-w-none'>
+        <img src={src} className={" h-full max-w-[90vw] mx-auto object-contain"} alt={alt}></img>
   </DialogContent>
 </Dialog>
 
