@@ -69,7 +69,7 @@ export default function Home() {
 
       <div className="max-w-[1500px] mx-auto">
         <div className="nav  opacity-0 -translate-y-6">
-          <HelloSection />
+          <HelloSection homepage={true}/>
           <MyWork />
           <Featured/>
         </div>

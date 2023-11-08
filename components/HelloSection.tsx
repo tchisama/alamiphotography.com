@@ -1,9 +1,13 @@
 import React from 'react'
 import { Button } from './ui/button'
+import Link from 'next/link'
+import Profile from "@/public/images/Alami About.jpg"
+import { profile } from 'console'
+type Props = {
+  homepage?:boolean
+}
 
-type Props = {}
-
-function HelloSection({}: Props) {
+function HelloSection({homepage=false}: Props) {
   return (
     <div className='flex gap-6 my-20 flex-col-reverse md:flex-row items-center justify-between'>
         <div className='flex  flex-col items-start gap-8'>
@@ -12,21 +16,20 @@ function HelloSection({}: Props) {
                 Thanks for stopping by
             </h1>
             <p className='text-md md:text-2xl fontcharm leading-relaxed md:max-w-4xl'>
-                    A fine art film and digital wedding photographer based out Wicklow, Ireland, I am someone who takes great pride in their work. A fan of superheroes and zombie flicks, I enjoy lazy Sundays, the calm, the relaxation, the way they seem to breeze on by.
-                    <br/>    
-                    Always quick with a joke and ready to get down to business, I knows how to be productive and have fun at the same time. I am a family man whose wife and kids are at the centre of my world and inspiration for everyday life.
-                    <br/>    
-                    Please take a look around the website, and I hope we connect soon!
-                    A fine art film and digital wedding photographer based out Wicklow, Ireland, I am someone who takes great pride in their work. A fan of superheroes and zombie flicks, I enjoy lazy Sundays, the calm, the relaxation, the way they seem to breeze on by.
-                    <br/>    
-                    Always quick with a joke and ready to get down to business, I knows how to be productive and have fun at the same time. I am a family man whose wife and kids are at the centre of my world and inspiration for everyday life.
-                    <br/>    
-                    Please take a look around the website, and I hope we connect soon!
+              Alami Photography is a Marrakesh-based wedding photography studio with over 7 years of experience in professional photography, operating throughout Morocco. <br/>
+              Our work has been featured in VOGUE, MyWed, Together Journal, and various online publications. If our work resonates with you, please don&apos;t hesitate to contact us. <br/>
+              We are passionate about capturing timeless moments in every image we create. We believe that a great photograph should evoke an emotional response in the viewer. We aim to tell stories through images rather than words. <br/>
+              Our approach is to document your love story in a creative way, capturing not only the magnificent moments but also the special and dear snippets of your day. We present your story in an artistic, expressive manner, allowing you to look back in awe years later. Our goal is to transport you back to those unique emotions from your big day long after it has passed. <br/>
             </p>
-            {/* <Button className='text-xl' size={'lg'}>Learn More</Button> */}
+            {
+              homepage &&
+              <Link href={"/about"}>
+                <Button className='text-xl' size={'lg'}>Learn More</Button>
+              </Link>
+            }
             <p className='text-6xl text-end w-full fontroman'>Alami</p>
         </div>
-        <img className='espect-[3/4] w-full max-h-[50vh] md:max-h-[70vh] max-w-[500px] object-cover  rounded-lg ' src="https://www.niallscullyphotography.com/wp-content/uploads/2022/12/Me-3-596x894.jpg"></img>
+        <img className='espect-[3/4] w-full max-h-[50vh] md:max-h-[70vh] max-w-[500px] object-cover  rounded-lg ' src={profile}></img>
     </div>
   )
 }
