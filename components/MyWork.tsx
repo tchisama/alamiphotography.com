@@ -30,7 +30,7 @@ const MyWork = (props: Props) => {
                     <img className='  group-hover:blur-0 filter group-hover:scale-105 duration-200' src='https://www.niallscullyphotography.com/wp-content/uploads/2022/12/Dave-Anna-3-597x894.jpg?x15971'></img>
                     <div className='absolute w-full h-full border-[1px] top-0 left-0 border-white scale-95 rounded-lg group-hover:scale-90 duration-200'></div>
                 </div>
-                <h2 className='text-4xl uppercase'>ENGAGEMENT</h2>
+                <h2 className='text-4xl uppercase'>ENGAGEMENTS</h2>
             </Link>
 
         </div>

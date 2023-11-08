@@ -61,7 +61,7 @@ export default function Home() {
           Natural & Elegance <br/>
             Fine Art Wedding & Lifestyle Photographer & Videographer
           </h1>
-          <h2 className="text-xl md:text-4xl font-light fontroman text-primary  text-center my-4">
+          <h2 className="text-xl md:text-5xl font-light fontroman text-primary  text-center my-4">
             Capturing Timeless Beauty & Emotion
           </h2>
         </div>

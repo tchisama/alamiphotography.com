@@ -8,7 +8,7 @@ type Props = {
 
 function HelloSection({homepage=false}: Props) {
   return (
-    <div className='flex gap-6 my-20 flex-col-reverse md:flex-row items-center justify-between'>
+    <div className='flex gap-6 my-24 flex-col-reverse md:flex-row items-center justify-between'>
         <div className='flex  flex-col items-start gap-8'>
             <h1 className='text-4xl md:text-7xl font-light'>
                 Hello!<br/>
@@ -26,7 +26,7 @@ function HelloSection({homepage=false}: Props) {
                 <Button className='text-xl' size={'lg'}>Learn More</Button>
               </Link>
             }
-            <p className='text-6xl text-end w-full fontroman'>Alami</p>
+            <p className='text-6xl text-end w-full fontsign'>Alami</p>
         </div>
         <img className='espect-[3/4] w-full max-h-[50vh] md:max-h-[70vh] max-w-[500px] object-cover  rounded-lg ' src={"https://firebasestorage.googleapis.com/v0/b/alamiphotography-b75a1.appspot.com/o/files%2F99120244Alami%20About.jpg?alt=media&token=2d480785-0b46-48c3-80db-2f68966712ce"}></img>
     </div>

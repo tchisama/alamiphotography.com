@@ -23,15 +23,13 @@ function LangButton({}: Props) {
             <Button size={"icon"} variant={"outline"} className={"ml-2 p-6 text-xl uppercase"}>{t('lang')}</Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
-            <DropdownMenuLabel>Languages</DropdownMenuLabel>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem asChild>
+            <DropdownMenuItem asChild className='text-xl'>
               <Link href={"/en"+pathName} locale="en">
                 
                 English
               </Link>
             </DropdownMenuItem>
-            <DropdownMenuItem asChild>
+            <DropdownMenuItem asChild  className='text-xl'>
               <Link href={"/fr"+pathName} locale="fr">
                 French
               </Link>

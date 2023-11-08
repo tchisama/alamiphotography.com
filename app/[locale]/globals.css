@@ -84,12 +84,20 @@
   font-family: Derivia;
   src: local(''),url("../../fonts/Derivia-Regular.woff")   format("woff");
 }
+@font-face{
+  font-family:Windsong;
+  src:url('../../fonts/Windsong.woff');
+}
 
 .fontcharm {
   font-family: 'Derivia';
 }
 
 .fontroman {
+  font-family: "Windsong";
+}
+
+.fontsign {
   font-family: var(--font-dancing);
 }
 
