@@ -21,13 +21,13 @@ type Props = {}
 
 const HomeSliderDashboard = (props: Props) => {
     const [imagesSlider, setImages] = useState<string[]>([]);
-    const [img, setImg] = useState<string>("");
+    // const [img, setImg] = useState<string>("");
   useEffect(() => {
     getDoc(doc(db, "configs","homePageImagesSlider")).then((docSnap) => {
       setImages(docSnap.data()?.images as string[])
     })
   },[])
-  const addImage = () => {
+  const addImage = (img:string) => {
     updateDoc(doc(db, "configs","homePageImagesSlider"), {
         images:[
             img,
@@ -38,7 +38,6 @@ const HomeSliderDashboard = (props: Props) => {
         img,
         ...p
     ])
-    setImg("")
     })
   }
   const deleteImage=(index:number)=>{
@@ -58,7 +57,7 @@ const HomeSliderDashboard = (props: Props) => {
         <>
       <h1 className='text-4xl my-4'>Home Page Slider</h1>
       <div className='flex  gap-4 h-[330px] w-full overflow-x-scroll'>
-        <FileExplorer>
+        <FileExplorer cta={addImage} >
             <button className='h-[300px] border aspect-[3/4] bg-[#fafaf8] flex gap-2 justify-center items-center'>
                 <Plus/> Add image
             </button>
