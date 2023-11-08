@@ -14,6 +14,7 @@ import { Separator } from './ui/separator'
 import { ArrowLeft, FolderIcon } from 'lucide-react'
 import { Button } from './ui/button'
 import { DialogClose } from '@radix-ui/react-dialog'
+import UploadImage from './UploadImage'
   
 type Props = {
     children: React.ReactNode
@@ -96,6 +97,12 @@ const FileExplorer = ({children,cta}: Props) => {
                         path == "" ? "Root" : "/"+folder?.name
                     }
                     </h1>
+                    {
+                        path !== "" &&
+                        <div className='ml-auto'>
+                        <UploadImage parent={path} />
+                        </div>
+                    }
                 </div>
                 <div  className='my-4'>
                 <Separator/>
