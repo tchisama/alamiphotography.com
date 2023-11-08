@@ -15,6 +15,7 @@ import {
     DialogTrigger,
   } from "@/components/ui/dialog"
 import { Input } from './ui/input';
+import FileExplorer from './FileExplorer';
   
 type Props = {}
 
@@ -57,29 +58,11 @@ const HomeSliderDashboard = (props: Props) => {
         <>
       <h1 className='text-4xl my-4'>Home Page Slider</h1>
       <div className='flex  gap-4 h-[330px] w-full overflow-x-scroll'>
-        <Dialog>
-        <DialogTrigger asChild>
-        <button className='h-[300px] border aspect-[3/4] bg-[#fafaf8] flex gap-2 justify-center items-center'>
-            <Plus/> Add image
-        </button>
-        </DialogTrigger>
-        <DialogContent>
-            <DialogHeader>
-            <DialogTitle>Add image link</DialogTitle>
-            <DialogDescription className='pt-2'>
-                    <Input value={img} placeholder='image link' onChange={(e)=>setImg(e.target.value)}></Input>
-            </DialogDescription>
-            </DialogHeader>
-            <DialogFooter>
-                <DialogClose>
-                    <Button variant={"outline"} className='px-4 py-2'>Close</Button>
-                </DialogClose>
-                <DialogClose>
-                    <Button  onClick={addImage}>Add</Button>
-                </DialogClose>
-            </DialogFooter>
-        </DialogContent>
-        </Dialog>
+        <FileExplorer>
+            <button className='h-[300px] border aspect-[3/4] bg-[#fafaf8] flex gap-2 justify-center items-center'>
+                <Plus/> Add image
+            </button>
+        </FileExplorer>
 
         {imagesSlider?.map((img, index) => (
             <div className='w-fit h-[300px] relative aspect-[3/4]' key={index}>

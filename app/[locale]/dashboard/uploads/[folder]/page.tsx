@@ -16,6 +16,7 @@ import Loading from '@/components/Loading'
 import { Input } from 'postcss'
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage'
 import UploadImage from '@/components/UploadImage'
+import ImageComp from '@/components/ImageComp'
 
 type Props = {
 }
@@ -113,7 +114,7 @@ const Page = (props: Props) => {
         photos.length>0 &&
         photos.map((p) => {
             return(
-                <ImageComp key={p.id} src={p.image}/>
+                <ImageComp key={p.id} img={p}/>
             )
         })
     }
@@ -127,17 +128,6 @@ const Page = (props: Props) => {
 }
 
 
-const ImageComp = ({src}:{src:string}) => {
-  const copySrc = () => {
-    navigator.clipboard.writeText(src)
-  }
-    return (
-            <div className='bg-[#fafaf8] relative overflow-hidden aspect-square border '>
-                <Button onClick={copySrc} size={"icon"} variant={"outline"} className='absolute right-0 top-0'><Copy/></Button>
-                <img className='w-full h-full object-contain' src={src} alt=""/>
-            </div>
-    )
-}
 
 
 export default Page

@@ -5,7 +5,7 @@ import { Inter,Dancing_Script,Charm,WindSong,Cormorant_Garamond  } from 'next/fo
 import NavbarProvider from '@/components/NavbarProvider'
 import {NextIntlClientProvider} from 'next-intl';
 import {notFound} from 'next/navigation';
-
+import { Toaster } from "@/components/ui/toaster"
 const inter = Inter({ subsets: ['latin'] })
 const dancing = WindSong({ 
   weight:['400','500'],
@@ -53,7 +53,7 @@ export default async function RootLayout({
             </NavbarProvider>
           </ButtonScrollUpProvider>
         </div>
-
+        <Toaster />
         </NextIntlClientProvider>
       </body>
     </html>

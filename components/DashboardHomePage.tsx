@@ -40,6 +40,7 @@ const CheckOutMyWork = () => {
             <div className='flex gap-6'>
                 <div className='w-fit mb-8 h-[300px] relative aspect-[3/4]' >
                     <img className='w-full h-full object-cover' src={images[0]} alt="" />
+                    
                     <Button size={"icon"} variant={"outline"} className='absolute right-0 top-0'><Replace/></Button>
                     <h2 className='text-2xl'>Wedding</h2>
                 </div>

@@ -14,6 +14,7 @@ import { Image, ImageIcon, Loader, Upload } from 'lucide-react'
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage'
 import { db, storage } from '@/firebase'
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
+import { useToast } from './ui/use-toast'
   
 type Props = {
     parent:string
@@ -23,6 +24,7 @@ const UploadImage = (props: Props) => {
 
   const [file, setFile] = useState<File|null>();
   const [percent, setPercent] = useState(0);
+  const { toast } = useToast();
  
   // Handles input change event and updates state
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
@@ -33,7 +35,8 @@ const UploadImage = (props: Props) => {
 
   useEffect(() => {
     if (file && percent === 0) {
-        const storageRef = ref(storage, `/files/${file?.name}`)
+        const random = Math.floor(Math.random() * 100000000);
+        const storageRef = ref(storage, `/files/${random + file.name}`);
         const uploadTask = uploadBytesResumable(storageRef, file);
         uploadTask.on(
             "state_changed",
@@ -49,13 +52,17 @@ const UploadImage = (props: Props) => {
             () => {
                 // download url
                 getDownloadURL(uploadTask.snapshot.ref).then(async(url) => {
-                    const docRef = await addDoc(collection(db, "photos"), {
-                        name:file.name,
+                    await addDoc(collection(db, "photos"), {
+                        name:`/files/${random + file.name}`,
                         image:url,
                         parent:props.parent,
                         createdAt:serverTimestamp()
                     });
                     setPercent(0)
+                    toast({
+                        title: " Image uploaded",
+                        description: " The image has been uploaded successfully",
+                    })
                 });
             }
         ); 
