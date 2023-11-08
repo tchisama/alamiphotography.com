@@ -4,6 +4,7 @@ import React from 'react'
 type Props = {}
 
 const WeAreCinematicStyle = (props: Props) => {
+  
   return (
     <div className='flex min-h-[80vh] my-40 scale-[1.04]'>
         <div className='flex flex-1 bg-[rgba(238,227,222,0.64)] py-4 items-center justify-center'>
