@@ -15,8 +15,9 @@ const WeAreCinematicStyle = (props: Props) => {
                     STORYTELLERS.
             </h1>
             <p className='text-2xl my-8 p-20 pl-32'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus eos molestias nam aut voluptatum praesentium est rem nulla obcaecati necessitatibus optio asperiores sequi inventore consectetur similique, fuga architecto earum eveniet.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus eos molestias nam aut voluptatum praesentium est rem nulla obcaecati necessitatibus optio asperiores sequi inventore consectetur similique, fuga architecto earum eveniet.
+              Every wedding has its own unique sense of style and personality, our cinematic approach is to be non-directorial and more observative while making our clients feel inspired, relaxed, and connected.
+              We use the formula of documentary style shooting as it happens so that our works are honest,
+              fun, and timeless. We want you to remember your day… not us directing you!
             </p>
         </div>
     </div>
