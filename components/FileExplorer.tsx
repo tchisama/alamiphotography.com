@@ -27,7 +27,7 @@ const FileExplorer = ({children,cta}: Props) => {
 
     const [folders, setFolders] = React.useState<Folder[]>([])
     const [photos, setPhotos] = React.useState<Photo[]>([])
-    const [folder, setFolder] = React.useState<Folder>()
+    const [folder, setFolder] = React.useState<Folder|null>(null)
     const [loading, setLoading] = React.useState(true)
 
   React.useEffect( () => {
@@ -81,7 +81,7 @@ const FileExplorer = ({children,cta}: Props) => {
   return (
         <Dialog>
         <DialogTrigger asChild>{children}</DialogTrigger>
-        <DialogContent className='max-w-[800px] max-h-[90vh] overflow-y-scroll'>
+        <DialogContent className='max-w-[800px] max-h-[90vh] overflow-y-auto'>
             <DialogHeader>
             <DialogTitle>Choose your file</DialogTitle>
             </DialogHeader>
@@ -100,7 +100,7 @@ const FileExplorer = ({children,cta}: Props) => {
                 <div  className='my-4'>
                 <Separator/>
                 </div>
-                <div className='grid gap-2 grid-cols-3 '>
+                <div className='grid gap-2 grid-cols-2 '>
                 {
                     folders.length >0 ?
                     folders.map((f)=>{
