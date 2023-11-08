@@ -7,9 +7,9 @@ type Props = {}
 
 const Featured = (props: Props) => {
   return (
-    <div className='my-20'>
+    <div className='my-40'>
 
-    <h1 className='text-center text-2xl md:text-4xl my-10 fontcharm'>Featured on</h1>
+    <h1 className='text-center text-3xl md:text-5xl uppercase my-20 '>Featured on</h1>
     <div className='flex drop-shadow-xl md:flex-row flex-col gap-8 items-center justify-center  '>
         <Image className='' height={120} src={img1}   alt="" />
         <Image className='' height={110} src={img2}   alt="" />

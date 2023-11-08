@@ -20,7 +20,7 @@ function LangButton({}: Props) {
   return (
     <DropdownMenu>
         <DropdownMenuTrigger asChild>
-            <Button size={"icon"} variant={"outline"} className={"ml-2 text-lg uppercase"}>{t('lang')}</Button>
+            <Button size={"icon"} variant={"outline"} className={"ml-2 p-6 text-xl uppercase"}>{t('lang')}</Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
             <DropdownMenuLabel>Languages</DropdownMenuLabel>

@@ -5,7 +5,7 @@ type Props = {}
 
 const WeAreCinematicStyle = (props: Props) => {
   return (
-    <div className='flex min-h-[80vh] scale-[1.04]'>
+    <div className='flex min-h-[80vh] my-40 scale-[1.04]'>
         <div className='flex flex-1 bg-[rgba(238,227,222,0.64)] py-4 items-center justify-center'>
             <img className='flex-1 max-w-sm aspect-[2/3] my-12' src={"https://www.niallscullyphotography.com/wp-content/uploads/2023/03/Confetti-1st-Edits-8-597x894.jpeg?x15971"} alt="" />
         </div>

@@ -77,10 +77,16 @@
   body {
     @apply bg-background text-foreground;
   }
+
+}
+
+@font-face{
+  font-family: Derivia;
+  src: local(''),url("../../fonts/Derivia-Regular.woff")   format("woff");
 }
 
 .fontcharm {
-  font-family: var(--font-charm);
+  font-family: 'Derivia';
 }
 
 .fontroman {
@@ -88,5 +94,8 @@
 }
 
 *{
-  font-family: var(--font-charm);
+  /* font-family: var(--font-charm); */
+  font-family: 'Derivia';
 }
+
+

@@ -1,8 +1,7 @@
 import React from 'react'
 import { Button } from './ui/button'
 import Link from 'next/link'
-import Profile from "@/public/images/Alami About.jpg"
-import { profile } from 'console'
+
 type Props = {
   homepage?:boolean
 }
@@ -29,7 +28,7 @@ function HelloSection({homepage=false}: Props) {
             }
             <p className='text-6xl text-end w-full fontroman'>Alami</p>
         </div>
-        <img className='espect-[3/4] w-full max-h-[50vh] md:max-h-[70vh] max-w-[500px] object-cover  rounded-lg ' src={profile}></img>
+        <img className='espect-[3/4] w-full max-h-[50vh] md:max-h-[70vh] max-w-[500px] object-cover  rounded-lg ' src={"https://firebasestorage.googleapis.com/v0/b/alamiphotography-b75a1.appspot.com/o/files%2F99120244Alami%20About.jpg?alt=media&token=2d480785-0b46-48c3-80db-2f68966712ce"}></img>
     </div>
   )
 }
