@@ -13,19 +13,7 @@ type Props = {};
 const ImageSlider = (props: Props) => {
   const [images, setImages] = useState<string[]>([]);
   const swiper = useSwiper();
-
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     gsap
-  //       .fromTo(
-  //         ".mySwiper",
-  //         { y: 120, opacity: 0,  },
-  //         { y: 0, opacity: 1, duration: 0.3 }
-  //       )
-  //       .then(() => {});
-  //     gsap.to(".img", { y: 0, scale: 1, opacity: 1, duration: 0.3 });
-  //   }, 400);
-  // }, [images]);
+  const [current, setCurrent] = useState(0);
   useEffect(() => {
     getDoc(doc(db, "configs","homePageImagesSlider")).then((docSnap) => {
       setImages(docSnap.data()?.images as string[])
@@ -43,7 +31,7 @@ const ImageSlider = (props: Props) => {
         },
         768: {
           slidesPerView: 5,
-          spaceBetween: 15,
+          spaceBetween: 40,
         },
       }} 
       autoCorrect="off"
@@ -52,25 +40,32 @@ const ImageSlider = (props: Props) => {
         disableOnInteraction: false,
       }}
       modules={[Autoplay]}
-      className="mySwiper my-[10vh] z-[-10] scale-[2.4] md:scale-[1.2]  "
+      className="mySwiper my-[13vh] md:my-[11vh] z-[-10] scale-[1.8] md:scale-[1.3]  "
     >
       {[...images,...images,...images].map((image, index) => (
         <SwiperSlide
           className="w-full h-full overflow-hidden group"
           key={index}
         >
-          <div className="h-full  w-full overflow-hidden ">
-            <div
-              className=" aspect-[2/3] img w-full  bg-repeat-no-repeat group-hover:scale-[1.02] duration-300 "
-              style={{
-                backgroundSize: "cover",
-                backgroundImage: `url(${image})`,
-              }}
-            ></div>
-          </div>
+
+              {({ isActive }) => {
+                  if(isActive){
+                      setCurrent(index)
+                  }
+                  return(
+                        <div className="h-full  w-full overflow-hidden ">
+                          <div
+                            className=" aspect-[2/3] img w-full  bg-repeat-no-repeat group-hover:scale-[1.02] duration-300 "
+                            style={{
+                              backgroundSize: "cover",
+                              backgroundImage: `url(${image})`,
+                            }}
+                          ></div>
+                        </div>
+                  )}}
         </SwiperSlide>
       ))}
-      <SliderButtons/>
+      <SliderButtons current={current} images={images.length}/>
     </Swiper>
     </>
   );
