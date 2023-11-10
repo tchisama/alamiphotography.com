@@ -15,10 +15,22 @@ function HelloSection({homepage=false}: Props) {
                 Thanks for stopping by
             </h1>
             <p className='text-md md:text-2xl fontcharm leading-relaxed md:max-w-4xl'>
-              Alami Photography is a Marrakesh-based wedding photography studio with over 7 years of experience in professional photography, operating throughout Morocco. <br/>
-              Our work has been featured in VOGUE, MyWed, Together Journal, and various online publications. If our work resonates with you, please don&apos;t hesitate to contact us. <br/>
-              We are passionate about capturing timeless moments in every image we create. We believe that a great photograph should evoke an emotional response in the viewer. We aim to tell stories through images rather than words. <br/>
-              Our approach is to document your love story in a creative way, capturing not only the magnificent moments but also the special and dear snippets of your day. We present your story in an artistic, expressive manner, allowing you to look back in awe years later. Our goal is to transport you back to those unique emotions from your big day long after it has passed. <br/>
+              {
+                homepage?
+                `
+                  Alami Photography is a Marrakesh-based wedding photography studio with over 7 years of experience in professional photography, operating throughout Morocco. <br/>
+                  Our work has been featured in VOGUE, MyWed, Together Journal, and various online publications. If our work resonates with you, please don&apos;t hesitate to contact us. <br/>
+                  We are passionate about capturing timeless moments in every image we create. We believe that a great photograph should evoke an emotional response in the viewer. We aim to tell stories through images rather than words. <br/>
+                  Our approach is to document your love story in a creative way, capturing not only the magnificent moments but also the special and dear snippets of your day. We present your story in an artistic, expressive manner, allowing you to look back in awe years later. Our goal is to transport you back to those unique emotions from your big day long after it has passed. <br/>
+                `
+                :
+                `
+                Over the last 7 years, Alami Photography has been documenting weddings for Marrakesh’s newlyweds with a modern yet natural wedding photography approach. 
+                Alami photography’s work is elegant, natural, timeless, and captures the couples under their most honest side. The team has been named one of the Best Wedding Photographers in Morocco and has been published in wedding magazines and blogs such as VOGUE, MY WED and many more.
+                At Alami Photography, we believe in the importance of craft in the work, and serving a limited number of weddings each year. Alami Photography team consists of some of Morocco’s finest wedding photographers and videographers who work hard to achieve excellence both in the services and products that deliver to the clients.
+                We provide a wide range of wedding and engagement packages which will cater to all different needs, If you have any special requirements or requests, please let us know as we are here for you.
+                `
+              }
             </p>
             {
               homepage &&

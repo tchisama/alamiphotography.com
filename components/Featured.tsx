@@ -1,6 +1,7 @@
 import React from 'react'
 import img1 from "@/public/1.png"
 import img2 from "@/public/2.png"
+import img3 from "@/public/3.png"
 import Image from 'next/image'
 
 type Props = {}
@@ -13,6 +14,7 @@ const Featured = (props: Props) => {
     <div className='flex drop-shadow-xl md:flex-row flex-col gap-8 items-center justify-center  '>
         <Image className='' height={120} src={img1}   alt="" />
         <Image className='' height={110} src={img2}   alt="" />
+        <Image className='' height={110} src={img3}   alt="" />
     </div>
     </div>
   )
