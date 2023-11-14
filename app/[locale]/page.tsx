@@ -52,12 +52,12 @@ export default function Home() {
         <ImageSlider />
       </div>
 
-      <div className="texth opacity-0 fontcharm translate-y-12 mb-12 md:my-32 mt-10 md:mt-40">
+      <div className="texth opacity-0 fontcharm translate-y-12 mb-12 md:my-56 mt-10 ">
         <div
           ref={texth}
           className="max-w-[1500px] texth mx-auto flex  flex-col items-center"
         >
-          <h1 className="text-2xl uppercase font-thin md:text-5xl  leading-relaxed text-center max-w-[800px]">
+          <h1 className="text-2xl opacity-80 uppercase font-thin md:text-5xl tracking-[.10em] leading-relaxed text-center max-w-[900px]">
           Natural & Elegance <br/>
             Fine Art Wedding & Lifestyle Photographer & Videographer
           </h1>

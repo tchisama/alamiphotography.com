@@ -31,14 +31,14 @@ function Navbar({}: Props) {
   return (
 
     <>
-    <div className='w-full md:p-4 py-4  items-center flex justify-between  md:justify-between'>
+    <div className='w-full md:p-4 py-4 md:py-6 items-center flex justify-between  md:justify-between'>
         <Link href={"/"}>
             <Image alt='' className=' w-[100px] object-contain md:w-[250px] ' src={blackLogo} width={160} height={100}></Image>
         </Link>
         <Button size={"icon"} onClick={()=>setOpen(true)} variant={"ghost"} className='block md:hidden'><Menu/></Button>
 
-        <NavigationMenu style={{}} className='hidden  flex-1 md:flex text-xl z-50'>
-            <NavigationMenuList>
+        <NavigationMenu style={{}} className='hidden flex-1 md:flex text-xl z-50'>
+            <NavigationMenuList className='flex gap-6 text-lg'>
                 <NavigationMenuItem>
                     <Link href="/" legacyBehavior passHref>
                             <NavigationMenuLink className={"uppercase px-2"}>{t('home')}</NavigationMenuLink>
@@ -51,9 +51,9 @@ function Navbar({}: Props) {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className={"uppercase px-2 text-xl bg-transparent"}>{t('portfolio')}</NavigationMenuTrigger>
+                    <NavigationMenuTrigger className={"uppercase px-2 text-lg tracking-wider bg-transparent"}>{t('portfolio')}</NavigationMenuTrigger>
                     <NavigationMenuContent className='z-50 relative'>
-                        <div className='w-[280px] bg-[#fafaf8] flex flex-col gap-6 p-8 uppercase'>
+                        <div className='w-[250px] bg-primary text-background flex flex-col gap-6 p-8 uppercase'>
                             <Link href="/wedding" legacyBehavior passHref>
                                 <NavigationMenuLink className='text-sm flex justify-center '>I - Wedding stories</NavigationMenuLink>
                             </Link>

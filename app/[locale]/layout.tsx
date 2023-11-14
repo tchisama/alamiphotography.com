@@ -46,7 +46,7 @@ export default async function RootLayout({
       <body className={` ${charm.variable} ${dancing.variable}`}>
         <NextIntlClientProvider messages={messages} locale={locale}>
 
-        <div className='text-gray-700'>
+        <div className='text-gray-700 tracking-wider'>
           <ButtonScrollUpProvider>
             <NavbarProvider>
             {children}
