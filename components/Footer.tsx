@@ -41,16 +41,9 @@ const Footer = (props: Props) => {
     )
 
   return (
-    <div className='py-20 '>
-        <div className='gap-1 hidden md:grid'  style={{gridTemplateColumns:"repeat("+images.length+",1fr)"}}>
-            {
-                images.map((image, index) => (
-                    <img src={image} key={index} className='flex-1 rounded-md object-cover w-full h-[200px]'></img>
-                ))
-            }
-        </div>
-        <div className='flex md:items-center flex-col md:flex-row'>
-            <div className='flex-1 gap-4 h-full flex flex-col justify-center items-center'>
+    <div className=' '>
+        <div className='flex md:items-center flex-col md:flex-row '>
+            <div className='flex-1 gap-4 p-4 h-full flex flex-col justify-center items-center'>
                 <Image width={300} src={logo} alt="logo"></Image>
                 <Separator/>
                 <div className='flex gap-3 '>
@@ -65,8 +58,8 @@ const Footer = (props: Props) => {
             <div className='h-[250px] hidden md:block'>
                 <Separator orientation='vertical'/>
             </div>
-            <div className='flex-[2] md:px-4 flex gap-12 md:gap-0 pt-12 md:pt-0 h-[400px] md:items-center flex-col md:flex-row'>
-                <div className='flex-1'>
+            <div className='flex-[2] md:px-4 bg-[#fbf5f1] flex gap-12 md:gap-0 pt-2 md:pt-0 h-[400px] md:items-center flex-col md:flex-row'>
+                <div className='flex-1 md:px-24'>
                     
                 <NavigationMenu >
                 <NavigationMenuList className='grid md:grid-cols-2 grid-cols-1 gap-6'>
@@ -113,7 +106,7 @@ const Footer = (props: Props) => {
                 </div>
             </div>
         </div>
-            <div className='flex justify-end px-4 pt-4 md:pt-0 md:px-8'>
+            <div className='flex justify-end my-8 px-4 pt-4 md:pt-0 md:px-8'>
                 <Button variant={"outline"} className='flex gap-2 text-xl' onClick={()=>setUp(p=>p+1)}><ArrowUpIcon size={20}/></Button>
             </div>
     </div>

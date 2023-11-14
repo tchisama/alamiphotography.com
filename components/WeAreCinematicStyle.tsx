@@ -11,7 +11,7 @@ const WeAreCinematicStyle = (props: Props) => {
             <img className='flex-1 max-w-sm aspect-[2/3] my-12' src={"https://www.niallscullyphotography.com/wp-content/uploads/2023/03/Confetti-1st-Edits-8-597x894.jpeg?x15971"} alt="" />
         </div>
         <div className='flex-[2] md:min-h-[80vh] p-4 flex flex-col bg-white justify-between'>
-            <h1 className='text-2xl md:text-7xl font-bold md:translate-y-12 md:-translate-x-8'>
+            <h1 className='text-2xl md:text-7xl tracking-wide md:translate-y-12 md:-translate-x-8'>
                     WE ARE CINEMATIC STYLE <br/>
                     STORYTELLERS.
             </h1>

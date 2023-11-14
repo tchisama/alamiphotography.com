@@ -16,6 +16,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import {useTranslations} from 'next-intl';
 import WeAreCinematicStyle from "@/components/WeAreCinematicStyle";
+import InstagramFooter from "@/components/instagramFooter";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -52,7 +53,7 @@ export default function Home() {
         <ImageSlider />
       </div>
 
-      <div className="texth opacity-0 fontcharm translate-y-12 mb-12 md:my-56 mt-10 ">
+      <div className="texth opacity-0 fontcharm translate-y-12 mb-12 md:my-64 mt-10 ">
         <div
           ref={texth}
           className="max-w-[1500px] texth mx-auto flex  flex-col items-center"
@@ -68,11 +69,9 @@ export default function Home() {
       </div>
 
       <div className="max-w-[1500px] mx-auto">
-        <div className="nav  opacity-0 -translate-y-6">
           <HelloSection homepage={true}/>
           <MyWork />
           <Featured/>
-        </div>
       </div>
 
       <div className="max-w-[2000px] mx-auto">
@@ -80,17 +79,15 @@ export default function Home() {
           <WeAreCinematicStyle/>
       </div>
       <div className="max-w-[2500px] mx-auto">
-        <div className="nav  opacity-0 -translate-y-6">
           <Testimonial/>
-        </div>
+      </div>
+
+      <div className="max-w-[1800px] mx-auto">
+          <InstagramFooter/>
       </div>
 
     </div>
-      <div className="bg-[#fbf5f1] py-4 ">
-        <div className="max-w-[1500px] mx-auto">
-            <Footer/>
-        </div>
-      </div>
+        <Footer/>
       </>
   );
 }

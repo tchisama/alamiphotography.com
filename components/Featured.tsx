@@ -9,7 +9,7 @@ type Props = {}
 
 const Featured = (props: Props) => {
   return (
-    <div className='my-40'>
+    <div className='mt-52 mb-56'>
 
         <div className='text-center uppercase mb-6'>
             <H h={5}>Featured on</H>
