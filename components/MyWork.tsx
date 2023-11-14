@@ -1,12 +1,15 @@
 import Link from 'next/link'
 import React from 'react'
+import H from './H'
 
 type Props = {}
 
 const MyWork = (props: Props) => {
   return (
     <div className='my-40 fontcharm'>
-        <h1 className='text-center text-3xl md:text-5xl uppercase my-20 '>Check out my work</h1>
+        <div className='text-center uppercase mb-6'>
+            <H h={5}>Check out my work</H>
+        </div>
         <div className='flex md:flex-row flex-col gap-8  fontcharm'>
 
             <Link href={'/weddings'} className='flex-1   group flex flex-col items-center gap-4 text-2xl '>

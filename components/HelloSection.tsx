@@ -20,7 +20,7 @@ function HelloSection({homepage=false}: Props) {
                 <>
                 <p>Alami Photography is a Marrakesh-based wedding photography studio with over 7 years of experience in professional photography, operating throughout Morocco.</p>
 
-                <p>Our work has been featured in VOGUE, MyWed, Together Journal, and various online publications. If our work resonates with you, please don't hesitate to contact us.</p>
+                <p>Our work has been featured in VOGUE, MyWed, Together Journal, and various online publications. If our work resonates with you, please don&apos;t hesitate to contact us.</p>
 
                 <p>We are passionate about capturing timeless moments in every image we create. We believe that a great photograph should evoke an emotional response in the viewer. We aim to tell stories through images rather than words.</p>
 
@@ -35,7 +35,7 @@ function HelloSection({homepage=false}: Props) {
 
                 <p>Alami Photography’s work is elegant, natural, timeless, and captures the couples under their most honest side. The team has been named one of the Best Wedding Photographers in Morocco and has been published in wedding magazines and blogs such as VOGUE, MY WED, and many more.</p>
 
-                <p>At Alami Photography, we believe in the importance of craft in the work, and serving a limited number of weddings each year. Alami Photography's team consists of some of Morocco’s finest wedding photographers and videographers who work hard to achieve excellence both in the services and products that they deliver to the clients.</p>
+                <p>At Alami Photography, we believe in the importance of craft in the work, and serving a limited number of weddings each year. Alami Photography&apos;s team consists of some of Morocco’s finest wedding photographers and videographers who work hard to achieve excellence both in the services and products that they deliver to the clients.</p>
 
                 <p>We provide a wide range of wedding and engagement packages that cater to all different needs. If you have any special requirements or requests, please let us know as we are here for you.</p>
                 </>
