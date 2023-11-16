@@ -59,10 +59,10 @@ function Page({}: Props) {
         <div className="max-w-[1500px] mx-auto">
             <div className="nav  opacity-0 -translate-y-6">
                 <QandA/>
-                <Footer/>
             </div>
         </div>
 
+                <Footer/>
     </div>
   )
 }

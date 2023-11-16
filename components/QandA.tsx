@@ -29,7 +29,7 @@ const QandA = (props: Props) => {
   return (
     <div className='py-10'>
         <h1 className='py-10 text-2xl md:text-5xl '>Frequently Asked Questions</h1>
-        <Accordion value='q1' type="single" collapsible>
+        <Accordion defaultValue='q1' type="single" collapsible>
             {
                 qanda.map((item) => (
                 <AccordionItem  value={item.id} key={item.id}>
