@@ -17,7 +17,7 @@ function Testimonial({}: Props) {
                 <h1 className='md:text-4xl uppercase text-xl  mt-4'>Testimonials</h1>
                 <h1 className='md:text-xl items-center text-muted-foreground lowercase flex-col gap-2 items-center flex gap-2'>REAL CLIENT MESSAGES <ArrowRight/></h1>
             </Link>
-            <Link href={"/"} className='md:w-[300px] w-[200px]  md:translate-y-20 flex flex-col md:gap-2 items-center'>
+            <Link href={"/investment"} className='md:w-[300px] w-[200px]  md:translate-y-20 flex flex-col md:gap-2 items-center'>
                 <img className='w-[180px]' src="https://www.niallscullyphotography.com/wp-content/uploads/2023/01/rachel-137-1-595x894.jpg?x15971" alt="" />
                 <h1 className='md:text-4xl uppercase text-xl  mt-4'>Experience</h1>
                 <h1 className='md:text-xl items-center text-muted-foreground lowercase flex flex-col items-center gap-2'>SEE HOW I WORK <ArrowRight/></h1>

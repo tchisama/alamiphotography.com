@@ -37,7 +37,7 @@ const Page = (props: Props) => {
   return (
     <div className=" bg-[#fafaf8] overflow-x-hidden">
 
-        <div className="nav px-6 opacity-0 -translate-y-6">
+        <div className="nav px-6 opacity-0 -translate-y-6 z-50">
           <div className="max-w-[1500px]  mx-auto relative z-50">
             <Navbar />
           </div>
