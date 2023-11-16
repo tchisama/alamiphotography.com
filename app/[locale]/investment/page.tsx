@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import {useTranslations} from 'next-intl';
 import InvestmentHero from "@/components/InvestmentHero";
 import InvestmentStepsCard from "@/components/InvestmentStepsCard";
+import GuideBookSection from "@/components/GuideBookSection";
 
 type Props = {}
 
@@ -42,15 +43,17 @@ const Page = (props: Props) => {
           </div>
         </div>
       <InvestmentHero />
-        <div className="px-6 mt-28">
+        <div className="px-6 my-28">
           <div className="max-w-[1600px]  mx-auto">
             {
-              new Array(3).fill(0).map((_, index) => {
+              new Array(2).fill(0).map((_, index) => {
                 return<InvestmentStepsCard key={index} index={index} />
               })
             }
+            <GuideBookSection/>
           </div>
         </div>
+        <Footer/>
     </div>
   )
 }

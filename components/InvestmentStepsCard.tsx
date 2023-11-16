@@ -6,7 +6,7 @@ type Props = {
 const InvestmentStepsCard = ({index}: Props) => {
     const align = index % 2 !== 0 ? 'left' : 'right';
   return (
-    <div className={'my-10 flex-col items-center md:flex-row flex gap-2 md:gap-8 '+(align === 'left' ? ' md:flex-row-reverse' : '')}>
+    <div className={'my-10  pt-24 border-t flex-col items-center md:flex-row flex gap-2 md:gap-8 '+(align === 'left' ? ' md:flex-row-reverse' : '')}>
         <div className={'flex-1 flex '+(align === 'left' ? ' flex-row-reverse' : '')}>
             <div className={'w-[250px] h-[300px] bg-[#a9b9b8] text-8xl text-white fontroman flex items-center justify-center '+(align === 'right' ? ' translate-x-4' : '-translate-x-4')}>0{index+1}</div>
             <img className={'md:w-[350px]'} src={"https://www.niallscullyphotography.com/wp-content/uploads/2017/06/Aisling-42-600x871.jpg"} alt="" />
