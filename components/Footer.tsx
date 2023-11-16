@@ -42,7 +42,7 @@ const Footer = (props: Props) => {
 
   return (
     <div className=' '>
-        <div className='flex md:items-center flex-col md:flex-row '>
+        <div className='flex bg-white md:items-center flex-col md:flex-row '>
             <div className='flex-1 gap-4 p-4 h-full flex flex-col justify-center items-center'>
                 <Image width={300} src={logo} alt="logo"></Image>
                 <Separator/>

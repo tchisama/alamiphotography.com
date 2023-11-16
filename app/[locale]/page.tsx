@@ -7,16 +7,14 @@ import Loading from "@/components/Loading";
 import MyWork from "@/components/MyWork";
 import Navbar from "@/components/Navbar";
 import NavbarMobile from "@/components/NavbarMobile";
-import Testimonial from "@/components/Testimonial";
 import Video from "@/components/Video";
-import { Separator } from "@/components/ui/separator";
 import useNavbarStore from "@/store/navbarStore";
 import gsap from "gsap";
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import {useTranslations} from 'next-intl';
 import WeAreCinematicStyle from "@/components/WeAreCinematicStyle";
 import InstagramFooter from "@/components/instagramFooter";
+import Testimonial from "@/components/Testimonial";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -78,6 +76,7 @@ export default function Home() {
           <Video/>
           <WeAreCinematicStyle/>
       </div>
+
       <div className="max-w-[2500px] mx-auto">
           <Testimonial/>
       </div>
