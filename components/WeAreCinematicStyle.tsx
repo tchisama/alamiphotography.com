@@ -8,7 +8,7 @@ const WeAreCinematicStyle = (props: Props) => {
   return (
     <div className='flex bg-white md:flex-row flex-col gap-2 md:gap-0 min-h-[80vh] my-20 md:my-40 md:scale-[1.04]'>
         <div className='flex flex-1 md:bg-[rgba(238,227,222,0.64)] md:py-4 items-center justify-center'>
-            <img className='flex-1 max-w-sm aspect-[2/3] my-12' src={"https://www.niallscullyphotography.com/wp-content/uploads/2023/03/Confetti-1st-Edits-8-597x894.jpeg?x15971"} alt="" />
+            <img className='flex-1 max-w-sm aspect-[2/3] my-12' src={"https://firebasestorage.googleapis.com/v0/b/alamiphotography-b75a1.appspot.com/o/files%2F672688252%204G0A1918-min.jpg?alt=media&token=1d980f28-2581-4e51-991f-12312d837323"} alt="" />
         </div>
         <div className='flex-[2] md:min-h-[80vh] p-4 flex flex-col bg-white justify-between'>
             <h1 className='text-2xl md:text-7xl tracking-wide md:translate-y-12 md:-translate-x-8'>

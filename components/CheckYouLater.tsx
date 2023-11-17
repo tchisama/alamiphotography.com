@@ -5,9 +5,9 @@ type Props = {}
 
 function CheckYouLater({}: Props) {
   return (
-    <div className='flex md:flex-row flex-col items-center relative'>
-        <img className='md:w-[60vw] w-full' src="https://www.niallscullyphotography.com/wp-content/uploads/2017/06/RUSH-FINAL-EDITS-138.jpg"/>
-        <div className='bg-primary flex flex-col gap-4 text-background p-8 max-w-[500px] md:absolute left-[50%] top-[50%] md:translate-x-[-50%] md:translate-y-[-50%]'>
+    <div className='flex md:flex-row my-12 flex-col items-center relative'>
+        <img className='md:w-[60vw] w-full' src="https://firebasestorage.googleapis.com/v0/b/alamiphotography-b75a1.appspot.com/o/files%2F758721103%20Philosophieimage-min.jpg?alt=media&token=af263aa0-cd41-41eb-911a-e6e78c560536"/>
+        <div className='bg-primary flex flex-col gap-4 text-background p-8 max-w-[500px] md:absolute left-[55%] top-[50%] md:translate-x-[-50%] md:translate-y-[-50%]'>
             <h1 className='text-3xl '>Philosophy</h1>
             <p className='pl-8'>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos quisquam doloribus iste laborum, nihil aspernatur illo qui! A hic consectetur quaerat cupiditate vitae voluptatibus blanditiis exercitationem molestias neque dicta. Dolor.
