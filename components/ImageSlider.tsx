@@ -55,12 +55,10 @@ const ImageSlider = (props: Props) => {
                   return(
                         <div className="h-full  w-full overflow-hidden ">
                           <div
-                            className=" aspect-[2/3] img w-full  bg-repeat-no-repeat group-hover:scale-[1.02] duration-300 "
-                            style={{
-                              backgroundSize: "cover",
-                              backgroundImage: `url(${image})`,
-                            }}
-                          ></div>
+                            className=" aspect-[2/3] img w-full  bg-repeat-no-repeat duration-300 "
+                          >
+                            <img src={image} className="w-full aspect-[2/3]" alt="" />
+                          </div>
                         </div>
                   )}}
         </SwiperSlide>
