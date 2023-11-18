@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from './ui/button'
 import Link from 'next/link'
+import Image from 'next/image'
 
 type Props = {
   homepage?:boolean
@@ -49,7 +50,7 @@ function HelloSection({homepage=false}: Props) {
               </Link>
             }
         </div>
-        <img className='espect-[2/3] w-full max-w-[500px] object-cover  rounded-lg ' src={"https://firebasestorage.googleapis.com/v0/b/alamiphotography-b75a1.appspot.com/o/files%2F99120244Alami%20About.jpg?alt=media&token=2d480785-0b46-48c3-80db-2f68966712ce"}></img>
+        <Image width={400} height={600} alt='' className='espect-[2/3] w-full max-w-[500px] object-cover  rounded-lg ' src={"https://firebasestorage.googleapis.com/v0/b/alamiphotography-b75a1.appspot.com/o/files%2F99120244Alami%20About.jpg?alt=media&token=2d480785-0b46-48c3-80db-2f68966712ce"}></Image>
     </div>
   )
 }
