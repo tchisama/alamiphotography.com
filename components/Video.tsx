@@ -12,7 +12,7 @@ const Video = (props: Props) => {
         autoPlay 
         loop 
         playsInline 
-        className="w-full scale-[1.15] md:scale-[1.05] h-full">
+        className="w-full  bg-[#0002] scale-[1.15] md:scale-[1.05] h-full">
       </video>
     </div>
   )
