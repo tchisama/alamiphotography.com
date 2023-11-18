@@ -67,10 +67,10 @@ const Page = (props: Props) => {
                 <WeddingStoryComp i={i} key={i}/>
               ))
             }
-            <Footer/>
           </div>
       </div>
 
+            <Footer/>
       </div>
   )
 }

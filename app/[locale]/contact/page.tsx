@@ -84,7 +84,7 @@ function Page({}: Props) {
 
 
   return (
-    <div  className="bg-[#fafaf8]">
+    <div  className="">
         <div className="max-w-[1500px] mx-auto relative z-50">
             <div className="nav  opacity-0 -translate-y-6 ">
             <Navbar />
@@ -141,9 +141,9 @@ function Page({}: Props) {
             </div>
         </div>
         <div className="max-w-[1500px] mx-auto">
-            <Footer />
         </div>
 
+        <Footer />
     </div>
   )
 }
