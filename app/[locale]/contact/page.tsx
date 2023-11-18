@@ -20,6 +20,7 @@ import { Button } from "@/components/ui/button";
 import { Send } from "lucide-react";
 import { db } from "@/firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import Image from "next/image";
 
 type Props = {}
 
@@ -91,7 +92,7 @@ function Page({}: Props) {
         </div>
         <div className="flex flex-col md:flex-row max-w-[2200px] mx-auto px-4">
             <div className="flex-1 img translate-y-10 opacity-0">
-                <img className="w-full object-cover" src="https://www.niallscullyphotography.com/wp-content/uploads/2019/03/Danielle-2.jpg"></img>
+                <Image width={1000} height={1500} alt="" className="w-full object-cover" src="https://firebasestorage.googleapis.com/v0/b/alamiphotography-b75a1.appspot.com/o/files%2F90589222Contactimage.jpg?alt=media&token=b7a25cc8-8d73-4ec4-940c-7c948b2e9d6e"></Image>
             </div>
             <div className="flex-1 form mt-8 md:mt-0 translate-y-10 opacity-0 flex flex-col gap-4 md:gap-8 md:p-10">
                 <h1 className="text-4xl md:text-6xl  leading-relaxed">Get In Touch!</h1>
