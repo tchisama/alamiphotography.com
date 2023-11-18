@@ -9,6 +9,7 @@ import { ArrowLeft, ArrowRight, LineChart } from "lucide-react";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "@/firebase";
 import SliderButtons from "./SliderButtons";
+import Image from "next/image";
 type Props = {};
 const ImageSlider = (props: Props) => {
   const [images, setImages] = useState<string[]>([]);
@@ -57,7 +58,7 @@ const ImageSlider = (props: Props) => {
                           <div
                             className=" aspect-[2/3] img w-full  bg-repeat-no-repeat duration-300 "
                           >
-                            <img src={image} className="w-full aspect-[2/3]" alt="" />
+                            <Image width={400} height={600} src={image} className="w-full aspect-[2/3]" alt="" />
                           </div>
                         </div>
                   )}}
