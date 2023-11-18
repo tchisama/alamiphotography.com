@@ -63,7 +63,7 @@ const Page = (props: Props) => {
             </div>
             
             {
-              new Array(5).fill(0).map((_, i) => (
+              new Array(1).fill(0).map((_, i) => (
                 <WeddingStoryComp i={i} key={i}/>
               ))
             }

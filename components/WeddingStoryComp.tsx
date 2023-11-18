@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from './ui/button'
 import classNames from 'classnames'
+import Image from 'next/image'
 
 type Props = {
     i:number
@@ -14,7 +15,7 @@ const WeddingStoryComp = ({i}: Props) => {
             'md:flex-row-reverse' :  i % 2 === 0 ,
         })}>
         <div className='md:flex-[5] md:-translate-y-20'>
-            <img className='w-full h-full' src='https://images.pexels.com/photos/1045541/pexels-photo-1045541.jpeg?auto=compress&cs=tinysrgb&w=1600'></img>
+            <Image alt="" width={900} height={600} className='w-full h-full bg-[#0002]' src='https://firebasestorage.googleapis.com/v0/b/alamiphotography-b75a1.appspot.com/o/files%2F86831919Test%20gallery%201.jpg?alt=media&token=3570bafe-85b5-4768-a9d0-4a07edf0bdd5'></Image>
         </div>
         <div className='md:flex-[4] p-4 flex items-start flex-col gap-8'>
             <p className='text-lg'>CATEGORY</p>
