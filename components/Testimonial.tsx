@@ -18,7 +18,7 @@ function Testimonial({}: Props) {
                 <h1 className='md:text-4xl uppercase text-xl  mt-4'>Testimonials</h1>
                 <h1 className='md:text-xl text-muted-foreground lowercase flex-col items-center flex gap-2'>REAL CLIENT MESSAGES <ArrowRight/></h1>
             </Link>
-            <Link href={"/investment"} className='md:w-[300px] w-[200px]  md:translate-y-20 flex flex-col md:gap-2 items-center'>
+            <Link href={"/experience"} className='md:w-[300px] w-[200px]  md:translate-y-20 flex flex-col md:gap-2 items-center'>
                 <Image width={200} height={300} className='w-[180px] bg-[#0002] ' src="https://firebasestorage.googleapis.com/v0/b/alamiphotography-b75a1.appspot.com/o/files%2F350238573%20EXPERIENCE-min.jpg?alt=media&token=bdd103ec-e410-457e-ae1c-4fa360397643" alt="" />
                 <h1 className='md:text-4xl uppercase text-xl  mt-4'>Experience</h1>
                 <h1 className='md:text-xl  text-muted-foreground lowercase flex flex-col items-center gap-2'>SEE HOW I WORK <ArrowRight/></h1>

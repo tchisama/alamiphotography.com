@@ -14,11 +14,10 @@ const GuideBookSection = (props: Props) => {
         <div className='flex-[4] flex flex-col gap-4 items-center text-center'>
             <h1 className='text-5xl'>I&apos;LL SEND YOU A GUIDE WITH EVERYTHING YOU NEED TO KNOW</h1>
             <p className='text-lg font-sans'>COUPLES THAT BOOK ME, GET MY WEDDING EXPERIENCE GUIDE FREE! THIS GUIDE WILL HELP YOU MAKE THE MOST OF YOUR WEDDING DAY WITH TIPS ON FIRST LOOK, DETAILS, TIMINGS, PORTRAITS AND MUCH MORE.</p>
-            <p className='text-lg font-sans'>OR YOU CAN PURCHASE THE WEDDING EXPERIENCE PDF USING THE BUTTON BELOW!</p>
             <Separator/>
             <Input className='font-sans' placeholder='Name' />
             <Input className='font-sans' placeholder='Email' />
-            <Textarea className='font-sans' placeholder='Why you want it'/>
+            <Textarea className='font-sans' placeholder="I'm open to any special requests."/>
             <Button className='text-lg pt-7 uppercase tracking-wider flex gap-4 items-center'>Get Now <ArrowRight/></Button>
         </div>
         <div className='flex-[4]'>
