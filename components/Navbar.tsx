@@ -18,7 +18,12 @@ import LangButton from './LangButton'
 import { Menu } from 'lucide-react'
 import useNavbarStore from '@/store/navbarStore'
 import { useTranslations } from 'next-intl'
-
+import {
+    Popover,
+    PopoverContent,
+    PopoverTrigger,
+  } from "@/components/ui/popover"
+  
 type Props = {}
 
 function Navbar({}: Props) {
@@ -27,7 +32,7 @@ function Navbar({}: Props) {
 
   useEffect(()=>{
     setOpen(false)
-  },[])
+  },[setOpen])
   return (
 
     <>
@@ -49,26 +54,28 @@ function Navbar({}: Props) {
                             <NavigationMenuLink className={"uppercase px-2"}>{t('about')}</NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                    <NavigationMenuTrigger className={"uppercase px-2 text-lg tracking-wider bg-transparent"}>{t('portfolio')}</NavigationMenuTrigger>
-                    <NavigationMenuContent className='z-50 relative'>
-                        <div className='w-[250px] bg-primary text-background flex flex-col gap-6 p-8 uppercase'>
+                <Popover>
+                    <PopoverTrigger>
+                            <NavigationMenuLink className={"uppercase px-2"}>{t('portfolio')}</NavigationMenuLink>
+                    </PopoverTrigger>
+                    <PopoverContent className='p-0 w-[250px]'>
+                        <div className='w-full  bg-primary text-background flex flex-col gap-6 p-8 uppercase'>
                             <Link href="/wedding" legacyBehavior passHref>
-                                <NavigationMenuLink className='text-sm flex justify-center '>I - Wedding stories</NavigationMenuLink>
+                                <NavigationMenuLink className='text-xs flex justify-center tracking-wider '>I - Wedding stories</NavigationMenuLink>
                             </Link>
                             <Link href="/engaged" legacyBehavior passHref>
-                                <NavigationMenuLink className=' text-sm flex justify-center '>II - WEDDING FILMS</NavigationMenuLink>
+                                <NavigationMenuLink className=' text-xs flex justify-center tracking-wider '>II - WEDDING FILMS</NavigationMenuLink>
                             </Link>
                             <Link href="/blog" legacyBehavior passHref>
-                                <NavigationMenuLink className=' text-sm flex justify-center '>III - Blog</NavigationMenuLink>
+                                <NavigationMenuLink className=' text-xs flex justify-center tracking-wider '>III - Blog</NavigationMenuLink>
                             </Link>
                             {/* <Link href="/editorial" legacyBehavior passHref>
                                 <NavigationMenuLink className=' '>IV - Editorial</NavigationMenuLink>
                             </Link> */}
                         </div>
-                    </NavigationMenuContent>
-                </NavigationMenuItem>
+                    </PopoverContent>
+                </Popover>
+
 
                 <NavigationMenuItem>
                     <Link href="/" legacyBehavior passHref>
