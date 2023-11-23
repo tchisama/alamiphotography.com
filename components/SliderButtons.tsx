@@ -16,7 +16,15 @@ const SliderButtons = ({current,images}: Props) => {
         <div className="w-[30px] md:w-[50px] h-[2px]  duration-200  -translate-x-2 bg-primary">
         </div>
         </button>
-      <div className="text-md md:text-lg">{(current % images) + 1} / {images}</div>
+        {
+          current > 0 ? (
+            <div className="text-md md:text-lg">{(((current % images)??0) + 1)} / {images}</div>
+          )
+          :
+          (
+            <div className="text-md md:text-lg">{1} / {images}</div>
+          )
+        }
       <button onClick={() => swipe.slideNext()} className="text-primary group flex items-center p-2" >
         <div className="w-[30px] md:w-[50px] h-[2px]  duration-200 translate-x-2 bg-primary">
         </div>
