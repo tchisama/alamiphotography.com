@@ -9,6 +9,7 @@ import {useTranslations} from 'next-intl';
 import InvestmentHero from "@/components/InvestmentHero";
 import InvestmentStepsCard from "@/components/InvestmentStepsCard";
 import GuideBookSection from "@/components/GuideBookSection";
+import Steps from "@/components/Steps";
 
 type Props = {}
 
@@ -51,6 +52,7 @@ const Page = (props: Props) => {
               })
             }
             <GuideBookSection/>
+            <Steps/>
           </div>
         </div>
         <Footer/>

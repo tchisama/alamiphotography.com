@@ -28,7 +28,7 @@ const ImageSlider = (props: Props) => {
       breakpoints={{
         140: {
           slidesPerView: 3,
-          spaceBetween: 10,
+          spaceBetween: 20,
         },
         768: {
           slidesPerView: 5,
