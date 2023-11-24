@@ -63,7 +63,7 @@ function Navbar({}: Props) {
                             <Link href="/wedding" legacyBehavior passHref>
                                 <NavigationMenuLink className='text-xs flex justify-center tracking-wider '>I - Wedding stories</NavigationMenuLink>
                             </Link>
-                            <Link href="/engaged" legacyBehavior passHref>
+                            <Link href="/wedding-films" legacyBehavior passHref>
                                 <NavigationMenuLink className=' text-xs flex justify-center tracking-wider '>II - WEDDING FILMS</NavigationMenuLink>
                             </Link>
                             <Link href="/blog" legacyBehavior passHref>
