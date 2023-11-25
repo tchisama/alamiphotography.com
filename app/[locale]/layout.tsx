@@ -6,6 +6,11 @@ import NavbarProvider from '@/components/NavbarProvider'
 import {NextIntlClientProvider} from 'next-intl';
 import {notFound} from 'next/navigation';
 import { Toaster } from "@/components/ui/toaster"
+
+// import "https://player.vimeo.com/api/player.js"
+
+
+
 const inter = Inter({ subsets: ['latin'] })
 const dancing = WindSong({ 
   weight:['400','500'],
