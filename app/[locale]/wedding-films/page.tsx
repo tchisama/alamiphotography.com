@@ -1,4 +1,5 @@
 "use client"
+import AlamiSection from '@/components/AlamiSection'
 import Footer from '@/components/Footer'
 import Loading from '@/components/Loading'
 import Navbar from '@/components/Navbar'
@@ -29,10 +30,10 @@ const Page = (props: Props) => {
     return <Loading />;
   }
   return (
-    <div className="px-4 md:px-6 bg-[#fafaf8] overflow-x-hidden">
+    <div className=" bg-[#fafaf8] overflow-x-hidden">
 
         <div className="max-w-[1500px] mx-auto relative z-50">
-            <div className="nav  opacity-0 -translate-y-6">
+            <div className="nav px-6 opacity-0 -translate-y-6">
                 <Navbar/>
             </div>
         </div>
@@ -53,6 +54,7 @@ const Page = (props: Props) => {
         </div>
         <div className='py-24'>
             <VideosSlider/>
+            <AlamiSection/>
         </div>
         <Footer/>
     </div>
