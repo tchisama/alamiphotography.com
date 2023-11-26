@@ -1,7 +1,7 @@
 import ButtonScrollUpProvider from '@/components/ButtonScrollUpProvider'
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter,Dancing_Script,Charm,WindSong,Cormorant_Garamond  } from 'next/font/google'
+import { Inter,WindSong,Cormorant_Garamond,Playfair_Display  } from 'next/font/google'
 import NavbarProvider from '@/components/NavbarProvider'
 import {NextIntlClientProvider} from 'next-intl';
 import {notFound} from 'next/navigation';
@@ -16,6 +16,11 @@ const dancing = WindSong({
   weight:['400','500'],
   subsets:["latin"],
   variable:"--font-dancing",
+})
+const playfair = Playfair_Display({
+  subsets:["latin"],
+  weight:['400','700'],
+  variable:"--font-playfair",
 })
 const charm = Cormorant_Garamond({ 
   subsets:["latin"],
@@ -48,7 +53,7 @@ export default async function RootLayout({
       <head>
       <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png"/>
       </head>
-      <body className={` ${charm.variable} ${dancing.variable}`}>
+      <body className={` ${charm.variable} ${dancing.variable} ${playfair.variable}`}>
         <NextIntlClientProvider messages={messages} locale={locale}>
 
         <div className='text-gray-700 tracking-wider bg-[#fafaf8]'>
