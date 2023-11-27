@@ -49,6 +49,7 @@ function Page({}: Props) {
                 <HelloSection/>
                 <div className="my-8 max-w-3xl mx-auto">
                 </div>
+                <h1 className=' text-4xl md:text-6xl my-16 fontcharm'>What Client Says</h1>
                 <WhatClientSays/>
             </div>
         </div>

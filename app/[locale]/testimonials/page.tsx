@@ -35,8 +35,8 @@ const [loading, setLoading] = React.useState(true);
                 <Navbar/>
             </div>
         </div>
-        <div className='max-w-[1500px] mx-auto py-8'>
-                <h1 className='uppercase font-thin md:text-5xl tracking-[.10em] leading-relaxed text-center'>testimonials</h1>
+        <div className='max-w-[1500px] mx-auto py-8 '>
+                <h1 className='uppercase font-thin mb-28 md:text-4xl tracking-[.10em] leading-relaxed text-center'>what clients say about me</h1>
                 <WhatClientSays/>
         </div>
         <Footer/>
