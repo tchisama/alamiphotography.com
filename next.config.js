@@ -8,6 +8,11 @@ const nextConfig = {
             port: '',
             pathname: '/v0/b/alamiphotography-b75a1.appspot.com/o/files%2F**',
           },
+          {
+            protocol: "https",
+            hostname: "alamiphotography.vercel.app",
+            pathname: "_next/image?url=https**"
+          }
         ],
       },
     
