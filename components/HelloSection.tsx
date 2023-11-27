@@ -50,7 +50,7 @@ function HelloSection({homepage=false}: Props) {
               </Link>
             }
         </div>
-        <Image width={400} height={600} alt='' className='aspect-[2/3] bg-[#0002]  w-full max-w-[500px] object-cover  rounded-lg ' src={"https://firebasestorage.googleapis.com/v0/b/alamiphotography-b75a1.appspot.com/o/files%2F99120244Alami%20About.jpg?alt=media&token=2d480785-0b46-48c3-80db-2f68966712ce"}></Image>
+        <Image width={400} height={600} alt='' className='aspect-[2/3] bg-[#0002]  w-full max-w-[500px] object-cover  rounded-lg ' src={homepage?"https://firebasestorage.googleapis.com/v0/b/alamiphotography-b75a1.appspot.com/o/files%2F99120244Alami%20About.jpg?alt=media&token=2d480785-0b46-48c3-80db-2f68966712ce":"https://firebasestorage.googleapis.com/v0/b/alamiphotography-b75a1.appspot.com/o/files%2F44609627About%20page%202.jpg?alt=media&token=c08a460c-0320-4229-9e27-a38dea422bda"}></Image>
     </div>
   )
 }

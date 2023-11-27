@@ -61,7 +61,7 @@ const ImageSlider = (props: Props) => {
                           <div
                             className=" aspect-[2/3] img w-full  bg-repeat-no-repeat duration-300 "
                           >
-                            <Image width={1000} height={1500} src={image} className="w-full bg-[#0002]  aspect-[2/3]" alt="" />
+                            <Image width={400} height={600} src={image} className="w-full bg-[#0002]  aspect-[2/3]" alt="" />
                           </div>
                         </div>
                   )}}

@@ -98,7 +98,7 @@ const Footer = (props: Props) => {
                     <div className='font-sans'>
                         <span className='font-sans'>contact@alamiphotography.com</span><br/>
                         +212-676545984<br/>
-                        <span className='uppercase font-sans'>Marrakesh , morocco</span><br/>
+                        <span className='uppercase font-sans'>Marrakesh, morocco</span><br/>
                     </div>
                     <Separator/>
                     <Button  className='text-xl' size={"lg"}>Contact me </Button>
