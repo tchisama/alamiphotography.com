@@ -56,7 +56,6 @@ const Footer = (props: Props) => {
                 </div>
             </div>
             <div className='h-[250px] hidden md:block'>
-                <Separator orientation='vertical'/>
             </div>
             <div className='flex-[2] md:px-4 bg-[#fbf5f1] flex gap-12 md:gap-0 pt-2 md:pt-0 h-[400px] md:items-center flex-col md:flex-row'>
                 <div className='flex-1 md:px-24'>
@@ -95,11 +94,11 @@ const Footer = (props: Props) => {
                 <div className='h-[250px] md:block hidden'>
                     <Separator orientation='vertical'/>
                 </div>
-                <div className='flex flex-col gap-4 px-4'>
-                    <div>
-                        info@niallscullyphotography.com<br/>
-                        087-0671977<br/>
-                        WICKLOW, IRELAND<br/>
+                <div className='flex font-sans flex-col gap-4 px-4'>
+                    <div className='font-sans'>
+                        <span className='font-sans'>contact@alamiphotography.com</span><br/>
+                        +212-676545984<br/>
+                        <span className='uppercase font-sans'>Marrakesh , morocco</span><br/>
                     </div>
                     <Separator/>
                     <Button  className='text-xl' size={"lg"}>Contact me </Button>
