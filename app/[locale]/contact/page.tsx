@@ -21,6 +21,7 @@ import { Send } from "lucide-react";
 import { db } from "@/firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import Image from "next/image";
+import Link from "next/link";
 
 type Props = {}
 
@@ -31,6 +32,7 @@ function Page({}: Props) {
     const [number, setNumber] = useState("");
     const [date, setDate] = useState("");
     const [message, setMessage] = useState("");
+    const [venue,setVenue]= useState("")
 
 
 
@@ -63,6 +65,7 @@ function Page({}: Props) {
                 email,
                 number,
                 date,
+                venue,
                 message,
                 createdAt:serverTimestamp()
             });
@@ -70,6 +73,7 @@ function Page({}: Props) {
             setDate("")
             setEmail("")
             setName("")
+            setVenue("")
             setNumber("")
             setMessage("")
             alert("Order added successfully")
@@ -96,7 +100,7 @@ function Page({}: Props) {
             </div>
             <div className="flex-1 form mt-8 md:mt-0 translate-y-10 opacity-0 flex flex-col gap-4 md:gap-8 md:p-10">
                 <h1 className="text-4xl md:text-6xl  leading-relaxed">Get In Touch!</h1>
-                <p className="text-md md:text-2xl leading-relaxed fontcharm">Thank you so much for your interest in my photography, I would love to hear more about your big day! I am located in Wicklow Ireland, but travel worldwide for weddings. I am excited to hear about your plans and will gladly travel to wherever your adventure takes us. I reply to emails within 24 hours. If you do not hear back from me within that timeframe, please check your spam folder and/or email me directly. Thank you!</p>
+                <p className="text-md md:text-xl leading-relaxed fontcharm">Thank you so much for your interest in my photography, I would love to hear more about your big day! I am located in Wicklow Ireland, but travel worldwide for weddings. I am excited to hear about your plans and will gladly travel to wherever your adventure takes us. I reply to emails within 24 hours. If you do not hear back from me within that timeframe, please check your spam folder and/or email me directly. Thank you!</p>
                 <Separator></Separator>
                 <div>
                     <h3 className="my-2 text-xl fontcharm">Your Name</h3>
@@ -111,8 +115,12 @@ function Page({}: Props) {
                     <Input  className="border-[#999]" value={email} onChange={(e) => setEmail(e.target.value)} type="email"></Input>
                 </div>
                 <div>
-                    <h3 className="my-2 text-xl fontcharm">Wedding Date & Venue</h3>
+                    <h3 className="my-2 text-xl fontcharm">Wedding Date </h3>
                     <Input  className="border-[#999]" value={date} onChange={(e) => setDate(e.target.value)} type="date"></Input>
+                </div>
+                <div>
+                    <h3 className="my-2 text-xl fontcharm"> Venue</h3>
+                    <Input  className="border-[#999]" value={venue} onChange={(e) => setVenue(e.target.value)}></Input>
                 </div>
                 <div className="flex-1">
                     <h3 className="my-2  text-xl fontcharm">More details</h3>
@@ -125,20 +133,20 @@ function Page({}: Props) {
         </div>
 
         <div className="max-w-[1500px] md:flex-row flex-col items-center py-20 mt-8 mx-auto flex gap-8">
-            <div className="flex-1 flex flex-col items-center">
+            <Link href={'/about'} className="flex-1 flex flex-col items-center">
                 <p className="text-2xl">Read more</p>
                 <h2 className="md:text-5xl text-4xl uppercase">About Me</h2>
-            </div>
+            </Link>
             <div className="md:h-[100px] md:w-[2px] w-[100px] h-[1px] bg-primary"></div>
-            <div className="flex-1 flex flex-col items-center">
+            <Link href={'/wedding'} className="flex-1 flex flex-col items-center">
                 <p className="text-2xl">View</p>
-                <h2 className="md:text-5xl text-4xl uppercase">REAL WEDDINGS</h2>
-            </div>
+                <h2 className="md:text-5xl text-4xl uppercase">More Stories</h2>
+            </Link>
             <div className="md:h-[100px] md:w-[2px] w-[100px] h-[1px] bg-primary"></div>
-            <div className="flex-1 flex flex-col items-center">
-                <p className="text-2xl">Details In</p>
-                <h2 className="md:text-5xl text-4xl uppercase">Investment</h2>
-            </div>
+            <Link href={"/wedding-film"} className="flex-1 flex flex-col items-center">
+                <p className="text-2xl">Watch</p>
+                <h2 className="md:text-5xl text-4xl uppercase">More films</h2>
+            </Link>
         </div>
         <div className="max-w-[1500px] mx-auto">
         </div>

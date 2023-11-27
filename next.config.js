@@ -12,6 +12,11 @@ const nextConfig = {
             protocol: "https",
             hostname: "alamiphotography.vercel.app",
             pathname: "_next/image?url=https**"
+          },
+          {
+            protocol: "http",
+            hostname: "localhost",
+            pathname: "_next/image?url=https**"
           }
         ],
       },

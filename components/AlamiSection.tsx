@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button } from './ui/button'
+import Link from 'next/link'
 
 type Props = {}
 
@@ -22,7 +23,9 @@ If our works resonate with you, feel free to reach out to us.
 </p>
                 <div className='flex items-center gap-4 flex-col'>
                     <h2 className='text-2xl text-[#454643] font-semibold'>let&apos;s get in touch</h2>
-                    <Button className='bg-[#454643] uppercase text-white font-sans hover:bg-[#393a37]'>contact us</Button>
+                    <Link href={"/contact"}>
+                        <Button className='bg-[#454643] uppercase text-white font-sans hover:bg-[#393a37]'>contact me</Button>
+                    </Link>
                 </div>
             </div>
         </div>

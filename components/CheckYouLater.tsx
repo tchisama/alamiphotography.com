@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from './ui/button'
 import Image from 'next/image'
+import Link from 'next/link'
 
 type Props = {}
 
@@ -17,7 +18,9 @@ function CheckYouLater({}: Props) {
         </div>
         <div className='flex flex-col p-8 gap-4 flex-1 justify-end items-center'>
             <h1 className='text-2xl md:text-5xl fontroman'>Check your date</h1>
-            <Button className='text-xl md:text-3xl p-8'>Get In Touch</Button>
+            <Link href={"/contact"}>
+              <Button className='text-xl md:text-3xl p-8'>Get In Touch</Button>
+            </Link>
         </div>
     </div>
   )

@@ -101,7 +101,9 @@ const Footer = (props: Props) => {
                         <span className='uppercase font-sans'>Marrakesh, morocco</span><br/>
                     </div>
                     <Separator/>
-                    <Button  className='text-xl' size={"lg"}>Contact me </Button>
+                    <Link href={"/contact"}>
+                            <Button  className='text-xl' size={"lg"}>Contact me </Button>
+                    </Link>
                 </div>
             </div>
         </div>

@@ -2,28 +2,38 @@ import React from 'react'
 import { Button } from './ui/button'
 import classNames from 'classnames'
 import Image from 'next/image'
+import Link from 'next/link'
 
 type Props = {
-    i:number
+    i:number,
+    item:{
+        img:string,
+        title:string
+        content:string
+        href:string
+        type:string
+    }
 }
 
-const WeddingStoryComp = ({i}: Props) => {
+const WeddingStoryComp = ({i,item}: Props) => {
   return (
     <div className={
         classNames({
             'flex flex-col md:flex-row my-24 md:p-8 md:px-12  gap-8 hover:bg-white duration-200':true,
             'md:flex-row-reverse' :  i % 2 === 0 ,
         })}>
-        <div className='md:flex-[5] md:-translate-y-20'>
-            <Image alt="" width={900} height={600} className='w-full h-full bg-[#0002]' src='https://firebasestorage.googleapis.com/v0/b/alamiphotography-b75a1.appspot.com/o/files%2F86831919Test%20gallery%201.jpg?alt=media&token=3570bafe-85b5-4768-a9d0-4a07edf0bdd5'></Image>
+        <div className='md:flex-[4] md:-translate-y-20'>
+            <Image alt="" width={900} height={600} className='w-full object-cover bg-[#0002]' src={item.img}></Image>
         </div>
-        <div className='md:flex-[4] p-4 flex items-start flex-col gap-8'>
-            <p className='text-lg'>CATEGORY</p>
+        <div className='md:flex-[5] p-4 flex items-start flex-col gap-8'>
+            <p className='text-lg'>{item.type}</p>
             <h1 className='md:text-6xl text-4xl'>
-                Lauren and Alex wedding Palais Namaskar
+                {item.title}
             </h1>
-            <p className='text-xl md:mr-20'>What better way to start your life together than a picture-perfect, romantic wedding in this stunning venue Palais Namaskar Marrakech⁣, Morocco? hat better way to start your life together than a picture-perfect, romantic wedding in this stunning venue Palais Namaskar Marrakech⁣, Morocco?</p>
-            <Button variant={"outline"} className='text-xl'>Full story</Button>
+            <p className='text-md md:mr-8'>{item.content}</p>
+            <Link href={item.href}>
+                <Button variant={"outline"} className='text-xl'>Full story</Button>
+            </Link>
         </div>
     </div>
   )
