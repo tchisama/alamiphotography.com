@@ -13,15 +13,18 @@ import { Separator } from './ui/separator'
 import { Button } from './ui/button'
 import { X } from 'lucide-react'
 import useNavbarStore from '@/store/navbarStore'
-  
-
+import {motion} from "framer-motion"
 type Props = {}
 
 
 function NavbarMobile({}: Props) {
     const {setOpen} = useNavbarStore()
   return (
-        <div className='bg-[#a9b9b8] py-8 px-4 items-center flex-col fixed z-50 flex md:hidden top-0 -left-0 w-screen h-screen'>
+        <motion.div 
+        initial={{opacity:0,scale:1.2}}
+        animate={{opacity:1,scale:1}}
+        transition={{duration:0.4}}
+        className='bg-[#a9b9b8] py-8 px-4 items-center flex-col fixed z-50 flex md:hidden top-0 -left-0 w-screen h-screen'>
             <Button onClick={()=>setOpen(false)} variant={"ghost"} size={"icon"} className='my-8 text-white'><X/></Button>
             <ul className='w-full uppercase text-white'>
                 <li className='flex justify-center'>
@@ -39,16 +42,13 @@ function NavbarMobile({}: Props) {
                         <AccordionContent>
                             <ul>
                                 <li className='flex justify-center'>
-                                    <Link className='py-3  w-full text-center' href={"/wedding"}>Wedding</Link>
+                                    <Link className='py-3  w-full text-center' href={"/wedding"}>wedding stories</Link>
                                 </li>
                                 <li className='flex justify-center'>
-                                    <Link className='py-3  w-full text-center' href={"/engaged"}>Engaged</Link>
+                                    <Link className='py-3  w-full text-center' href={"/wedding-film"}>wedding film</Link>
                                 </li>
                                 <li className='flex justify-center'>
                                     <Link className='py-3  w-full text-center' href={"/blog"}>Blog</Link>
-                                </li>
-                                <li className='flex justify-center'>
-                                    <Link className='py-3  w-full text-center' href={"/editorial"}>Editorial</Link>
                                 </li>
                             </ul>
                         </AccordionContent>
@@ -63,7 +63,7 @@ function NavbarMobile({}: Props) {
                     <Link className='py-3 text-lg w-full text-center' href={"/contact"}>contact</Link>
                 </li>
             </ul>
-        </div>
+        </motion.div>
   )
 }
 

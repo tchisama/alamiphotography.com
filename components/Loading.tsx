@@ -9,7 +9,7 @@ function Loading() {
   return (
     <div className="flex h-screen text-2xl items-center justify-center gap-2">
       <motion.div  initial={{ opacity: 0,scale:1.1 }} transition={{ duration: 3 }} animate={{ opacity: 1,scale:1 }}>
-          <Image src={blackLogo} alt="logo" width={400} height={400} />
+          <Image src={blackLogo} alt="logo" width={400} height={400}  className="w-[200px]  md:w-[400px]"/>
       </motion.div>
     </div>
   );

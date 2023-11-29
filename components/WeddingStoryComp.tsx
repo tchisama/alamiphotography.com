@@ -30,7 +30,7 @@ const WeddingStoryComp = ({i,item}: Props) => {
             <h1 className='md:text-6xl text-4xl'>
                 {item.title}
             </h1>
-            <p className='text-md md:mr-8'>{item.content}</p>
+            <p className='text-sm md:text-md md:mr-8'>{item.content}</p>
             <Link href={item.href}>
                 <Button variant={"outline"} className='text-xl'>Full story</Button>
             </Link>

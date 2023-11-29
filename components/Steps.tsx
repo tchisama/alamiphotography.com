@@ -4,7 +4,7 @@ type Props = {}
 
 const Steps = (props: Props) => {
   return (
-    <div className='w-full gap-10 grid grid-cols-4 my-20 py-24'>
+    <div className='w-full gap-10 grid grid-cols-1 md:grid-cols-4 my-20 py-24'>
         {
             ["we chat & see if we're a good fit.","you pay a deposit & sign a contract.","i photograph your wedding.","your gallery is delivered."]
             .map((step, index) => (

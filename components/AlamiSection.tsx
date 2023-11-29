@@ -1,36 +1,49 @@
-import React from 'react'
-import { Button } from './ui/button'
-import Link from 'next/link'
+import React from "react";
+import { Button } from "./ui/button";
+import Link from "next/link";
 
-type Props = {}
+type Props = {};
 
 const AlamiSection = (props: Props) => {
   return (
-    <div className='bg-[#B9B1A6] py-16'>
-        <div className='container mx-auto'>
-            <div className='text-6xl text-[#918D82] uppercase font-sans tracking-[0.16em]'>
-                {
-                    ["affection", "legacy", "adventure", "memory", "intimacy"].map((word, index) => (
-                        <h1 key={index} className='font-serif '><span className='text-white space-y-2 font-serif '>{word[0]}</span>{word.slice(1)}</h1>
-                    ))
-                }
-            </div>
-            <div className='flex py-8 justify-between gap-8 items-center text-white '>
-                <p className='flex-1 max-w-4xl text-lg font-serif'>Alami Photography was established by Alami Mohamed and a team of passionate photographers and videographers. Our goal is not only 
-to capture the sincerity and beauty of your weddings but also to document the genuine emotions of the dayin our creations.
-<br/><br/>
-If our works resonate with you, feel free to reach out to us.
-</p>
-                <div className='flex items-center gap-4 flex-col'>
-                    <h2 className='text-2xl text-[#454643] font-semibold'>let&apos;s get in touch</h2>
-                    <Link href={"/contact"}>
-                        <Button className='bg-[#454643] uppercase text-white font-sans hover:bg-[#393a37]'>contact me</Button>
-                    </Link>
-                </div>
-            </div>
+    <div className="bg-[#B9B1A6] py-16">
+      <div className="container mx-auto">
+        <div className="md:text-6xl text-4xl text-[#918D82] uppercase font-sans tracking-[0.16em]">
+          {["affection", "legacy", "adventure", "memory", "intimacy"].map(
+            (word, index) => (
+              <h1 key={index} className="font-serif ">
+                <span className="text-white space-y-2 font-serif ">
+                  {word[0]}
+                </span>
+                {word.slice(1)}
+              </h1>
+            )
+          )}
         </div>
+        <div className="flex flex-col md:flex-row  py-8 justify-between gap-8 items-center text-white ">
+          <p className="flex-1 max-w-4xl text-xs font-sans md:text-lg">
+            Alami Photography was established by Alami Mohamed and a team of
+            passionate photographers and videographers. Our goal is not only to
+            capture the sincerity and beauty of your weddings but also to
+            document the genuine emotions of the dayin our creations.
+            <br />
+            <br />
+            If our works resonate with you, feel free to reach out to us.
+          </p>
+          <div className="flex items-start md:w-fit w-full md:items-center gap-4 flex-col">
+            <h2 className="text-2xl text-[#454643] font-semibold">
+              let&apos;s get in touch
+            </h2>
+            <Link href={"/contact"}>
+              <Button className="bg-[#454643] uppercase text-white font-sans hover:bg-[#393a37]">
+                contact me
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default AlamiSection
+export default AlamiSection;

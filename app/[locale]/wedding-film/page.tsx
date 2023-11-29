@@ -42,7 +42,7 @@ const Page = (props: Props) => {
             {/* <h1 className="absolute md:text-white md:bottom-10 md:left-10 drop-shadow-2xl font-bold text-3xl md:text-6xl ">Capturing Timeless Beauty & Emotion</h1> */}
         </div>
         <div className='max-w-[1500px] mx-auto flex justify-center'>
-            <p className='text-center max-w-3xl mx-auto py-28 text-xl'>
+            <p className='text-center max-w-3xl mx-auto mt-4 md:py-28 text-sm p-4 md:text-xl'>
                     &quot;Every wedding has its own unique sense of style and personality,
 
                     our cinematic approach is to be non-directorial and more observative while making our clients feel inspired,

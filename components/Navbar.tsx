@@ -18,6 +18,7 @@ import LangButton from './LangButton'
 import { Menu } from 'lucide-react'
 import useNavbarStore from '@/store/navbarStore'
 import { useTranslations } from 'next-intl'
+import { CiMenuFries } from "react-icons/ci";
 import {
     Popover,
     PopoverContent,
@@ -40,7 +41,7 @@ function Navbar({}: Props) {
         <Link href={"/"}>
             <Image alt='' className=' w-[100px] object-contain md:w-[250px] ' src={blackLogo} width={160} height={100}></Image>
         </Link>
-        <Button size={"icon"} onClick={()=>setOpen(true)} variant={"ghost"} className='block md:hidden'><Menu/></Button>
+        <Button size={"icon"} onClick={()=>setOpen(true)} variant={"ghost"} className='block md:hidden'><CiMenuFries size={24}/></Button>
 
         <NavigationMenu style={{}} className='hidden flex-1 md:flex text-xl z-50'>
             <NavigationMenuList className='flex gap-6 text-lg'>
@@ -92,9 +93,9 @@ function Navbar({}: Props) {
 
         <NavigationMenu className='hidden md:flex '>
             <NavigationMenuList>
-                <NavigationMenuItem >
+                {/* <NavigationMenuItem >
                     <LangButton />
-                </NavigationMenuItem>
+                </NavigationMenuItem> */}
                 <NavigationMenuItem>
                     <Link href="/contact" legacyBehavior passHref>
                             <Button className={"ml-2 uppercase text-lg"}>{t("enquire")}</Button>

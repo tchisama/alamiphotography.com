@@ -41,10 +41,10 @@ function Page({}: Props) {
             </div>
         </div>
         <div className="relative nav mt-8 opacity-0 -translate-y-6">
-            <Image width={1500} height={1000} alt="" className="h-[50vh]  bg-[#0002]  md:h-[70vh] scale-105 w-full  object-cover mb-8 " src="https://firebasestorage.googleapis.com/v0/b/alamiphotography-b75a1.appspot.com/o/files%2F244157121%20Landscapeimage-min.jpg?alt=media&token=838ce1e6-02e4-44aa-a915-0f86b82f50c2"  />
-            <h1 className="absolute md:text-white md:bottom-10 md:left-10 drop-shadow-2xl  text-3xl md:text-6xl ">Capturing Timeless Beauty & Emotion</h1>
+            <Image width={1500} height={1000} alt="" className="h-[50vh]  bg-[#0002]  md:h-[70vh] scale-110 md:scale-105 w-full  object-cover mb-8 " src="https://firebasestorage.googleapis.com/v0/b/alamiphotography-b75a1.appspot.com/o/files%2F244157121%20Landscapeimage-min.jpg?alt=media&token=838ce1e6-02e4-44aa-a915-0f86b82f50c2"  />
+            <h1 className="absolute text-white bottom-5 left-5 md:bottom-10 md:left-10 drop-shadow-2xl  text-3xl md:text-6xl ">Capturing Timeless Beauty & Emotion</h1>
         </div>
-        <div className="max-w-[1500px] mx-auto">
+        <div className="max-w-[1500px] mx-auto py-8">
             <div className="nav  opacity-0 -translate-y-6">
                 <HelloSection/>
                 <div className="my-8 max-w-3xl mx-auto">

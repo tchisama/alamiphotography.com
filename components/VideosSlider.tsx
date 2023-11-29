@@ -19,7 +19,7 @@ const VideosSlider = (props: Props) => {
       navigation
       breakpoints={{
         140: {
-          slidesPerView: 1,
+          slidesPerView: 1.2,
           spaceBetween: 10,
         },
         768: {
@@ -78,9 +78,9 @@ const VideosSlider = (props: Props) => {
                                 setCurrent(index)
                             }
                             return(
-                                <div className={index === 0 ? 'mx-8' : 'mx-8'}>
+                                <div className={' mx-2 md:mx-8'}>
                                     <Image alt="" className="w-full bg-[#0002] filter brightness-95 aspect-[3/2]" width={1200} height={800} src={_.img}></Image>
-                                    <h3 className='text-xl uppercase text-center absolute duration-200 bottom-10 drop-shadow-md font-bold left-[50%] translate-x-[-50%] text-white'>{_.name}</h3>
+                                    <h3 className='md:text-xl text-xs uppercase text-center absolute duration-200 bottom-2 md:bottom-10 drop-shadow-md md:font-bold left-[50%] translate-x-[-50%] text-white'>{_.name}</h3>
                                     <VideoPlayer href={_.href}/>
                                 </div>
                             )}}

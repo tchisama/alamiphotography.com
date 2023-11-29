@@ -11,11 +11,11 @@ function HelloSection({homepage=false}: Props) {
   return (
     <div className={'flex gap-6 my-24 flex-col-reverse items-center justify-between '+(homepage?'md:flex-row':'md:flex-row-reverse')}>
         <div className='flex  flex-col items-start gap-8' >
-            <h1 className='text-4xl md:text-7xl font-light'>
+            <h1 className='text-4xl md:text-7xl font-light text-center md:text-start'>
                 Hello!<br/>
                 Thanks for stopping by
             </h1>
-            <p className='text-md md:text-xl space-y-6 leading-relaxed md:max-w-4xl'>
+            <p className='text-sm md:text-xl space-y-6 leading-relaxed md:max-w-4xl text-center md:text-start'>
               {
                 homepage?
                 <>
@@ -42,7 +42,7 @@ function HelloSection({homepage=false}: Props) {
                 </>
               }
             </p>
-            <p className='text-6xl text-end w-full rotate-2 fontsign'>Alami</p>
+            <p className='text-4xl md:text-6xl text-end w-full rotate-2 fontsign'>Alami</p>
             {
               homepage &&
               <Link href={"/about"}>
