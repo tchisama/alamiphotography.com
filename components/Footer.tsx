@@ -61,29 +61,34 @@ const Footer = (props: Props) => {
                 <div className='flex-1 md:px-24 p-8'>
                     
                 <NavigationMenu >
-                <NavigationMenuList className='grid grid-cols-2 gap-6 text-xs font-sans'>
+                <NavigationMenuList className='grid grid-cols-2 gap-6 md:gap-12 text-xs font-sans'>
                     <NavigationMenuItem>
                         <Link href="/" legacyBehavior passHref>
                                 <NavigationMenuLink className={"uppercase px-2 ml-1 font-sans"}>Home</NavigationMenuLink>
                         </Link>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                        <Link href="/" legacyBehavior passHref>
+                        <Link href="/about" legacyBehavior passHref>
                                 <NavigationMenuLink className={"uppercase px-2 font-sans"}>About</NavigationMenuLink>
                         </Link>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                        <Link href="/" legacyBehavior passHref>
-                                <NavigationMenuLink className={"uppercase px-2 font-sans"}>PORTFOLIO</NavigationMenuLink>
+                        <Link href="/wedding" legacyBehavior passHref>
+                                <NavigationMenuLink className={"uppercase px-2 font-sans"}>Wedding stories</NavigationMenuLink>
                         </Link>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
+                        <Link href="/wedding-film" legacyBehavior passHref>
+                                <NavigationMenuLink className={"uppercase px-2 font-sans"}>Wedding film</NavigationMenuLink>
+                        </Link>
+                    </NavigationMenuItem>
+                    {/* <NavigationMenuItem>
                         <Link href="/" legacyBehavior passHref>
                                 <NavigationMenuLink className={"uppercase px-2 font-sans"}>FOR PHOTOGRAPHERS</NavigationMenuLink>
                         </Link>
-                    </NavigationMenuItem>
+                    </NavigationMenuItem> */}
                     <NavigationMenuItem>
-                        <Link href="/" legacyBehavior passHref>
+                        <Link href="/contact" legacyBehavior passHref>
                                 <NavigationMenuLink className={"uppercase px-2 font-sans"}>CONTACT</NavigationMenuLink>
                         </Link>
                     </NavigationMenuItem>
