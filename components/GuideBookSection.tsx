@@ -39,7 +39,7 @@ const GuideBookSection = (props: Props) => {
     })
   }
   return (
-    <div className='flex flex-col md:flex-row gap-10 mt-32 items-center'>
+    <div className='flex flex-col-reverse md:flex-row gap-10 mt-32 items-center'>
         <div className='flex-[4] flex flex-col gap-4 items-center text-center'>
             <h1 className='text-2xl md:text-5xl'>I&apos;LL SEND YOU A GUIDE WITH EVERYTHING YOU NEED TO KNOW</h1>
             <p className='text-sm md:text-lg font-sans'>COUPLES THAT BOOK ME, GET MY WEDDING EXPERIENCE GUIDE FREE! THIS GUIDE WILL HELP YOU MAKE THE MOST OF YOUR WEDDING DAY WITH TIPS ON FIRST LOOK, DETAILS, TIMINGS, PORTRAITS AND MUCH MORE.</p>
