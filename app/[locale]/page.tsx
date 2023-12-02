@@ -51,7 +51,7 @@ export default function Home() {
         <ImageSlider />
       </div>
 
-      <div className="texth opacity-0 fontcharm translate-y-12 md:my-64 my-52 ">
+      <div className="texth opacity-0 fontcharm translate-y-12 md:my-64 my-52 mb-16 ">
         <div
           ref={texth}
           className="max-w-[1500px] texth mx-auto flex  flex-col items-center"

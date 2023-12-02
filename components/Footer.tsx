@@ -61,7 +61,7 @@ const Footer = (props: Props) => {
                 <div className='flex-1 md:px-24 p-8'>
                     
                 <NavigationMenu >
-                <NavigationMenuList className='grid grid-cols-2 gap-6 md:gap-12 text-xs font-sans'>
+                <NavigationMenuList className='grid grid-cols-2 gap-2 md:gap-12 text-xs font-sans'>
                     <NavigationMenuItem>
                         <Link href="/" legacyBehavior passHref>
                                 <NavigationMenuLink className={"uppercase px-2 ml-1 font-sans"}>Home</NavigationMenuLink>
@@ -74,12 +74,12 @@ const Footer = (props: Props) => {
                     </NavigationMenuItem>
                     <NavigationMenuItem>
                         <Link href="/wedding" legacyBehavior passHref>
-                                <NavigationMenuLink className={"uppercase px-2 font-sans"}>Wedding stories</NavigationMenuLink>
+                                <NavigationMenuLink className={"uppercase px-2 font-sans"}>Wedding</NavigationMenuLink>
                         </Link>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                        <Link href="/wedding-film" legacyBehavior passHref>
-                                <NavigationMenuLink className={"uppercase px-2 font-sans"}>Wedding film</NavigationMenuLink>
+                        <Link href="/" legacyBehavior passHref>
+                                <NavigationMenuLink className={"uppercase px-2 font-sans"}>for photographers</NavigationMenuLink>
                         </Link>
                     </NavigationMenuItem>
                     {/* <NavigationMenuItem>
