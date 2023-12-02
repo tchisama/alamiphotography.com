@@ -10,7 +10,7 @@ type Props = {
 const SliderButtons = ({current,images}: Props) => {
     const swipe = useSwiper()
   return (
-    <div className="flex gap-4 md:scale-[.8] mx-auto scale-[0.5] items-center justify-between max-w-md img mt-2 md:mt-8">
+    <div className="flex gap-4 md:scale-[.8] mx-auto  scale-[0.3] items-center justify-between max-w-md img mt-2 md:mt-8">
       <button onClick={() => swipe.slidePrev()} className="text-primary flex items-center p-2 group" >
         <ArrowLeft/>
         <div className="w-[30px] md:w-[50px] h-[2px]  duration-200  -translate-x-2 bg-primary">
@@ -18,7 +18,7 @@ const SliderButtons = ({current,images}: Props) => {
         </button>
         {
           current > 0 ? (
-            <div className="text-md md:text-lg">{(((current % images)??0) + 1)} / {images}</div>
+            <div className="text-lg md:text-lg">{(((current % images)??0) + 1)} / {images}</div>
           )
           :
           (
