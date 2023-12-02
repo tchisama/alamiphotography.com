@@ -99,7 +99,7 @@ const Footer = (props: Props) => {
                 <div className='h-[250px] md:block hidden'>
                     <Separator orientation='vertical'/>
                 </div>
-                <div className='flex font-sans flex-col gap-4 px-4 items-center md:items=start'>
+                <div className='flex font-sans flex-col gap-4 px-4 py-6 items-center md:items=start'>
                     <div className='font-sans text-center md:text-start'>
                         <span className='font-sans'>contact@alamiphotography.com</span><br/>
                         +212-676545984<br/>
@@ -112,7 +112,7 @@ const Footer = (props: Props) => {
                 </div>
             </div>
         </div>
-            <div className='flex justify-center md:justify-end my-8 px-4 pt-4 md:pt-0 md:px-8'>
+            <div className='flex justify-center md:justify-end my-8 px-4 py-4 md:pt-0 md:px-8'>
                 <Button variant={"outline"} className='flex bg-transparent gap-2 text-xl' onClick={()=>setUp(p=>p+1)}><ArrowUpIcon size={20}/></Button>
             </div>
     </div>
