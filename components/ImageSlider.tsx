@@ -23,6 +23,18 @@ const ImageSlider = (props: Props) => {
       setImages(docSnap.data()?.images as string[])
     })
   },[])
+
+
+  useEffect(() => {
+    const time = setInterval(() => {
+      setCurrent(current + 1);
+    }, 7000);
+    return () => {
+      clearInterval(time);
+    }
+  },[current])
+
+
   return (
     <>
     {/* <Swiper
