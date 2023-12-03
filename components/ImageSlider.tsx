@@ -1,6 +1,6 @@
 "use client";
 import gsap from "gsap";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Swiper, SwiperSlide,useSwiper } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
@@ -17,7 +17,7 @@ type Props = {};
 const ImageSlider = (props: Props) => {
   const [images, setImages] = useState<string[]>([]);
   const swiper = useSwiper();
-  const [current, setCurrent] = useState(0);
+  const [current, setCurrent] = useState(200);
   useEffect(() => {
     getDoc(doc(db, "configs","homePageImagesSlider")).then((docSnap) => {
       setImages(docSnap.data()?.images as string[])
@@ -25,7 +25,7 @@ const ImageSlider = (props: Props) => {
   },[])
   return (
     <>
-    <Swiper
+    {/* <Swiper
       spaceBetween={10}
       navigation
       breakpoints={{
@@ -67,8 +67,28 @@ const ImageSlider = (props: Props) => {
                   )}}
         </SwiperSlide>
       ))}
-      <SliderButtons current={current} images={images.length}/>
-    </Swiper>
+    </Swiper> */}
+    <div className=" hidden md:flex w-[calc(100vw+15%)] translate-x-[-7.6%] overflow-hidden gap-8 ">
+        {
+          new Array(100).fill(images).flat(1).slice(current,current+5).map((image, index) => (
+            <div key={index+current} className="flex-1 duration-200 aspect-[2/3]">
+              <Image alt="" width={600} height={900} src={image} key={index} className="w-full object-contain"></Image>
+            </div>
+          ))
+        }
+    </div>
+    <div className="flex md:hidden  w-[calc(100vw+100%)] mt-8 translate-x-[-26%] overflow-hidden gap-8 ">
+        {
+          new Array(100).fill(images).flat(1).slice(current,current+3).map((image, index) => (
+            <div key={index} className="flex-1 aspect-[2/3]">
+              <Image alt="" width={600} height={900} src={image} key={index} className="w-full object-contain"></Image>
+            </div>
+          ))
+        }
+    </div>
+        <div>
+            <SliderButtons setCurrent={setCurrent} current={current} images={images.length}/>
+        </div>
     </>
   );
 };
