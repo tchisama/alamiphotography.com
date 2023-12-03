@@ -68,7 +68,7 @@ const ImageSlider = (props: Props) => {
         </SwiperSlide>
       ))}
     </Swiper> */}
-    <div className=" hidden md:flex w-[calc(100vw+15%)] translate-x-[-7.6%] overflow-hidden gap-8 ">
+    <div className=" hidden lg:flex w-[calc(100vw+15%)] translate-x-[-7.6%] overflow-hidden gap-8 ">
         {
           new Array(100).fill(images).flat(1).slice(current,current+5).map((image, index) => (
             <div key={index+current} className="flex-1 duration-200 aspect-[2/3]">
@@ -77,7 +77,7 @@ const ImageSlider = (props: Props) => {
           ))
         }
     </div>
-    <div className="flex md:hidden  w-[calc(100vw+100%)] mt-8 translate-x-[-26%] overflow-hidden gap-8 ">
+    <div className="flex lg:hidden  w-[calc(100vw+100%)] mt-8 translate-x-[-26%] overflow-hidden gap-8 ">
         {
           new Array(100).fill(images).flat(1).slice(current,current+3).map((image, index) => (
             <div key={index} className="flex-1 aspect-[2/3]">
