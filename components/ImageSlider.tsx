@@ -25,19 +25,19 @@ const ImageSlider = (props: Props) => {
   },[])
 
 
-  useEffect(() => {
-    const time = setInterval(() => {
-      setCurrent(current + 1);
-    }, 7000);
-    return () => {
-      clearInterval(time);
-    }
-  },[current])
+  // useEffect(() => {
+  //   const time = setInterval(() => {
+  //     setCurrent(current + 1);
+  //   }, 7000);
+  //   return () => {
+  //     clearInterval(time);
+  //   }
+  // },[current])
 
 
   return (
     <>
-    {/* <Swiper
+    <Swiper
       spaceBetween={10}
       navigation
       breakpoints={{
@@ -56,11 +56,11 @@ const ImageSlider = (props: Props) => {
         disableOnInteraction: false,
       }}
       modules={[Autoplay]}
-      className="mySwiper my-[16vh] md:my-[11vh] z-[-10] scale-[2.2] md:scale-[1.2]  "
+      className="  z-[-10] w-[calc(100vw+120%)] md:w-[calc(100vw+15%)] mt-14 md:mt-6 translate-x-[-28%] md:translate-x-[-7.6%] "
     >
       {[...images,...images,...images].map((image, index) => (
         <SwiperSlide
-          className="w-full h-full overflow-hidden group"
+          className="w-full overflow-hidden group"
           key={index}
         >
 
@@ -69,9 +69,9 @@ const ImageSlider = (props: Props) => {
                       setCurrent(index)
                   }
                   return(
-                        <div className="h-full  w-full overflow-hidden ">
+                        <div className="h-full  overflow-hidden ">
                           <div
-                            className=" aspect-[2/3] img w-full  bg-repeat-no-repeat duration-300 "
+                            className=" aspect-[2/3] img   bg-repeat-no-repeat duration-300 "
                           >
                             <Image width={400} height={600} src={image} className="w-full bg-[#0002]  aspect-[2/3]" alt="" />
                           </div>
@@ -79,8 +79,9 @@ const ImageSlider = (props: Props) => {
                   )}}
         </SwiperSlide>
       ))}
-    </Swiper> */}
-    <div className=" hidden lg:flex w-[calc(100vw+15%)] translate-x-[-7.6%] overflow-hidden gap-8 ">
+        <SliderButtons current={current} images={images.length}/>
+    </Swiper>
+    {/* <div className=" hidden lg:flex w-[calc(100vw+15%)] translate-x-[-7.6%] overflow-hidden gap-8 ">
         {
           new Array(100).fill(images).flat(1).slice(current,current+5).map((image, index) => (
             <div key={index+current} className="flex-1 duration-200 aspect-[2/3]">
@@ -120,7 +121,7 @@ const ImageSlider = (props: Props) => {
         <ArrowRight/>
       </button>
     </div>
-        </div>
+        </div> */}
     </>
   );
 };
