@@ -8,6 +8,8 @@ import { db } from '@/firebase';
 import HomeSliderDashboard from './homeSliderDashboard';
 import ChangeImageTo from './ChangeImageTo';
 import Image from 'next/image';
+import ImageDashboard from './ImageDashboard';
+import H from './H';
 
 type Props = {}
 
@@ -26,6 +28,12 @@ const DashboardHomePage = (props: Props) => {
   return (
     <div className='flex flex-col gap-4 pb-8'>
         <HomeSliderDashboard/>
+
+        <Separator/>
+        <h1 className='text-4xl my-8'>Hello Section</h1>
+        <div className='w-fit mb-8 h-[300px] relative aspect-[3/4]' >
+            <ImageDashboard width={300} height={400} section={"aboutPage"} image={"helloHome"}/>
+        </div>
         <Separator/>
         <CheckOutMyWork/>
         <Separator/>
@@ -35,17 +43,17 @@ const DashboardHomePage = (props: Props) => {
 }
 
 
-type Config = {
+type ConfigCheck = {
     wedding : string,
     films : string,
     engagement : string
 }
 
 const CheckOutMyWork = () => {
-    const [config, setConfig] = useState<Config|null>();
+    const [config, setConfig] = useState<ConfigCheck|null>();
     useEffect(() => {
         const unSub = onSnapshot(doc(db, "configs","checkOutMyWork"), (doc) => {
-            setConfig(doc.data() as Config)
+            setConfig(doc.data() as ConfigCheck)
         })
         return () => unSub()
     },[])
@@ -72,25 +80,37 @@ const CheckOutMyWork = () => {
         </div>
     )
 }
+type ConfigPackages = {
+    bg: string,
+    testimonials: string,
+    experience: string
+}
 const CheckMyPackages = () => {
+    const [config, setConfig] = useState<ConfigPackages|null>();
+    useEffect(() => {
+        const unSub = onSnapshot(doc(db, "configs","checkPackages"), (doc) => {
+            setConfig(doc.data() as ConfigPackages)
+        })
+        return () => unSub()
+    },[])
     return(
         <div>
             <h1 className='text-4xl my-8'>Check my packages</h1>
             <div className='flex gap-6'>
                 <div className='w-fit mb-8 h-[300px] relative aspect-[3/4]' >
-                    <img className='w-full h-full object-cover' src={"https://www.niallscullyphotography.com/wp-content/uploads/2022/12/Eimear-Niall-277-1-scaled.jpeg?x15971"} alt="" />
-                    <Button size={"icon"} variant={"outline"} className='absolute right-0 top-0'><Replace/></Button>
+                    <Image width={300} height={400} className='w-full h-full object-cover' src={config?.bg?? ""} alt="" />
+                    <ChangeImageTo section={"checkPackages"} image={"bg"}/>
                     <h2 className='text-2xl'>background</h2>
                 </div>
                 <div className='w-8'></div>
                 <div className='w-fit mb-8 h-[300px] relative aspect-[3/4]' >
-                    <img className='w-full h-full object-cover' src={"https://www.niallscullyphotography.com/wp-content/uploads/2023/03/Ciara-Shane-361-597x894.jpg?x15971"} alt="" />
-                    <Button size={"icon"} variant={"outline"} className='absolute right-0 top-0'><Replace/></Button>
+                    <Image width={300} height={400} className='w-full h-full object-cover' src={config?.testimonials?? ""} alt="" />
+                    <ChangeImageTo section={"checkPackages"} image={"testimonials"}/>
                     <h2 className='text-2xl'>Testimonials</h2>
                 </div>
                 <div className='w-fit mb-8 h-[300px] relative aspect-[3/4]' >
-                    <img className='w-full h-full object-cover' src={"https://www.niallscullyphotography.com/wp-content/uploads/2023/01/rachel-137-1-595x894.jpg?x15971"} alt="" />
-                    <Button size={"icon"} variant={"outline"} className='absolute right-0 top-0'><Replace/></Button>
+                    <Image width={300} height={400} className='w-full h-full object-cover' src={config?.experience?? ""} alt="" />
+                    <ChangeImageTo section={"checkPackages"} image={"experience"}/>
                     <h2 className='text-2xl'>Experience</h2>
                 </div>
             </div>

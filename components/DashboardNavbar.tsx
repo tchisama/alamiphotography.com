@@ -1,5 +1,5 @@
 "use client"
-import { Book, FolderIcon, Home, Layers2, LogOut, Mail, MessageCircle, Upload, User } from 'lucide-react'
+import { Book, FolderIcon, Home, ImageIcon, Languages, Layers2, LogOut, Mail, MessageCircle, Quote, Scroll, Star, Upload, User } from 'lucide-react'
 import React from 'react'
 import { Button } from './ui/button'
 import Link from 'next/link'
@@ -33,14 +33,34 @@ const links = [
         icon:<Mail size={iconSize}/>,
     },
     {
+        href: '/dashboard/Guide',
+        name: 'Guide Requests',
+        icon:<Book size={iconSize}/>,
+    },
+    {
         href: '/dashboard/pages',
-        name: 'Pages',
-        icon:<Layers2 size={iconSize}/>,
+        name: 'Images',
+        icon:<ImageIcon size={iconSize}/>,
+    },
+    {
+        href: '/dashboard/languages',
+        name: 'Languages',
+        icon:<Languages size={iconSize}/>,
+    },
+    {
+        href: '/dashboard/reviews',
+        name: 'Reviews',
+        icon:<Star size={iconSize}/>,
+    },
+    {
+        href: '/dashboard/q-and-a',
+        name: 'Q and A',
+        icon:<Quote size={iconSize}/>,
     },
     {
         href: '/dashboard/blogs',
-        name: 'blogs',
-        icon:<Book size={iconSize}/>,
+        name: 'Blogs',
+        icon:<Scroll size={iconSize}/>,
     },
 ]
 function DashboardNavbar({}: Props) {

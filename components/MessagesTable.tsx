@@ -184,7 +184,7 @@ export function MessagesTable({data}:{data:Message[]}) {
 
   return (
     <div className="w-full">
-      <div className="flex items-center py-4">
+      <div className="flex items-center py-4 font-sans">
         <Input
           placeholder="Filter emails..."
           value={(table.getColumn("email")?.getFilterValue() as string) ?? ""}
@@ -207,7 +207,7 @@ export function MessagesTable({data}:{data:Message[]}) {
                 return (
                   <DropdownMenuCheckboxItem
                     key={column.id}
-                    className="capitalize"
+                    className="capitalize font-sans"
                     checked={column.getIsVisible()}
                     onCheckedChange={(value) =>
                       column.toggleVisibility(!!value)
@@ -227,7 +227,7 @@ export function MessagesTable({data}:{data:Message[]}) {
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead key={header.id}>
+                    <TableHead key={header.id} className="font-sans">
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -248,11 +248,13 @@ export function MessagesTable({data}:{data:Message[]}) {
                   data-state={row.getIsSelected() && "selected"}
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
+                    <TableCell key={cell.id} className="font-sans">
+                      <p className="font-sans-important font-bold">
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext()
                       )}
+                      </p>
                     </TableCell>
                   ))}
                 </TableRow>
@@ -261,7 +263,7 @@ export function MessagesTable({data}:{data:Message[]}) {
               <TableRow>
                 <TableCell
                   colSpan={columns.length}
-                  className="h-24 text-center"
+                  className="h-24 text-center font-sans"
                 >
                   No results.
                 </TableCell>

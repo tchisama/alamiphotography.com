@@ -17,20 +17,12 @@ function page({}: Props) {
             <TabsList className=' grid grid-cols-4 w-[400px] font-sans'>
                 <TabsTrigger value="home" className=''>Home</TabsTrigger>
                 <TabsTrigger value="about" className=''>About</TabsTrigger>
-                <TabsTrigger value="wedding" className=''>Wedding</TabsTrigger>
-                <TabsTrigger value="engaged" className=''>Engaged</TabsTrigger>
             </TabsList>
             <TabsContent value="home">
                 <DashboardHomePage/>
             </TabsContent>
             <TabsContent value="about">
                 <DashboardAboutPage/>
-            </TabsContent>
-            <TabsContent value="wedding">
-                <DashboardWeddingPage/>
-            </TabsContent>
-            <TabsContent value="engaged">
-                <DashboardEngagedPage/>
             </TabsContent>
             </Tabs>
 

@@ -26,7 +26,7 @@ const Page = (props: Props) => {
   },[])
 
   return (
-    <div className=' mx-auto container'>
+    <div className=' mx-auto px-8'>
         <div className='flex py-8 justify-between items-end'>
             <h1 className='text-5xl'>Orders</h1>
         </div>
