@@ -23,23 +23,23 @@ const links = [
     //     icon:<User size={iconSize}/>,
     // },
     {
-        href: '/dashboard/uploads',
-        name: 'File System',
-        icon:<FolderIcon size={iconSize}/>,
-    },
-    {
         href: '/dashboard/orders',
         name: 'Orders',
         icon:<Mail size={iconSize}/>,
     },
     {
-        href: '/dashboard/Guide',
+        href: '/dashboard/guide',
         name: 'Guide Requests',
         icon:<Book size={iconSize}/>,
     },
     {
+        href: '/dashboard/uploads',
+        name: 'File System',
+        icon:<FolderIcon size={iconSize}/>,
+    },
+    {
         href: '/dashboard/pages',
-        name: 'Images',
+        name: 'Images Controller',
         icon:<ImageIcon size={iconSize}/>,
     },
     {
@@ -66,9 +66,9 @@ const links = [
 function DashboardNavbar({}: Props) {
     const currentPath = usePathname();
   return (
-    <div className='bg-primary p-4 font-sans flex flex-col  min-h-screen'>
+    <div className='bg-primary p-4 px-0 font-sans flex flex-col  min-h-screen'>
         <Link href={'/'}>
-            <Image width={150} alt='' className='w-[150px] mb-24 mt-8 mx-auto' src={logo}></Image>
+            <Image width={150} alt='' className='w-[200px] mb-24 mt-8 mx-auto' src={logo}></Image>
         </Link>
         {
             links.map((link) => (
@@ -76,7 +76,7 @@ function DashboardNavbar({}: Props) {
                     <button className={
                         classNames(
                             {
-                            'min-w-[200px] font-sans py-3 hover:bg-[#fff2] duration-200 rounded-lg text-white  px-6 flex gap-2 items-center':true,
+                            'min-w-[300px] font-sans py-3 hover:bg-[#fff2] duration-200 rounded-lg text-white  px-6 flex gap-2 items-center':true,
                             },
                             {
                                 'bg-[#fff3]': currentPath === link.href
