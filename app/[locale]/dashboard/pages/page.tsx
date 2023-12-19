@@ -16,8 +16,8 @@ function page({}: Props) {
         <div className='container mx-auto '>
 
             <h1 className='text-5xl my-8 '>Static Media Controller</h1>
-            <Tabs defaultValue="home" className="w-full ">
-                <TabsList className='flex w-full h-fit p-2 sticky -top-2 justify-start z-50 my-8 font-sans'>
+            <Tabs defaultValue="home" className="w-full " >
+                <TabsList className='flex w-full h-fit bg-primary text-white p-2 sticky -top-2 justify-start z-50 my-8 font-sans'>
                     <TabsTrigger value="home" className='py-4 flex-1 max-w-xs'>Home</TabsTrigger>
                     <TabsTrigger value="about" className='py-4 flex-1 max-w-xs'>About</TabsTrigger>
                     <TabsTrigger value="contact" className='py-4 flex-1 max-w-xs'>Contact</TabsTrigger>
