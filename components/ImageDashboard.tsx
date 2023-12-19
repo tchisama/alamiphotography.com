@@ -23,7 +23,7 @@ function ImageDashboard({width,height,section,image}: Props) {
     },[section,image])
   return (
     <>
-        <Image width={width} height={height} className='w-full h-full object-cover' src={config?? ""} alt="" />
+        <Image width={width} height={height} className='w-full bg-gray-400 h-full object-cover' src={config?? ""} alt="" />
         <ChangeImageTo section={section} image={image}/>
     </>
   )
