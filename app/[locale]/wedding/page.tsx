@@ -95,7 +95,7 @@ I aim to seize enchanting and magical moments shared by people in love, providin
                 {
                   title:'Sidney & Youri',
                   type:"Wedding Beldi Country Club",
-                  content:`In the warm glow of Marrakech's sun, Sidney and Youri's vows echoed joy at The Beldi Country Club. Alami, the skilled photographer, wove a visual narrative capturing moments of laughter, tears, and the promise of forever.
+                  content:`In the warm glow of Marrakech's sun, Sidney and Your's vows echoed joy at The Beldi Country Club. Alami, the skilled photographer, wove a visual narrative capturing moments of laughter, tears, and the promise of forever.
 
                   Alami's artistry caught the eye of UK Vogue, showcasing the couple's love and his magical touch. From intimate glances to the grand celebration, each photo painted a unique story in the vibrant hues of Marrakech.
                   
