@@ -3,9 +3,11 @@ import React, { useEffect, useState } from 'react'
 import { Button } from './ui/button';
 import { Check, Plus, Replace, X } from 'lucide-react';
 import { Separator } from './ui/separator';
-import { doc, getDoc, updateDoc } from 'firebase/firestore';
+import { doc, getDoc, onSnapshot, updateDoc } from 'firebase/firestore';
 import { db } from '@/firebase';
 import HomeSliderDashboard from './homeSliderDashboard';
+import ChangeImageTo from './ChangeImageTo';
+import Image from 'next/image';
 
 type Props = {}
 
@@ -33,25 +35,37 @@ const DashboardHomePage = (props: Props) => {
 }
 
 
+type Config = {
+    wedding : string,
+    films : string,
+    engagement : string
+}
+
 const CheckOutMyWork = () => {
+    const [config, setConfig] = useState<Config|null>();
+    useEffect(() => {
+        const unSub = onSnapshot(doc(db, "configs","checkOutMyWork"), (doc) => {
+            setConfig(doc.data() as Config)
+        })
+        return () => unSub()
+    },[])
     return(
         <div>
             <h1 className='text-4xl my-8'>Check Out My Work</h1>
             <div className='flex gap-6'>
                 <div className='w-fit mb-8 h-[300px] relative aspect-[3/4]' >
-                    <img className='w-full h-full object-cover' src={images[0]} alt="" />
-                    
-                    <Button size={"icon"} variant={"outline"} className='absolute right-0 top-0'><Replace/></Button>
+                    <Image width={300} height={400} className='w-full h-full object-cover' src={config?.wedding?? ""} alt="" />
+                    <ChangeImageTo section={"checkOutMyWork"} image={"wedding"}/>
                     <h2 className='text-2xl'>Wedding</h2>
                 </div>
                 <div className='w-fit mb-8 h-[300px] relative aspect-[3/4]' >
-                    <img className='w-full h-full object-cover' src={images[1]} alt="" />
-                    <Button size={"icon"} variant={"outline"} className='absolute right-0 top-0'><Replace/></Button>
-                    <h2 className='text-2xl'>Editorial</h2>
+                    <Image width={300} height={400} className='w-full h-full object-cover' src={config?.films?? ""} alt="" />
+                    <ChangeImageTo section={"checkOutMyWork"} image={"films"}/>
+                    <h2 className='text-2xl'>films</h2>
                 </div>
                 <div className='w-fit mb-8 h-[300px] relative aspect-[3/4]' >
-                    <img className='w-full h-full object-cover' src={images[2]} alt="" />
-                    <Button size={"icon"} variant={"outline"} className='absolute right-0 top-0'><Replace/></Button>
+                    <Image width={300} height={400} className='w-full h-full object-cover' src={config?.engagement?? ""} alt="" />
+                    <ChangeImageTo section={"checkOutMyWork"} image={"engagement"}/>
                     <h2 className='text-2xl'>Engagements</h2>
                 </div>
             </div>

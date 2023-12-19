@@ -10,11 +10,11 @@ type Props = {}
 function page({}: Props) {
   return (
     <div className='px-2 '>
-        <div className='container mx-auto'>
+        <div className='container mx-auto '>
 
             <h1 className='text-5xl my-8'>Pages</h1>
             <Tabs defaultValue="home" className="w-full ">
-            <TabsList className=' grid grid-cols-4 w-[400px]'>
+            <TabsList className=' grid grid-cols-4 w-[400px] font-sans'>
                 <TabsTrigger value="home" className=''>Home</TabsTrigger>
                 <TabsTrigger value="about" className=''>About</TabsTrigger>
                 <TabsTrigger value="wedding" className=''>Wedding</TabsTrigger>

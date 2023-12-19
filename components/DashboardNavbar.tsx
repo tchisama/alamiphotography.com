@@ -12,16 +12,16 @@ type Props = {}
 
 const iconSize = 20
 const links = [
-    // {
-    //     href: '/dashboard',
-    //     name: 'Dashboard',
-    //     icon:<Home size={iconSize}/>,
-    // },
     {
-        href: '/dashboard/admin',
-        name: 'Admins',
-        icon:<User size={iconSize}/>,
+        href: '/dashboard',
+        name: 'Dashboard',
+        icon:<Home size={iconSize}/>,
     },
+    // {
+    //     href: '/dashboard/admin',
+    //     name: 'Admins',
+    //     icon:<User size={iconSize}/>,
+    // },
     {
         href: '/dashboard/uploads',
         name: 'File System',
@@ -46,7 +46,7 @@ const links = [
 function DashboardNavbar({}: Props) {
     const currentPath = usePathname();
   return (
-    <div className='bg-primary p-4 flex flex-col  min-h-screen'>
+    <div className='bg-primary p-4 font-sans flex flex-col  min-h-screen'>
         <Link href={'/'}>
             <Image width={150} alt='' className='w-[150px] mb-24 mt-8 mx-auto' src={logo}></Image>
         </Link>
@@ -56,7 +56,7 @@ function DashboardNavbar({}: Props) {
                     <button className={
                         classNames(
                             {
-                            'min-w-[200px] py-3 hover:bg-[#fff2] duration-200 rounded-lg text-white  px-6 flex gap-2 items-center':true,
+                            'min-w-[200px] font-sans py-3 hover:bg-[#fff2] duration-200 rounded-lg text-white  px-6 flex gap-2 items-center':true,
                             },
                             {
                                 'bg-[#fff3]': currentPath === link.href
