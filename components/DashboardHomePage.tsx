@@ -10,29 +10,30 @@ import ChangeImageTo from './ChangeImageTo';
 import Image from 'next/image';
 import ImageDashboard from './ImageDashboard';
 import H from './H';
+import { Input } from './ui/input';
 
 type Props = {}
 
-const images = [
-  "https://images.pexels.com/photos/1730877/pexels-photo-1730877.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "https://images.pexels.com/photos/1439261/pexels-photo-1439261.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "https://images.pexels.com/photos/2403568/pexels-photo-2403568.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "https://images.pexels.com/photos/2788488/pexels-photo-2788488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "https://images.pexels.com/photos/2814808/pexels-photo-2814808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "https://images.pexels.com/photos/1439261/pexels-photo-1439261.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "https://images.pexels.com/photos/2403568/pexels-photo-2403568.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "https://images.pexels.com/photos/2788488/pexels-photo-2788488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "https://images.pexels.com/photos/2814808/pexels-photo-2814808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-];
 const DashboardHomePage = (props: Props) => {
   return (
     <div className='flex flex-col gap-4 pb-8'>
         <HomeSliderDashboard/>
 
-        <Separator/>
         <h1 className='text-4xl my-8'>Hello Section</h1>
         <div className='w-fit mb-8 h-[300px] relative aspect-[3/4]' >
             <ImageDashboard width={300} height={400} section={"aboutPage"} image={"helloHome"}/>
+        </div>
+        <Separator/>
+        <h1 className='text-4xl my-4'>Home Page Video Link</h1>
+        <div className='grid grid-cols-2 gap-4'>
+            <div className=''>
+                <h2 className='text-xl font-sans my-2'>Desktop Video</h2>
+                <Input ></Input>
+            </div>
+            <div>
+                <h2 className='text-xl font-sans my-2'>Phone Video</h2>
+                <Input ></Input>
+            </div>
         </div>
         <Separator/>
         <CheckOutMyWork/>

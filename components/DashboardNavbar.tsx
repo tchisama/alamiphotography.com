@@ -1,5 +1,5 @@
 "use client"
-import { Book, FolderIcon, Home, ImageIcon, Languages, Layers2, LogOut, Mail, MessageCircle, Quote, Scroll, Star, Upload, User } from 'lucide-react'
+import { Book, Clapperboard, FolderIcon, Gem, Home, ImageIcon, Languages, Layers2, LinkIcon, LogOut, Mail, MessageCircle, Quote, Scroll, Star, Upload, User } from 'lucide-react'
 import React from 'react'
 import { Button } from './ui/button'
 import Link from 'next/link'
@@ -44,8 +44,13 @@ const links = [
     },
     {
         href: '/dashboard/languages',
-        name: 'Languages',
+        name: 'Texts / Languages',
         icon:<Languages size={iconSize}/>,
+    },
+    {
+        href: '/dashboard/languages',
+        name: 'Links',
+        icon:<LinkIcon size={iconSize}/>,
     },
     {
         href: '/dashboard/reviews',
@@ -62,14 +67,25 @@ const links = [
         name: 'Blogs',
         icon:<Scroll size={iconSize}/>,
     },
+    {
+        href: '/dashboard/wedding-stories',
+        name: 'Wedding stories',
+        icon:<Gem size={iconSize}/>,
+    },
+    {
+        href: '/dashboard/wedding-film',
+        name: 'Wedding film',
+        icon:<Clapperboard size={iconSize}/>,
+    },
 ]
 function DashboardNavbar({}: Props) {
     const currentPath = usePathname();
   return (
     <div className='bg-primary p-4 px-0 font-sans flex flex-col  min-h-screen'>
         <Link href={'/'}>
-            <Image width={150} alt='' className='w-[200px] mb-24 mt-8 mx-auto' src={logo}></Image>
+            <Image width={150} alt='' className='w-[200px] mb-14 mt-8 mx-auto' src={logo}></Image>
         </Link>
+        <div className='flex-1 overflow-y-auto'>
         {
             links.map((link) => (
                 <Link href={link.href} key={link.href}>
@@ -86,6 +102,7 @@ function DashboardNavbar({}: Props) {
                 </Link>
             ))
         }
+        </div>
         <button onClick={() => {auth.signOut();window.location.reload()}} className=' min-w-[200px] py-3 mt-auto hover:bg-[#fff2] duration-200 rounded-lg text-white  px-6 flex gap-2 items-center' ><LogOut/>Logout</button>
     </div>
   )
