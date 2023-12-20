@@ -7,6 +7,7 @@ import DashboardEngagedPage from '@/components/DashbaordEngaged'
 import DashboardContactPage from '@/components/DashboardContactPage'
 import DashboardWeddingFilmsPage from '@/components/DashboardWeddingFilmsPage'
 import DashboardExperiencePage from '@/components/DashboardExperiencePage'
+import TabBar from '@/components/TabBar'
 
 type Props = {}
 
@@ -16,31 +17,14 @@ function page({}: Props) {
         <div className='container mx-auto '>
 
             <h1 className='text-5xl my-8 '>Static Media Controller</h1>
-            <Tabs defaultValue="home" className="w-full " >
-                <TabsList className='flex w-full h-fit bg-primary text-white p-2 sticky -top-2 justify-start z-50 my-8 font-sans'>
-                    <TabsTrigger value="home" className='py-4 flex-1 max-w-xs'>Home</TabsTrigger>
-                    <TabsTrigger value="about" className='py-4 flex-1 max-w-xs'>About</TabsTrigger>
-                    <TabsTrigger value="contact" className='py-4 flex-1 max-w-xs'>Contact</TabsTrigger>
-                    <TabsTrigger value="wedding-films" className='py-4 flex-1 max-w-xs'>Wedding Films</TabsTrigger>
-                    <TabsTrigger value="experience" className='py-4 flex-1 max-w-xs'>Experience</TabsTrigger>
-                </TabsList>
-                <TabsContent value="home">
-                    <DashboardHomePage/>
-                </TabsContent>
-                <TabsContent value="about">
-                    <DashboardAboutPage/>
-                </TabsContent>
-                <TabsContent value="contact">
-                    <DashboardContactPage/>
-                </TabsContent>
-                <TabsContent value="wedding-films">
-                    <DashboardWeddingFilmsPage/>
-                </TabsContent>
-                <TabsContent value="experience">
-                    <DashboardExperiencePage/>
-                </TabsContent>
-                </Tabs>
-
+            <TabBar tabs={[
+                {title:"home",content:<DashboardHomePage/>},
+                {title:"about",content:<DashboardAboutPage/>},
+                {title:"contact",content:<DashboardContactPage/>},
+                {title:"wedding-films",content:<DashboardWeddingFilmsPage/>},
+                {title:"experience",content:<DashboardExperiencePage/>},
+            ]}>
+            </TabBar>
         </div>
     </div>
   )

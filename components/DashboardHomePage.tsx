@@ -11,6 +11,7 @@ import Image from 'next/image';
 import ImageDashboard from './ImageDashboard';
 import H from './H';
 import { Input } from './ui/input';
+import ChangeTextTo from './ChangeTextTo';
 
 type Props = {}
 
@@ -20,8 +21,10 @@ const DashboardHomePage = (props: Props) => {
         <HomeSliderDashboard/>
 
         <h1 className='text-4xl my-8'>Hello Section</h1>
-        <div className='w-fit mb-8 h-[300px] relative aspect-[3/4]' >
-            <ImageDashboard width={300} height={400} section={"aboutPage"} image={"helloHome"}/>
+        <div className='flex gap-4'>
+            <div className='w-fit mb-8 h-[300px] relative aspect-[3/4]' >
+                <ImageDashboard width={300} height={400} section={"aboutPage"} image={"helloHome"}/>
+            </div>
         </div>
         <Separator/>
         <h1 className='text-4xl my-4'>Home Page Video Link</h1>

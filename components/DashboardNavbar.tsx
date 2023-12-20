@@ -12,11 +12,11 @@ type Props = {}
 
 const iconSize = 20
 const links = [
-    {
-        href: '/dashboard',
-        name: 'Dashboard',
-        icon:<Home size={iconSize}/>,
-    },
+    // {
+    //     href: '/dashboard/home',
+    //     name: 'Dashboard',
+    //     icon:<Home size={iconSize}/>,
+    // },
     // {
     //     href: '/dashboard/admin',
     //     name: 'Admins',
@@ -48,7 +48,7 @@ const links = [
         icon:<Languages size={iconSize}/>,
     },
     {
-        href: '/dashboard/languages',
+        href: '/dashboard/links',
         name: 'Links',
         icon:<LinkIcon size={iconSize}/>,
     },
@@ -95,7 +95,7 @@ function DashboardNavbar({}: Props) {
                             'min-w-[300px] font-sans py-3 hover:bg-[#fff2] duration-200 rounded-lg text-white  px-6 flex gap-2 items-center':true,
                             },
                             {
-                                'bg-[#fff3]': currentPath === link.href
+                                'bg-[#fff3]': currentPath !== "/dashboard" ? currentPath.includes(link.href) : currentPath == link.href
                             }
                         )
                     }>{link.icon}{link.name}</button>
