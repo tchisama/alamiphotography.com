@@ -12,7 +12,7 @@ function TabBar({tabs}: Props) {
     const [current,setCurrent] = React.useState(0)
   return (
     <Tabs className='w-full' defaultValue={tabs[0].title}>
-        <TabsList className='flex w-full h-fit  p-2 sticky -top-2 justify-start z-50 my-8 font-sans'>
+        <TabsList className='flex w-full h-fit  p-2  justify-start z-50 my-8 font-sans'>
         {
             tabs.map((tab,index) => {
                 return(
