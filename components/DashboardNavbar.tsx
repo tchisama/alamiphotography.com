@@ -44,7 +44,7 @@ const links = [
     },
     {
         href: '/dashboard/languages',
-        name: 'Texts / Languages',
+        name: 'Content / Languages',
         icon:<Languages size={iconSize}/>,
     },
     {
