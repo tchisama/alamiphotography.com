@@ -15,6 +15,7 @@ import { ArrowLeft, FolderIcon } from 'lucide-react'
 import { Button } from './ui/button'
 import { DialogClose } from '@radix-ui/react-dialog'
 import UploadImage from './UploadImage'
+import Image from 'next/image'
   
 type Props = {
     children: React.ReactNode
@@ -161,7 +162,7 @@ const FolderComp = ({folder,setPath}:
 const ImageComp = ({img}:{img:Photo}) => {
     return (
             <div className='bg-[#fafaf8] font-mono relative overflow-hidden aspect-square border '>
-                <img className='w-full h-full object-contain' src={img.image} alt=""/>
+                <Image width={200} height={200} className='w-full h-full object-contain' src={img.image} alt=""/>
             </div>
     )
 }

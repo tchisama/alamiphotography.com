@@ -63,11 +63,6 @@ const links = [
         icon:<Quote size={iconSize}/>,
     },
     {
-        href: '/dashboard/blogs',
-        name: 'Blogs',
-        icon:<Scroll size={iconSize}/>,
-    },
-    {
         href: '/dashboard/wedding-stories',
         name: 'Wedding stories',
         icon:<Gem size={iconSize}/>,
@@ -77,6 +72,11 @@ const links = [
         name: 'Wedding film',
         icon:<Clapperboard size={iconSize}/>,
     },
+    // {
+    //     href: '/dashboard/blogs',
+    //     name: 'Blogs',
+    //     icon:<Scroll size={iconSize}/>,
+    // },
 ]
 function DashboardNavbar({}: Props) {
     const currentPath = usePathname();
