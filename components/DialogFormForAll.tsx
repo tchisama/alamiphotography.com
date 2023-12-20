@@ -111,7 +111,7 @@ const ImageDialog = ({image,setImage}:{image:string,setImage:(v:string) => void}
 
         {
             image &&
-                <Image width={300} className='w-full h-full object-contain' height={400} src={image} alt=''></Image>
+                <Image width={300} className={'w-full h-full object-contain'} height={400} src={image} alt=''></Image>
         }
 
         <FileExplorer cta={callToAction}>

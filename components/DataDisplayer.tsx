@@ -1,6 +1,6 @@
 "use client"
 import { db } from '@/firebase'
-import { collection, doc, onSnapshot, updateDoc } from 'firebase/firestore'
+import { collection, deleteDoc, doc, onSnapshot, updateDoc } from 'firebase/firestore'
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import { Button } from './ui/button'
@@ -15,10 +15,11 @@ type Props =
         type:"text"|"paragraph"|"Image"|"number",
         props?: any,
         title:string,
-    }[]
+    }[],
+    grid?:boolean
 }
 
-function DataDisplayer({for_,inputs}: Props) {
+function DataDisplayer({for_,inputs,grid=false}: Props) {
     const [data,setData] = useState<any[]>()
     useEffect(() => {
         // get all the docs using onsnapshot by for_
@@ -28,7 +29,7 @@ function DataDisplayer({for_,inputs}: Props) {
         })
     },[setData,for_])
   return (
-    <div className='space-y-4'>
+    <div className={'grid gap-4 ' + (grid ? "grid-cols-2" : "grid-cols-1")}>
         {
             data?.map((item,index) => {
                 return (
@@ -48,7 +49,7 @@ type Props2 = {
         title:string,
     }[],
     index:number,
-    item:any
+    item:any,
 }
 
 const DataDisplayerItem = ({for_,inputs,index,item}: Props2) => {
@@ -61,17 +62,27 @@ const DataDisplayerItem = ({for_,inputs,index,item}: Props2) => {
     const callToAction = (v:string) => {
         setItemData({...itemData,Image:v})
     }
+    const Delete = () => {
+        const confirm = window.confirm("Are you sure you want to delete this item?")
+        if(!confirm) return
+        deleteDoc(doc(db, for_,item.id))
+        
+    }
     return (
                     <div key={index} className="flex gap-8 border p-2 relative">
                         <div className='relative'>
                         {
-                            inputs.find((input) => input.type === "Image") ? <Image className='h-[400px] w-fit aspect-[2/3] object-contain bg-gray-50 border' src={itemData.Image} height={300} width={200} alt="" /> : null
-                        }
-                        {
-                            edit &&
-                            <FileExplorer cta={callToAction}>
-                                <Button size={"icon"} className='absolute right-0 top-0'><Replace/></Button>
-                            </FileExplorer>
+                            inputs.find((input) => input.type === "Image") ? 
+                            <>
+                            <Image className={'h-[350px] w-fit  object-contain bg-gray-50 border'+ (inputs[index]?.props?.type === "3/2" ? " aspect-[3/2]" : " aspect-[2/3]")} src={itemData.Image} height={400} width={400} alt="" /> 
+                            {
+                                edit &&
+                                <FileExplorer cta={callToAction}>
+                                    <Button size={"icon"} className='absolute right-0 top-0'><Replace/></Button>
+                                </FileExplorer>
+                            }
+                            </>
+                            : null
                         }
                         </div>
                         <div className='space-y-2 p-4 flex-1'>
@@ -98,7 +109,7 @@ const DataDisplayerItem = ({for_,inputs,index,item}: Props2) => {
                         </div>
                         {
                             edit &&
-                        <Button onClick={() => {}} variant={"destructive"} className='absolute right-11 top-0' size={"icon"}>
+                        <Button onClick={Delete} variant={"destructive"} className='absolute right-11 top-0' size={"icon"}>
                             <Trash/>
                         </Button>
                         }

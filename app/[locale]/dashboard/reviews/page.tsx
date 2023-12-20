@@ -10,7 +10,7 @@ const inputs:{
     props?: any,
     title:string,
 }[] = [
-        {type:"Image",title:"Photo"},
+        {type:"Image",props:{type:"2/3"},title:"Photo"},
         {type:"text",title:"Name"},
         {type:"text",title:"Address"},
         {type:"paragraph",title:"Message"},

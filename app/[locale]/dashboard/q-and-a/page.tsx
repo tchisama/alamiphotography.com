@@ -1,7 +1,18 @@
+import DataDisplayer from '@/components/DataDisplayer'
 import DialogFormForAll from '@/components/DialogFormForAll'
 import React from 'react'
 
 type Props = {}
+
+
+const inputs:{
+    type:"text"|"paragraph"|"Image"|"number",
+    props?: any,
+    title:string,
+}[] = [
+    {type:"text",title:"question"},
+    {type:"paragraph",title:"answer"},
+]
 
 function page({}: Props) {
   return (
@@ -10,12 +21,10 @@ function page({}: Props) {
             <h1 className='text-5xl my-8 '>Questions and Answers</h1>
             <DialogFormForAll
                 for_={"Question and Answer"}
-                inputs={[
-                    {type:"text",title:"Question"},
-                    {type:"paragraph",title:"Answer"},
-                ]}
+                inputs={inputs}
             ></DialogFormForAll>
         </div>
+        <DataDisplayer grid={true} for_={"Question and Answers"} inputs={inputs}/>
     </div>
   )
 }
