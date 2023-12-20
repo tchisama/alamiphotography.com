@@ -1,0 +1,64 @@
+"use client"
+import React, { useEffect, useState } from 'react'
+import { Input } from './ui/input'
+import { doc, onSnapshot, updateDoc } from 'firebase/firestore';
+import { db } from '@/firebase';
+import { Check, Coffee, Replace } from 'lucide-react';
+import { Button } from './ui/button';
+import { Textarea } from './ui/textarea';
+
+
+
+/// i want in the props the section and the image and the html input atributes
+
+type Props = {
+    text:string,
+    lang:"en" | "fr"
+}
+
+function ChangeTranslationTo({text,lang}: Props) {
+    const [config, setConfig] = useState<string>();
+    const [edit, setEdit] = useState<boolean>(false)
+    useEffect(() => {
+        try {
+            const unSub = onSnapshot(doc(db, "configs","translate"), (doc) => {
+                if(!doc.exists()) return
+                if(!doc.data()[text]) return
+                if(!doc.data()[text][lang]) return setConfig("")
+                setConfig(doc.data()[text][lang] ?? "" as string)
+            })
+            return () => unSub()
+        } catch (error) {
+            setConfig("")
+        }
+    },[text,lang])
+    const changeText = () => {
+        const updated = {
+            [lang]: config
+        }
+        updateDoc(doc(db, "configs","translate"), {
+            [text]:updated
+        })
+    }
+  return (
+    <>
+        {
+            edit ? <Textarea  value={config} onChange={(e) => setConfig(e.target.value)} className='w-full font-sans min-h-[200px] h-full font-medium' /> :
+            <span className='font-sans font-medium break-words'>{config=="" ? <span className='opacity-50 font-sans font-medium'>there is no value</span>: config}</span>
+        }
+
+        <Button onClick={() => {
+            setEdit(!edit)
+            if (edit) {
+                changeText()
+            }
+        }} size={"icon"} variant={"outline"} className='absolute -left-12 top-0'>
+            {
+                edit ? <Check/> : <Replace/>
+            }
+        </Button>
+    </>
+  )
+}
+
+export default ChangeTranslationTo
