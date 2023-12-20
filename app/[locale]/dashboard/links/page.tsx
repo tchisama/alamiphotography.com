@@ -7,7 +7,7 @@ function page({}: Props) {
   return (
     <div className='container'>
         <h1 className='text-5xl my-8 '>Links Controller</h1>
-        <div className='grid grid-cols-4 gap-2'>
+        <div className='grid grid-cols-2 gap-2'>
           {
             ["email","whatsapp","number_1","number_2","instagram","facebook","twitter","youtube","pinterest","address"].map((link,index) => {
               return(

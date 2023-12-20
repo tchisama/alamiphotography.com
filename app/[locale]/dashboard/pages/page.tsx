@@ -13,7 +13,7 @@ type Props = {}
 
 function page({}: Props) {
   return (
-    <div className='px-2 relative'>
+    <div className='px-8 relative'>
         <div className='container mx-auto '>
 
             <h1 className='text-5xl my-8 '>Static Media Controller</h1>

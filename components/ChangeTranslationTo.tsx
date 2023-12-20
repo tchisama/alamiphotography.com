@@ -56,9 +56,11 @@ function ChangeTranslationTo({text,lang}: Props) {
         
         {
             !data?.en || !data?.fr ? (
-            <div className='bg-yellow-100 px-4 border border-yellow-400 text-yellow-700 p-2 text-sm rounded-xl w-fit flex gap-4 items-center font-sans'>
+            <div className='bg-yellow-50 group w-[40px] h-[40px] overflow-hidden  text-yellow-700 p-2 text-sm rounded-xl duration-300 justify-center hover:w-fit flex gap-4 items-center font-sans'>
                 <AlertTriangle size={16}/>
-                You need to add {!data?.fr ? "french" : ""} - {!data?.en ? "english" : ""} translation
+                <div className='group-hover:block hidden font-sans font-medium'>
+                    You need to add {!data?.fr ? "french" : ""} - {!data?.en ? "english" : ""} translation
+                </div>
             </div>
             ) : null
         }
@@ -67,7 +69,7 @@ function ChangeTranslationTo({text,lang}: Props) {
             if (edit) {
                 changeText()
             }
-        }} size={"icon"} variant={"outline"} className='absolute -left-12 top-0'>
+        }} size={"icon"} className='absolute right-2 top-2'>
             {
                 edit ? <Check/> : <Replace/>
             }

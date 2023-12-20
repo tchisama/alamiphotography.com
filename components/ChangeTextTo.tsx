@@ -34,7 +34,7 @@ function ChangeTextTo({section,text}: Props) {
   return (
     <>
         {
-            edit ? <Textarea  value={config} onChange={(e) => setConfig(e.target.value)} className='w-full font-sans h-full font-medium' /> :
+            edit ? <Textarea  value={config} onChange={(e) => setConfig(e.target.value)} className='w-full font-sans h-[100px] font-medium' /> :
             <span className='font-sans font-medium break-words'>{config=="" ? <span className='opacity-50 font-sans font-medium'>there is no value</span>: config}</span>
         }
 
@@ -43,7 +43,7 @@ function ChangeTextTo({section,text}: Props) {
             if (edit) {
                 changeText()
             }
-        }} size={"icon"} variant={"outline"} className='absolute right-0 top-0'>
+        }} size={"icon"} className='absolute right-2 top-2'>
             {
                 edit ? <Check/> : <Replace/>
             }

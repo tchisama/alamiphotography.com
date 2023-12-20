@@ -9,12 +9,17 @@ type Props = {}
 
 function page({}: Props) {
   return (
-    <div className='container'>
+    <div className='container px-14'>
             <h1 className='text-5xl my-8 '>Content and Languages Controller</h1>
             <TabBar tabs={[
                 {title:"home",content:<HomePage/>},
                 {title:"about",content:<AboutPage/>},
                 {title:"contact",content:<ContactPage/>},
+                {title:"wedding",content:<WeddingPage/>},
+                {title:"wedding-films",content:<WeddingFilmsPage/>},
+                {title:"experience",content:<ExperiencePage/>},
+                {title:"navbar",content:<NavbarPage/>},
+                {title:"footer",content:<FooterPage/>},
             ]}>
             </TabBar>
     </div>
@@ -50,6 +55,10 @@ const HomePage = () => {
                     {
                         title:'Content',
                         section:'hello_content',
+                    },
+                    {
+                        title:'Button',
+                        section:'hello_Button',
                     }
                 ]
                 }
@@ -219,6 +228,7 @@ const ContactPage = () => {
     return(
         <div className='py-4 space-y-4'>
             <Section 
+                grid={2}
                 title='Contact Section'
                 content={
                     [
@@ -263,6 +273,7 @@ const ContactPage = () => {
             />
             <Section
                 title={"Last Section"}
+                grid={2}
                 content={
                     [
                         {
@@ -295,19 +306,218 @@ const ContactPage = () => {
 
 
 
+const WeddingPage = () => {
+    return(
+        <div className='py-4 space-y-4'>
+            <Section
+                title={"Hero"}
+                content={
+                    [
+                        {
+                            title:'title',
+                            section:'wedding_title',
+                        },
+                        {
+                            title:'content',
+                            section:'wedding_content',
+                        },
+                        {
+                            title:'Full Story button',
+                            section:'wedding_full_story_button',
+                        },
+
+                    ]
+                }
+            
+            />
+        </div>
+    )
+}
 
 
 
 
 
+const WeddingFilmsPage = () => {
+    return(
+        <div className='py-4 space-y-4'>
+            <Section
+                title={"hero"}
+                content={
+                    [
+                        {
+                            title:'content',
+                            section:'wedding_films_content',
+                        },
+                    ]
+                }
+            
+            />
+            <Section
+                title={"Affection legacy (A-L-A-M-I)"}
+                content={
+                    [
+                        {
+                            title:'content',
+                            section:'wedding_films_affection_legacy_content',
+                        },
+                        {
+                            title:'button',
+                            section:'wedding_films_affection_legacy_button',
+                        },
+                        {
+                            title:'Button Subtitle',
+                            section:'wedding_films_affection_legacy_button_subtitle',
+                        }
+                    ]
+                }
+            
+            />
+        </div>
+    )
+}
+
+
+
+const ExperiencePage = () => {
+    return(
+        <div className='py-4 space-y-4'>
+            <Section
+                title={"Hero"}
+                content={
+                    [
+                        {
+                            title:'title',
+                            section:'experiencePage_hero_title',
+                        },
+                    ]
+            }
+
+            />
+            <Section
+                title={"what to expect"}
+                content={
+                    [
+                        {
+                            title:'title : 1',
+                            section:'experiencePage_step1_title',
+                        },
+                        {
+                            title:'content : 1',
+                            section:'experiencePage_step1_content',
+                        },
+                        {
+                            title:'title : 2',
+                            section:'experiencePage_step2_title',
+                        },
+                        {
+                            title:'content : 2',
+                            section:'experiencePage_step2_content',
+                        }
+                    ]
+            }
+
+            />
+            <Section
+                title={"Guide section"} 
+                content={
+                    [
+                        {
+                            title:'title',
+                            section:'experiencePage_guide_title',
+                        },
+                        {
+                            title:'subtitle',
+                            section:'experiencePage_guide_subtitle',
+                        },
+                        {
+                            title:'paragraph',
+                            section:'experiencePage_guide_paragraph',
+                        },
+                        {
+                            title:'name',
+                            section:'experiencePage_guide_name',
+                        },
+                        {
+                            title:'email',
+                            section:'experiencePage_guide_email',
+                        },
+                        {
+                            title:'i\'m open to any request',
+                            section:'experiencePage_guide_i\'m_open_to_any_request',
+                        }
+                    ]
+            }
+
+            />
+            <Section
+                grid={2}
+                title={"Steps"} 
+                content={
+                    new Array(4).fill("").map((_,index)=>
+                        [
+                        {
+                            title:'content '+(index + 1),
+                            section:'experiencePage_step_'+(index + 1)+"_content",
+                        }
+                    ]).flat(1)
+            }
+
+                />
+
+        </div>
+    )
+}
 
 
 
 
-
-
-
-
+const NavbarPage = () => {
+    return (
+        <div className='py-4 space-y-4'>
+            <Section
+                grid={2}
+                title={"Links"}
+                content={
+                    [
+                        ...["home","about","portfolio","contact","for photographers","wedding stories","wedding film","blog","enquire"].map(
+                            (item,index) => {
+                                return {
+                                    title:item,
+                                    section:'navbar_'+item
+                                }
+                            }
+                        )
+                        
+                    ]
+                }
+            />
+        </div>
+    )
+}
+const FooterPage = () => {
+    return (
+        <div className='py-4 '>
+            <Section
+                grid={2}
+                title={"Links"}
+                content={
+                    [
+                        ...["home","about","contact","for photographers","wedding","Contact me"].map(
+                            (item,index) => {
+                                return {
+                                    title:item,
+                                    section:'footer_'+item
+                                }
+                            }
+                        )
+                        
+                    ]
+                }
+            />
+        </div>
+    )
+}
 
 
 
@@ -315,10 +525,12 @@ const ContactPage = () => {
 const Section = (
     {
         title,
-        content
+        content,
+        grid=1
     }:
     {
         title:string,
+        grid?:number,
         content:
             {
                 title:string,
@@ -331,15 +543,15 @@ const Section = (
         <div >
             <div className='flex gap-4 items-center'>
                 <h1 className='text-5xl capitalize my-8'>{title}</h1>
-                <Button className='text-xl font-sans font-medium' size={"icon"} variant={"outline"} onClick={() => setLang(lang === "en" ? "fr" : "en")}>
+                <Button className='text-xl font-sans font-medium capitalize' size={"icon"}  onClick={() => setLang(lang === "en" ? "fr" : "en")}>
                     {lang}
                 </Button>
             </div>
-            <div className='space-y-8 mb-8'>
+            <div className={' gap-10 mb-8 grid ' + (grid == 1 ? " grid-cols-1 " : " grid-cols-2 ")}>
                 {
                     content.map((item,index) => {
                         return (
-                            <div key={index} className='relative flex gap-3 flex-col'>
+                            <div key={index} className='relative h-fit flex gap-3 flex-col border p-4'>
                                 <h1 className='text-2xl capitalize font-bold'>{item.title}</h1>
                                 <ChangeTranslationTo text={item.section} lang={lang as "en" | "fr"}></ChangeTranslationTo>
                             </div>
