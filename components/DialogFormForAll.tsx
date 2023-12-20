@@ -107,10 +107,11 @@ const ImageDialog = ({image,setImage}:{image:string,setImage:(v:string) => void}
     const callToAction = (v:string) => {
         setImage(v)
     }
-    return <div className='mb-8 h-fit w-[300px] bg-gray-100 relative aspect-[3/4]'>
+    return <div className='mb-8 h-fit font-sans flex justify-between text-center items-center border w-[300px] bg-gray-100 relative aspect-[3/4]'>
+
         {
             image &&
-            <Image width={300} className='w-full h-full object-contain' height={400} src={image} alt=''></Image>
+                <Image width={300} className='w-full h-full object-contain' height={400} src={image} alt=''></Image>
         }
 
         <FileExplorer cta={callToAction}>

@@ -11,8 +11,8 @@ function page({}: Props) {
             <DialogFormForAll
                 for_={"Question and Answer"}
                 inputs={[
-                    {type:"text",title:"question"},
-                    {type:"paragraph",title:"answer"},
+                    {type:"text",title:"Question"},
+                    {type:"paragraph",title:"Answer"},
                 ]}
             ></DialogFormForAll>
         </div>
