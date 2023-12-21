@@ -17,6 +17,8 @@ import {
   } from "@/components/ui/navigation-menu"
 import Link from 'next/link';
 import GetText from './GetText';
+import { db } from '@/firebase';
+import { doc, getDoc } from 'firebase/firestore';
 
 type Props = {}
 const Footer = (props: Props) => {
@@ -31,6 +33,13 @@ const Footer = (props: Props) => {
             }
         },[up]
     )
+    const [links,setLinks] = useState<any>()
+    useEffect(()=>{
+       getDoc(doc(db,"configs","links")).then((snap)=>{
+           if(!snap.exists()) return
+           setLinks(snap.data())
+       }) 
+    },[])
 
   return (
     <div className=' '>
@@ -39,10 +48,10 @@ const Footer = (props: Props) => {
                 <Image width={300} src={logo} alt="logo" className='w-[200px] md:w-[300px] m-8'></Image>
                 <Separator/>
                 <div className='flex gap-3 '>
-                    <Link href={"https://www.facebook.com/Alamiphotography/"}>
+                    <Link href={links?.facebook??""}>
                         <Button variant={"outline"} size={"icon"} className='rounded-full '><FacebookIcon size={24}/></Button>
                     </Link >
-                    <Link href={"https://www.instagram.com/alami_photography/"}>
+                    <Link href={links?.instagram??""}>
                         <Button variant={"outline"} size={"icon"} className='rounded-full '><InstagramIcon size={24}/></Button>
                     </Link>
                 </div>
@@ -103,9 +112,9 @@ const Footer = (props: Props) => {
                 </div>
                 <div className='flex font-sans flex-col gap-4 px-4 py-6 items-center md:items=start'>
                     <div className='font-sans text-center md:text-start'>
-                        <span className='font-sans'>contact@alamiphotography.com</span><br/>
-                        +212-676545984<br/>
-                        <span className='uppercase font-sans'>Marrakesh, morocco</span><br/>
+                        <span className='font-sans'>{links?.email}</span><br/>
+                        {links?.number_1}<br/>
+                        <span className='uppercase font-sans'>{links?.address}</span><br/>
                     </div>
                     <Separator/>
                     <Link href={"/contact"}>
