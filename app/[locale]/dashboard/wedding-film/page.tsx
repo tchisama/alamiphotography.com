@@ -4,13 +4,13 @@ import React from 'react'
 
 type Props = {}
 const inputs :{
-    type:"text"|"paragraph"|"Image"|"number",
+    type:"text"|"paragraph"|"Image"|"number"|"link",
     props?: any,
     title:string,
 }[] = [
     {type:"Image",props:{type:"3/2"},title:"Snapshot"},
     {type:"text",title:"Name"},
-    {type:"text",title:"Video link"},
+    {type:"link",title:"Video link"},
 ]
 
 function page({}: Props) {

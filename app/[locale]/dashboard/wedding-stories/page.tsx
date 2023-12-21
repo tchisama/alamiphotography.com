@@ -6,14 +6,14 @@ type Props = {}
 
 
 const inputs:{
-    type:"text"|"paragraph"|"Image"|"number",
+    type:"text"|"paragraph"|"Image"|"number"|"link",
     props?: any,
     title:string,
 }[] = [
     {type:"Image",props:{type:"3/2"},title:"Photo"},
     {type:"text",title:"name"},
     {type:"text",title:"wedding type"},
-    {type:"text",title:"full story link"},
+    {type:"link",title:"full story link"},
     {type:"paragraph",title:"content"},
 ]
 

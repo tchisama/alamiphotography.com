@@ -4,15 +4,16 @@ import { collection, deleteDoc, doc, onSnapshot, updateDoc } from 'firebase/fire
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import { Button } from './ui/button'
-import { Check, Edit, Replace, Trash } from 'lucide-react'
+import { ArrowRight, Check, Edit, Replace, Trash } from 'lucide-react'
 import { Textarea } from './ui/textarea'
 import FileExplorer from './FileExplorer'
+import Link from 'next/link'
 
 type Props = 
 {
     for_:string,
     inputs:{
-        type:"text"|"paragraph"|"Image"|"number",
+        type:"text"|"paragraph"|"Image"|"number"|"link",
         props?: any,
         title:string,
     }[],
@@ -44,7 +45,7 @@ function DataDisplayer({for_,inputs,grid=false}: Props) {
 type Props2 = {
     for_:string,
     inputs:{
-        type:"text"|"paragraph"|"Image"|"number",
+        type:"text"|"paragraph"|"Image"|"number"|"link",
         props?: any,
         title:string,
     }[],
@@ -74,7 +75,7 @@ const DataDisplayerItem = ({for_,inputs,index,item}: Props2) => {
                         {
                             inputs.find((input) => input.type === "Image") ? 
                             <>
-                            <Image className={'h-[350px] w-fit  object-contain bg-gray-50 border'+ (inputs[index]?.props?.type === "3/2" ? " aspect-[3/2]" : " aspect-[2/3]")} src={itemData.Image} height={400} width={400} alt="" /> 
+                            <Image className={'h-[350px] w-fit  object-contain bg-gray-50 border'+ ((for_ === "wedding storys" || for_ === "wedding films")  ? " aspect-[3/2]" : " aspect-[2/3]")} src={itemData.Image} height={400} width={400} alt="" /> 
                             {
                                 edit &&
                                 <FileExplorer cta={callToAction}>
@@ -96,11 +97,20 @@ const DataDisplayerItem = ({for_,inputs,index,item}: Props2) => {
                                             (
                                             input.type === "text"?
                                             <input value={itemData[input.title]} onInput={(e:any) => setItemData({...itemData,[input.title]:e.target.value})} type={input.type} className='border font-sans p-2 w-full' defaultValue={item[input.title]}/> :
+                                            input.type === "link"?
+                                            <input value={itemData[input.title]} onInput={(e:any) => setItemData({...itemData,[input.title]:e.target.value})} type={input.type} className='border font-sans p-2 w-full' defaultValue={item[input.title]}/> :
                                             input.type === "paragraph" ?
                                             <Textarea value={itemData[input.title]} onInput={(e:any) => setItemData({...itemData,[input.title]:e.target.value})} className='border p-2 min-h-[150px] w-full font-sans' defaultValue={item[input.title]}/>:
                                             null
                                             ):
-                                            <p className='font-sans'>{item[input.title]?? ""}</p>
+                                            (
+                                                input.type !== "link" ?
+                                                <p className='font-sans'>{item[input.title]?? ""}</p>:
+                                                <Link className='font-sans text-blue-900 hover:translate-x-2 duration-200 flex gap-4 relative' href={item[input.title]}>
+                                                    {item[input.title]}
+                                                    <ArrowRight/>
+                                                </Link>
+                                            )
                                         }
                                     </div>
                                 )

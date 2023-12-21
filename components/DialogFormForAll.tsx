@@ -22,7 +22,7 @@ import { db } from '@/firebase'
 type Props = {
     for_:string,
     inputs:{
-        type:"text"|"paragraph"|"Image"|"number",
+        type:"text"|"paragraph"|"Image"|"number"|"link",
         props?: any,
         title:string,
     }[]
@@ -80,6 +80,7 @@ function DialogFormForAll({for_,inputs}: Props) {
                                 {
                                 item.type === "number" ? <Input value={data[index]??""} onChange={(e) => setData(data.map((d,i) => i === index ? e.target.value : d))} className='font-sans' type='number'/> :
                                 item.type === "text" ? <Input value={data[index]??""} onChange={(e) => setData(data.map((d,i) => i === index ? e.target.value : d))} className='font-sans' type='text'/> :
+                                item.type === "link" ? <Input value={data[index]??""} onChange={(e) => setData(data.map((d,i) => i === index ? e.target.value : d))} className='font-sans' type='text'/> :
                                 item.type === "paragraph" ? <Textarea className='font-sans min-h-[200px]' value={data[index]??""} onChange={(e) => setData(data.map((d,i) => i === index ? e.target.value : d))}/> : null
                                 }
                                 </>
