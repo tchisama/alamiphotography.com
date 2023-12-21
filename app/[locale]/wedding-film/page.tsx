@@ -1,6 +1,7 @@
 "use client"
 import AlamiSection from '@/components/AlamiSection'
 import Footer from '@/components/Footer'
+import GetImage from '@/components/GetImage'
 import GetText from '@/components/GetText'
 import Loading from '@/components/Loading'
 import Navbar from '@/components/Navbar'
@@ -39,7 +40,7 @@ const Page = (props: Props) => {
             </div>
         </div>
         <div className="relative nav mt-8 opacity-0 -translate-y-6">
-            <Image width={1500} height={1000} alt="" className="h-[50vh]  bg-[#0002]  md:h-[70vh] scale-105 w-full  object-cover mb-8 " src="https://firebasestorage.googleapis.com/v0/b/alamiphotography-b75a1.appspot.com/o/files%2F244157121%20Landscapeimage-min.jpg?alt=media&token=838ce1e6-02e4-44aa-a915-0f86b82f50c2"  />
+            <GetImage width={1500} height={1000} name="hero" className="h-[50vh]  bg-[#0002]  md:h-[70vh] scale-105 w-full  object-cover mb-8 " section="weddingFilms"  />
             {/* <h1 className="absolute md:text-white md:bottom-10 md:left-10 drop-shadow-2xl font-bold text-3xl md:text-6xl ">Capturing Timeless Beauty & Emotion</h1> */}
         </div>
         <div className='max-w-[1500px] mx-auto flex justify-center'>

@@ -51,12 +51,12 @@ const Page = (props: Props) => {
                 {
                   title:t("experiencePage_step1_title"),
                   content:t("experiencePage_step1_content"),
-                  img:"https://firebasestorage.googleapis.com/v0/b/alamiphotography-b75a1.appspot.com/o/files%2F205116552%20What%20to%20expect.jpg?alt=media&token=84e6bb84-ecfd-461f-a7cb-23fef395a6d6"
+                  img:"step1"
                 },
                 {
                   title:t("experiencePage_step2_title"),
                   content:t("experiencePage_step2_content"),
-                  img:"https://firebasestorage.googleapis.com/v0/b/alamiphotography-b75a1.appspot.com/o/files%2F226170573%20From%20start%20to%20finish.jpg?alt=media&token=4cafca51-1198-4dc4-beae-160dc70ba620"
+                  img:"step2"
                 }
               ].map((_, index) => {
                 return<InvestmentStepsCard item={_} key={index} index={index} />

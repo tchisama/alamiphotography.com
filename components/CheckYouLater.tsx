@@ -3,13 +3,14 @@ import { Button } from './ui/button'
 import Image from 'next/image'
 import Link from 'next/link'
 import GetText from './GetText'
+import GetImage from './GetImage'
 
 type Props = {}
 
 function CheckYouLater({}: Props) {
   return (
     <div className='flex md:flex-row my-12 flex-col items-center relative'>
-        <Image width={900} height={600} alt="" className='md:w-[60vw] bg-[#0002] w-full' src="https://firebasestorage.googleapis.com/v0/b/alamiphotography-b75a1.appspot.com/o/files%2F758721103%20Philosophieimage-min.jpg?alt=media&token=af263aa0-cd41-41eb-911a-e6e78c560536"/>
+        <GetImage width={900} height={600} name="checkYourDate" className='md:w-[60vw] bg-[#0002] w-full' section="aboutPage"/>
         <div className='bg-primary flex flex-col gap-4 text-background p-8 max-w-[500px] md:absolute left-[55%] top-[50%] md:translate-x-[-50%] md:translate-y-[-50%]'>
             <h1 className='text-3xl '>
               <GetText id="about_check_your_date_paragraph_title"/>

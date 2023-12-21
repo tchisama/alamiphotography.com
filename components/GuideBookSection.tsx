@@ -10,6 +10,7 @@ import { db } from '@/firebase'
 import { toast } from './ui/use-toast'
 import GetText from './GetText'
 import { useTranslations } from 'next-intl'
+import GetImage from './GetImage'
 
 type Props = {}
 
@@ -56,7 +57,7 @@ const GuideBookSection = (props: Props) => {
             <p className='md:text-start text-sm text-center md:text-lg'><GetText id="experiencePage_guide_paragraph"/></p>
         </div>
         <div className='flex-[2]'>
-            <Image width={500} height={750} className='w-full bg-[#0002]' src="https://firebasestorage.googleapis.com/v0/b/alamiphotography-b75a1.appspot.com/o/files%2F943996204%20SEND%20YOU%20A%20GUIDE.jpg?alt=media&token=141e01a2-8b2d-41a3-bfb5-d947c30429eb" alt="" />
+            <GetImage width={500} height={750} className='w-full bg-[#0002]' section="experiencePage" name="guide" />
         </div>
     </div>
   )
