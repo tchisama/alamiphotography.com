@@ -3,12 +3,16 @@ import React from 'react'
 import { Tabs, TabsContent, TabsList } from './ui/tabs'
 import { TabsTrigger } from '@radix-ui/react-tabs'
 
-type Props = {tabs:{
-    title:string,
-    content:React.ReactNode
-}[]}
+type TabBarProps = {
+    tabs: {
+      title: string;
+      content: React.ReactNode;
+    }[];
+    children?: React.ReactNode; // Include children prop
+  };
+  
 
-function TabBar({tabs}: Props) {
+function TabBar({ tabs , children }: TabBarProps) {
     const [current,setCurrent] = React.useState(0)
   return (
     <Tabs className='w-full' defaultValue={tabs[0].title}>
