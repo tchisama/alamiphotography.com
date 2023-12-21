@@ -2,6 +2,7 @@ import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import GetText from './GetText'
 
 type Props = {}
 
@@ -15,13 +16,23 @@ function Testimonial({}: Props) {
         <div className='flex-[3] flex md:flex-row md:p-0 pt-16 flex-col gap-12 justify-center'>
             <Link href={"/testimonials"} className='md:w-[300px] w-[200px]  md:-translate-y-20 flex flex-col md:gap-2 items-center'>
                 <Image width={200} height={300} className='w-[180px] bg-[#0002] ' src="https://firebasestorage.googleapis.com/v0/b/alamiphotography-b75a1.appspot.com/o/files%2F553804152%20TESTIMONIALS-min.jpg?alt=media&token=553b49ea-cf2d-4d5c-8351-db7dc4ddefc7" alt="" />
-                <h1 className='md:text-4xl uppercase text-xl  mt-4'>Testimonials</h1>
-                <h1 className='md:text-xl text-muted-foreground lowercase flex-col items-center flex gap-2'>REAL CLIENT MESSAGES <ArrowRight/></h1>
+                <h1 className='md:text-4xl uppercase text-xl  mt-4'>
+                  <GetText id="testimonials_title"/>
+                </h1>
+                <h1 className='md:text-xl text-muted-foreground lowercase flex-col items-center flex gap-2'>
+                  <GetText id="testimonials_subtitle"/>
+                  <ArrowRight/>
+                </h1>
             </Link>
             <Link href={"/experience"} className='md:w-[300px] w-[200px]  md:translate-y-20 flex flex-col md:gap-2 items-center'>
                 <Image width={200} height={300} className='w-[180px] bg-[#0002] ' src="https://firebasestorage.googleapis.com/v0/b/alamiphotography-b75a1.appspot.com/o/files%2F350238573%20EXPERIENCE-min.jpg?alt=media&token=bdd103ec-e410-457e-ae1c-4fa360397643" alt="" />
-                <h1 className='md:text-4xl uppercase text-xl  mt-4'>Experience</h1>
-                <h1 className='md:text-xl  text-muted-foreground lowercase flex flex-col items-center gap-2'>SEE HOW I WORK <ArrowRight/></h1>
+                <h1 className='md:text-4xl uppercase text-xl  mt-4'>
+                  <GetText id="experience_title"/>
+                </h1>
+                <h1 className='md:text-xl  text-muted-foreground lowercase flex flex-col items-center gap-2'>
+                  <GetText id="experience_subtitle"/>
+                  <ArrowRight/>
+                </h1>
             </Link>
         </div>
       </div>

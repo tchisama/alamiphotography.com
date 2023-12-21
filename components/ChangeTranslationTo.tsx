@@ -31,7 +31,7 @@ function ChangeTranslationTo({text,lang}: Props) {
                 if(!doc.data()[text]) return
                 if(!doc.data()[text][lang]) return setConfig("")
                 setConfig(doc.data()[text][lang] ?? "" as string)
-                setData({...data, [lang]:doc.data()[text]})
+                setData(doc.data()[text])
             })
             return () => unSub()
         } catch (error) {
@@ -39,12 +39,13 @@ function ChangeTranslationTo({text,lang}: Props) {
         }
     },[text,lang])
     const changeText = () => {
-        const updated = {
-            ...data,
-            [lang]: config
-        }
+        console.log(data)
+        // i want to update just the [long]
         updateDoc(doc(db, "configs","translate"), {
-            [text]:updated
+            [text]:{
+                ...data,
+                [lang]:config
+            }
         })
     }
   return (
@@ -53,7 +54,7 @@ function ChangeTranslationTo({text,lang}: Props) {
             edit ? <Textarea  value={config} onChange={(e) => setConfig(e.target.value)} className='w-full font-sans min-h-[200px] h-full font-medium' /> :
             <span className='font-sans font-medium break-words'>{config=="" ? <span className='opacity-50 font-sans font-medium'>there is no value</span>: <span className='font-sans font-medium' dangerouslySetInnerHTML={{__html: config?.replace(/\n/g,"<br/>" ) as string}}></span> }</span>
         }
-        
+        <p className='opacity-80 font-sans font-medium'>{text}</p> 
         {
             !data?.en || !data?.fr ? (
             <div className='bg-yellow-50 group w-[40px] h-[40px] overflow-hidden  text-yellow-700 p-2 text-sm rounded-xl duration-300 justify-center hover:w-fit flex gap-4 items-center font-sans'>
