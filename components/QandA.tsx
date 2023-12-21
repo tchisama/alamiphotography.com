@@ -20,13 +20,13 @@ const QandA = (props: Props) => {
     id: string
   }
 
-  const [qandas, setQandas] = useState<QandAs[]>([]);
+  const [qandas, setQantas] = useState<QandAs[]>([]);
 
   useEffect(() => {
-    // onsnapshot from wedding stories
+    // d from wedding stories
     const unsub = onSnapshot(
       collection(db, "Question and Answers"),( snap) => {
-        setQandas(
+        setQantas(
           snap.docs.map((doc) => ({ ...doc.data() as QandAs, id: doc.id })) as QandAs[]
         );
       }
