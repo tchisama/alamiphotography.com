@@ -20,7 +20,7 @@ const GuideBookSection = (props: Props) => {
   const [loading, setLoading] = React.useState(false);
   const submit =async () => {
     setLoading(true)
-    await addDoc(collection(db, "guidebook"), {
+    await addDoc(collection(db, "Guides"), {
       name: form.name,
       email: form.email,
       message: form.message,
