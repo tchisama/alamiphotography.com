@@ -82,7 +82,7 @@ export default function Home() {
       </div>
 
       <div className="max-w-[1800px] mx-auto">
-          <InstagramFooter/>
+          {/* <InstagramFooter/> */}
       </div>
 
     </div>

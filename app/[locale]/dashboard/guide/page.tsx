@@ -20,10 +20,6 @@ function page({}: Props) {
     <div className='container'>
         <div className='flex gap-2 justify-between items-center'>
             <h1 className='text-5xl my-8 '>Guide Requests</h1>
-            <DialogFormForAll
-                for_={"Guide"}
-                inputs={inputs}
-            ></DialogFormForAll>
         </div>
         <DataDisplayer grid={true} for_={"Guides"} inputs={inputs}/>
     </div>
