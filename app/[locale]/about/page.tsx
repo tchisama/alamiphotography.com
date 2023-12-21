@@ -6,7 +6,7 @@ import Loading from "@/components/Loading";
 import Navbar from "@/components/Navbar";
 import QandA from "@/components/QandA";
 import { Separator } from "@/components/ui/separator";
-import WhatClientSays from "@/components/whatClientSays";
+import WhatClientSays from '@/components/whatClientSays';
 import gsap from "gsap";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";

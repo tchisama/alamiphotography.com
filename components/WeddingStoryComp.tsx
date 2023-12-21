@@ -7,11 +7,12 @@ import Link from 'next/link'
 type Props = {
     i:number,
     item:{
-        img:string,
-        title:string
-        content:string
-        href:string
-        type:string
+        Image: string,
+        content: string,
+        "full story link": string,
+        id: string,
+        name: string,
+        "wedding type": string
     }
 }
 
@@ -23,15 +24,15 @@ const WeddingStoryComp = ({i,item}: Props) => {
             'md:flex-row-reverse' :  i % 2 === 0 ,
         })}>
         <div className='md:flex-[4] md:-translate-y-20'>
-            <Image alt="" width={900} height={600} className='w-full object-cover bg-[#0002]' src={item.img}></Image>
+            <Image alt="" width={900} height={600} className='w-full object-cover bg-[#0002]' src={item.Image}></Image>
         </div>
         <div className='md:flex-[5] p-4 flex items-start flex-col gap-8'>
-            <p className='text-lg'>{item.type}</p>
+            <p className='text-lg'>{item['wedding type']}</p>
             <h1 className='md:text-6xl text-4xl'>
-                {item.title}
+                {item.name}
             </h1>
             <p className='text-sm md:text-md md:mr-8'>{item.content}</p>
-            <Link href={item.href}>
+            <Link href={item['full story link']}>
                 <Button variant={"outline"} className='text-xl'>Full story</Button>
             </Link>
         </div>

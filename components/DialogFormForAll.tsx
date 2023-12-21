@@ -16,7 +16,7 @@ import { Textarea } from './ui/textarea'
 import FileExplorer from './FileExplorer'
 import { Replace } from 'lucide-react'
 import { DialogClose } from '@radix-ui/react-dialog'
-import { addDoc, collection } from 'firebase/firestore'
+import { Timestamp, addDoc, collection } from 'firebase/firestore'
 import { db } from '@/firebase'
   
 type Props = {
@@ -49,7 +49,10 @@ function DialogFormForAll({for_,inputs}: Props) {
             }
         }, inputs.find((input) => input.type === "Image") ?  {
             "Image": image,
-        } : {});
+            createdAt: Timestamp
+        } : {
+            createdAt: Timestamp
+        });
 
         addDoc(collection(db, for_+"s"), New)
 
