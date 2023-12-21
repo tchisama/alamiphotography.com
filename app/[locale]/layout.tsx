@@ -6,6 +6,7 @@ import NavbarProvider from '@/components/NavbarProvider'
 import {NextIntlClientProvider} from 'next-intl';
 import {notFound} from 'next/navigation';
 import { Toaster } from "@/components/ui/toaster"
+import LangProvider from '@/components/LangProvider'
 
 // import "https://player.vimeo.com/api/player.js"
 
@@ -42,20 +43,19 @@ export default async function RootLayout({
   children: React.ReactNode,
   params:{locale:string}
 }) {
-  let messages;
-  try {
-    messages = (await import(`../../messages/${locale}.json`)).default;
-  } catch (error) {
-    notFound();
-  }
+  // let messages;
+  // try {
+  //   messages = (await import(`../../messages/${locale}.json`)).default;
+  // } catch (error) {
+  //   notFound();
+  // }
   return (
     <html lang={locale}>
       <head>
       <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png"/>
       </head>
       <body className={` ${charm.variable} ${dancing.variable} ${playfair.variable}`}>
-        <NextIntlClientProvider messages={messages} locale={locale}>
-
+      <LangProvider locale={locale}>
         <div className='text-gray-700 tracking-wider bg-[#fafaf8]'>
           <ButtonScrollUpProvider>
             <NavbarProvider>
@@ -64,7 +64,7 @@ export default async function RootLayout({
           </ButtonScrollUpProvider>
         </div>
         <Toaster />
-        </NextIntlClientProvider>
+      </LangProvider>
       </body>
     </html>
   )

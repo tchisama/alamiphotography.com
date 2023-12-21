@@ -19,7 +19,7 @@ import Testimonial from "@/components/Testimonial";
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const texth = useRef(null);
-  const t = useTranslations('Index');
+  const t = useTranslations('translation');
   const {open} = useNavbarStore()
   useEffect(() => {
     setTimeout(() => {
@@ -57,11 +57,10 @@ export default function Home() {
           className="max-w-[1500px] texth mx-auto flex  flex-col items-center"
         >
           <h1 className="text-2xl opacity-80 uppercase font-thin md:text-5xl tracking-[.10em] leading-relaxed text-center max-w-[900px]">
-          Natural & Elegance <br/>
-            Fine Art Wedding & Lifestyle Photographer & Videographer
+            {t("home_hero_title")}
           </h1>
           <h2 className="text-xl md:text-5xl font-light fontroman text-primary  text-center my-4">
-            Capturing Timeless Beauty & Emotion
+            {t("home_hero_sub_title")}
           </h2>
         </div>
       </div>

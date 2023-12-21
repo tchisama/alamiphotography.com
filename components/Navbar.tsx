@@ -27,9 +27,10 @@ import {
   
 type Props = {}
 
+
 function Navbar({}: Props) {
     const {setOpen} = useNavbarStore()
-    const t = useTranslations('navbar');
+    const t = useTranslations('translation');
 
   useEffect(()=>{
     setOpen(false)
@@ -47,28 +48,28 @@ function Navbar({}: Props) {
             <NavigationMenuList className='flex gap-6 text-lg'>
                 <NavigationMenuItem>
                     <Link href="/" legacyBehavior passHref>
-                            <NavigationMenuLink className={"uppercase px-2"}>{t('home')}</NavigationMenuLink>
+                            <NavigationMenuLink className={"uppercase px-2"}>{t('navbar_home')}</NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                     <Link href="/about" legacyBehavior passHref>
-                            <NavigationMenuLink className={"uppercase px-2"}>{t('about')}</NavigationMenuLink>
+                            <NavigationMenuLink className={"uppercase px-2"}>{t('navbar_about')}</NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
                 <Popover>
                     <PopoverTrigger>
-                            <NavigationMenuLink className={"uppercase px-2"}>{t('portfolio')}</NavigationMenuLink>
+                            <NavigationMenuLink className={"uppercase px-2"}>{t('navbar_portfolio')}</NavigationMenuLink>
                     </PopoverTrigger>
                     <PopoverContent className='p-0 w-[250px]'>
                         <div className='w-full  bg-primary text-background flex flex-col gap-6 p-8 uppercase'>
                             <Link href="/wedding" legacyBehavior passHref>
-                                <NavigationMenuLink className='text-xs flex justify-center tracking-wider '>I - Wedding stories</NavigationMenuLink>
+                                <NavigationMenuLink className='text-xs flex justify-center tracking-wider '>I - {t("navbar_wedding stories")}</NavigationMenuLink>
                             </Link>
                             <Link href="/wedding-film" legacyBehavior passHref>
-                                <NavigationMenuLink className=' text-xs flex justify-center tracking-wider '>II - WEDDING FILM</NavigationMenuLink>
+                                <NavigationMenuLink className=' text-xs flex justify-center tracking-wider '>II - {t("navbar_wedding film")}</NavigationMenuLink>
                             </Link>
                             <Link href="/blog" legacyBehavior passHref>
-                                <NavigationMenuLink className=' text-xs flex justify-center tracking-wider '>III - Blog</NavigationMenuLink>
+                                <NavigationMenuLink className=' text-xs flex justify-center tracking-wider '>III - {t("navbar_blog")}</NavigationMenuLink>
                             </Link>
                             {/* <Link href="/editorial" legacyBehavior passHref>
                                 <NavigationMenuLink className=' '>IV - Editorial</NavigationMenuLink>
@@ -80,12 +81,12 @@ function Navbar({}: Props) {
 
                 <NavigationMenuItem>
                     <Link href="/" legacyBehavior passHref>
-                            <NavigationMenuLink className={"uppercase px-2"}>{t("for photographers")}</NavigationMenuLink>
+                            <NavigationMenuLink className={"uppercase px-2"}>{t("navbar_for photographers")}</NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                     <Link href="/contact" legacyBehavior passHref>
-                            <NavigationMenuLink className={"uppercase px-2"}>{t('contact')}</NavigationMenuLink>
+                            <NavigationMenuLink className={"uppercase px-2"}>{t('navbar_contact')}</NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
             </NavigationMenuList>
@@ -93,12 +94,12 @@ function Navbar({}: Props) {
 
         <NavigationMenu className='hidden md:flex '>
             <NavigationMenuList>
-                {/* <NavigationMenuItem >
+                <NavigationMenuItem >
                     <LangButton />
-                </NavigationMenuItem> */}
+                </NavigationMenuItem>
                 <NavigationMenuItem>
                     <Link href="/contact" legacyBehavior passHref>
-                            <Button className={"ml-2 uppercase text-lg"}>{t("enquire")}</Button>
+                            <Button className={"ml-2 uppercase text-lg"}>{t("navbar_enquire")}</Button>
                     </Link>
                 </NavigationMenuItem>
             </NavigationMenuList>

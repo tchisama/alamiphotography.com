@@ -16,17 +16,9 @@ import {
     NavigationMenuViewport,
   } from "@/components/ui/navigation-menu"
 import Link from 'next/link';
+import GetText from './GetText';
 
 type Props = {}
-const images = [
-  "https://images.pexels.com/photos/1730877/pexels-photo-1730877.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "https://images.pexels.com/photos/1439261/pexels-photo-1439261.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "https://images.pexels.com/photos/2403568/pexels-photo-2403568.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "https://images.pexels.com/photos/2788488/pexels-photo-2788488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "https://images.pexels.com/photos/2814808/pexels-photo-2814808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "https://images.pexels.com/photos/1439261/pexels-photo-1439261.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-];
 const Footer = (props: Props) => {
     const [up,setUp] = useState(0)
     useEffect(
@@ -64,22 +56,30 @@ const Footer = (props: Props) => {
                 <NavigationMenuList className='grid grid-cols-2 gap-2 md:gap-12 text-xs font-sans'>
                     <NavigationMenuItem>
                         <Link href="/" legacyBehavior passHref>
-                                <NavigationMenuLink className={"uppercase px-2 ml-1 font-sans"}>Home</NavigationMenuLink>
+                                <NavigationMenuLink className={"uppercase px-2 ml-1 font-sans"}>
+                                    <GetText props={{className:"font-sans"}} id="footer_home"/>
+                                </NavigationMenuLink>
                         </Link>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
                         <Link href="/about" legacyBehavior passHref>
-                                <NavigationMenuLink className={"uppercase px-2 font-sans"}>About</NavigationMenuLink>
+                                <NavigationMenuLink className={"uppercase px-2 font-sans"}>
+                                    <GetText props={{className:"font-sans"}} id="footer_about"/>
+                                </NavigationMenuLink>
                         </Link>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
                         <Link href="/wedding" legacyBehavior passHref>
-                                <NavigationMenuLink className={"uppercase px-2 font-sans"}>Wedding</NavigationMenuLink>
+                                <NavigationMenuLink className={"uppercase px-2 font-sans"}>
+                                    <GetText props={{className:"font-sans"}} id="footer_wedding"/>
+                                </NavigationMenuLink>
                         </Link>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
                         <Link href="/" legacyBehavior passHref>
-                                <NavigationMenuLink className={"uppercase px-2 font-sans"}>for photographers</NavigationMenuLink>
+                                <NavigationMenuLink className={"uppercase px-2 font-sans"}>
+                                    <GetText props={{className:"font-sans"}} id="footer_for photographers"/>
+                                </NavigationMenuLink>
                         </Link>
                     </NavigationMenuItem>
                     {/* <NavigationMenuItem>
@@ -89,7 +89,9 @@ const Footer = (props: Props) => {
                     </NavigationMenuItem> */}
                     <NavigationMenuItem>
                         <Link href="/contact" legacyBehavior passHref>
-                                <NavigationMenuLink className={"uppercase px-2 font-sans"}>CONTACT</NavigationMenuLink>
+                                <NavigationMenuLink className={"uppercase px-2 font-sans"}>
+                                    <GetText props={{className:"font-sans"}} id="footer_contact"/>
+                                </NavigationMenuLink>
                         </Link>
                     </NavigationMenuItem>
                 </NavigationMenuList>
@@ -107,7 +109,9 @@ const Footer = (props: Props) => {
                     </div>
                     <Separator/>
                     <Link href={"/contact"}>
-                            <Button  className='text-xl  font-sans' size={"lg"}>Contact me </Button>
+                            <Button  className='text-xl  font-sans' size={"lg"}>
+                                <GetText props={{className:"font-sans"}} id="footer_Contact me"/>
+                            </Button>
                     </Link>
                 </div>
             </div>

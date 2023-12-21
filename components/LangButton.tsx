@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import {
     DropdownMenu,
@@ -15,12 +16,12 @@ import {usePathname} from 'next-intl/client';
 type Props = {}
 
 function LangButton({}: Props) {
-  const t = useTranslations('Global');
+  const t = useTranslations('lang');
   const pathName = usePathname();
   return (
     <DropdownMenu>
         <DropdownMenuTrigger asChild>
-            <Button size={"icon"} variant={"outline"} className={"ml-2 p-6 text-xl uppercase"}>{t('lang')}</Button>
+            <Button size={"icon"} variant={"outline"} className={"ml-2 p-6 text-xl uppercase"}>{t('local')}</Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
             <DropdownMenuItem asChild className='text-xl'>

@@ -8,6 +8,7 @@ import {
   } from "@/components/ui/accordion"
 import { collection, onSnapshot } from 'firebase/firestore'
 import { db } from '@/firebase'
+import GetText from './GetText'
   
 type Props = {}
 
@@ -36,7 +37,9 @@ const QandA = (props: Props) => {
 
   return (
     <div className='py-10'>
-        <h1 className='py-10 text-2xl md:text-5xl '>Frequently Asked Questions</h1>
+        <h1 className='py-10 text-2xl md:text-5xl '>
+          <GetText id="about_frequently_asked_questions_title" />
+        </h1>
         <Accordion defaultValue='q1' type="single" collapsible>
             {
                 qandas.map((item) => (
