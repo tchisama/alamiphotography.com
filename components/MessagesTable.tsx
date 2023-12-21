@@ -42,6 +42,7 @@ import {
 import { ArrowRight, ChevronDown, ChevronsUpDown, MoreHorizontal, SortAsc } from "lucide-react"
 import { db } from "@/firebase";
 import { Message } from "@/types"
+import Link from "next/link"
 
 
 
@@ -117,26 +118,9 @@ export const columns: ColumnDef<Message>[] = [
 
       return (
         <div className="flex gap-2">
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="h-8 w-8 p-0">
-              <span className="sr-only">Open menu</span>
-              <MoreHorizontal className="h-4 w-4" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuLabel>Actions</DropdownMenuLabel>
-            <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(payment.id)}
-            >
-              Copy Order ID
-            </DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View Order</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-        <Button variant={"ghost"}  className="h-8 w-8 p-0"><ArrowRight className="h-4 w-4" /></Button>
+          <Link href={`/dashboard/orders/${row.original.id}`}>
+            <Button variant={"ghost"}  className="h-8 w-8 p-0"><ArrowRight className="h-4 w-4" /></Button>
+          </Link>
         </div>
       )
     },
