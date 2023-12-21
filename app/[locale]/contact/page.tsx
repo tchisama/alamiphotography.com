@@ -22,6 +22,8 @@ import { db } from "@/firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
+import GetText from "@/components/GetText";
 
 type Props = {}
 
@@ -37,7 +39,7 @@ function Page({}: Props) {
 
 
 
-
+     const t = useTranslations('translation');
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setTimeout(() => {
@@ -103,11 +105,15 @@ function Page({}: Props) {
                 <p className="text-md md:text-xl leading-relaxed fontcharm">Thank you so much for your interest in my photography, I would love to hear more about your big day! I am located in Wicklow Ireland, but travel worldwide for weddings. I am excited to hear about your plans and will gladly travel to wherever your adventure takes us. I reply to emails within 24 hours. If you do not hear back from me within that timeframe, please check your spam folder and/or email me directly. Thank you!</p>
                 <Separator></Separator>
                 <div>
-                    <h3 className="my-2 text-xl fontcharm">Your Name</h3>
+                    <h3 className="my-2 text-xl fontcharm">
+                        <GetText id="contact_your_name"/>
+                    </h3>
                     <Input className="border-[#999]" value={name} onChange={(e) => setName(e.target.value)}></Input>
                 </div>
                 <div>
-                    <h3 className="my-2 text-xl fontcharm">Phone Number</h3>
+                    <h3 className="my-2 text-xl fontcharm">
+                        <GetText id="contact_your_phone"/>
+                    </h3>
                     <Input  className="border-[#999]" value={number} onChange={(e) => setNumber(e.target.value)} type="number"></Input>
                 </div>
                 <div>
