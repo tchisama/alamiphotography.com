@@ -20,8 +20,7 @@ function page({}: Props) {
                 {title:"experience",content:<ExperiencePage/>},
                 {title:"navbar",content:<NavbarPage/>},
                 {title:"footer",content:<FooterPage/>},
-            ]}>
-            </TabBar>
+            ]}/>
     </div>
   )
 }
