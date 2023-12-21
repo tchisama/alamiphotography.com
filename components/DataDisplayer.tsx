@@ -13,7 +13,7 @@ type Props =
 {
     for_:string,
     inputs:{
-        type:"text"|"paragraph"|"Image"|"number"|"link",
+        type:"text"|"paragraph"|"Image"|"number"|"link"|"email",
         props?: any,
         title:string,
     }[],
@@ -34,7 +34,7 @@ function DataDisplayer({for_,inputs,grid=false}: Props) {
         {
             data?.map((item,index) => {
                 return (
-                    <DataDisplayerItem key={index} for_={for_} inputs={inputs} index={index} item={item}></DataDisplayerItem>
+                    <DataDisplayerItem key={item.id} for_={for_} inputs={inputs} index={index} item={item}></DataDisplayerItem>
                 )
             })
         }
@@ -45,7 +45,7 @@ function DataDisplayer({for_,inputs,grid=false}: Props) {
 type Props2 = {
     for_:string,
     inputs:{
-        type:"text"|"paragraph"|"Image"|"number"|"link",
+        type:"text"|"paragraph"|"Image"|"number"|"link"|"email",
         props?: any,
         title:string,
     }[],
@@ -97,19 +97,25 @@ const DataDisplayerItem = ({for_,inputs,index,item}: Props2) => {
                                             (
                                             input.type === "text"?
                                             <input value={itemData[input.title]} onInput={(e:any) => setItemData({...itemData,[input.title]:e.target.value})} type={input.type} className='border font-sans p-2 w-full' defaultValue={item[input.title]}/> :
-                                            input.type === "link"?
+                                            input.type === "link" || input.type === "email"?
                                             <input value={itemData[input.title]} onInput={(e:any) => setItemData({...itemData,[input.title]:e.target.value})} type={input.type} className='border font-sans p-2 w-full' defaultValue={item[input.title]}/> :
                                             input.type === "paragraph" ?
                                             <Textarea value={itemData[input.title]} onInput={(e:any) => setItemData({...itemData,[input.title]:e.target.value})} className='border p-2 min-h-[150px] w-full font-sans' defaultValue={item[input.title]}/>:
                                             null
                                             ):
                                             (
-                                                input.type !== "link" ?
-                                                <p className='font-sans'>{item[input.title]?? ""}</p>:
+                                                input.type == "link" ?
                                                 <Link className='font-sans text-blue-900 hover:translate-x-2 duration-200 flex gap-4 relative' href={item[input.title]}>
                                                     {item[input.title]}
                                                     <ArrowRight/>
+                                                </Link>:
+                                                input.type == "email" ?
+                                                <Link className='font-sans text-blue-900 hover:translate-x-2 duration-200 flex gap-4 relative' href={"mailto:"+item[input.title]}>
+                                                    {item[input.title]}
+                                                    <ArrowRight/>
                                                 </Link>
+                                                :
+                                                <p className='font-sans'>{item[input.title]?? ""}</p>
                                             )
                                         }
                                     </div>

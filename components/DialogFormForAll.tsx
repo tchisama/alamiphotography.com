@@ -16,13 +16,13 @@ import { Textarea } from './ui/textarea'
 import FileExplorer from './FileExplorer'
 import { Replace } from 'lucide-react'
 import { DialogClose } from '@radix-ui/react-dialog'
-import { Timestamp, addDoc, collection } from 'firebase/firestore'
+import { Timestamp, addDoc, collection, serverTimestamp } from 'firebase/firestore'
 import { db } from '@/firebase'
   
 type Props = {
     for_:string,
     inputs:{
-        type:"text"|"paragraph"|"Image"|"number"|"link",
+        type:"text"|"paragraph"|"Image"|"number"|"link"|"email",
         props?: any,
         title:string,
     }[]
@@ -49,9 +49,9 @@ function DialogFormForAll({for_,inputs}: Props) {
             }
         }, inputs.find((input) => input.type === "Image") ?  {
             "Image": image,
-            createdAt: Timestamp
+            createdAt: serverTimestamp()
         } : {
-            createdAt: Timestamp
+            createdAt: serverTimestamp()
         });
 
         addDoc(collection(db, for_+"s"), New)
@@ -83,7 +83,7 @@ function DialogFormForAll({for_,inputs}: Props) {
                                 {
                                 item.type === "number" ? <Input value={data[index]??""} onChange={(e) => setData(data.map((d,i) => i === index ? e.target.value : d))} className='font-sans' type='number'/> :
                                 item.type === "text" ? <Input value={data[index]??""} onChange={(e) => setData(data.map((d,i) => i === index ? e.target.value : d))} className='font-sans' type='text'/> :
-                                item.type === "link" ? <Input value={data[index]??""} onChange={(e) => setData(data.map((d,i) => i === index ? e.target.value : d))} className='font-sans' type='text'/> :
+                                item.type === "link" || item.type === "email" ? <Input value={data[index]??""} onChange={(e) => setData(data.map((d,i) => i === index ? e.target.value : d))} className='font-sans' type='text'/> :
                                 item.type === "paragraph" ? <Textarea className='font-sans min-h-[200px]' value={data[index]??""} onChange={(e) => setData(data.map((d,i) => i === index ? e.target.value : d))}/> : null
                                 }
                                 </>
