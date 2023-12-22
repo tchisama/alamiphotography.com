@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import GetText from "./GetText";
 
 type Props = {};
 
@@ -22,21 +23,15 @@ const AlamiSection = (props: Props) => {
         </div>
         <div className="flex flex-col md:flex-row  py-8 justify-between gap-8 items-center text-white ">
           <p className="flex-1 max-w-4xl text-xs font-sans md:text-lg">
-            Alami Photography was established by Alami Mohamed and a team of
-            passionate photographers and videographers. Our goal is not only to
-            capture the sincerity and beauty of your weddings but also to
-            document the genuine emotions of the dayin our creations.
-            <br />
-            <br />
-            If our works resonate with you, feel free to reach out to us.
+            <GetText id="wedding_films_affection_legacy_content"/>
           </p>
           <div className="flex items-start md:w-fit w-full md:items-center gap-4 flex-col">
             <h2 className="text-2xl text-[#454643] font-semibold">
-              let&apos;s get in touch
+              <GetText id="wedding_films_affection_legacy_button_subtitle"/>
             </h2>
             <Link href={"/contact"}>
               <Button className="bg-[#454643] uppercase text-white font-sans hover:bg-[#393a37]">
-                contact me
+                <GetText id="wedding_films_affection_legacy_button"/>
               </Button>
             </Link>
           </div>

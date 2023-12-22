@@ -9,6 +9,7 @@ import Footer from '@/components/Footer';
 import WeddingStoryComp from '@/components/WeddingStoryComp';
 import { collection, onSnapshot } from 'firebase/firestore';
 import { db } from '@/firebase';
+import GetText from '@/components/GetText';
 
 type Props = {}
 
@@ -86,11 +87,8 @@ const Page = (props: Props) => {
             className="max-w-[1500px]  mx-auto "
           >
             <div className='flex items-center gap-4 py-8 flex-col my-20'>
-              <h1 className='text-2xl md:text-5xl text-center'>GET A GLIMPSE OF MY THOUGHTS</h1>
-              <p className='text-center text-sm md:text-md  max-w-[700px]'>We passionate for the timeless photography with every moment we capture. We believe that a really
-awesome photograph should always create some level of emotional response in the viewer.<br/> We want to
-journal stories with images over words.<br/><br/>
-I aim to seize enchanting and magical moments shared by people in love, providing them with an unforgettable experience in the process.</p>
+              <h1 className='text-2xl md:text-5xl text-center'><GetText id="wedding_title"/></h1>
+              <p className='text-center text-sm md:text-md  max-w-[700px]'><GetText id="wedding_content"/></p>
             </div>
             
             {
