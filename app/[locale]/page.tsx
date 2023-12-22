@@ -85,9 +85,10 @@ export default function Home() {
           {/* <InstagramFooter/> */}
       </div>
 
+        
 
     </div>
-    
+
         <Footer/>
       </>
   );
