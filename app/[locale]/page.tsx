@@ -64,7 +64,7 @@ export default function Home() {
           </h2>
         </div>
       </div>
-      
+
 
       <div className="max-w-[1500px] mx-auto">
           <HelloSection homepage={true}/>
@@ -84,6 +84,7 @@ export default function Home() {
       <div className="max-w-[1800px] mx-auto">
           {/* <InstagramFooter/> */}
       </div>
+      
 
     </div>
         <Footer/>
