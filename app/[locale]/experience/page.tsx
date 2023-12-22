@@ -17,7 +17,7 @@ const Page = (props: Props) => {
 
   const [loading, setLoading] = useState(true);
   const texth = useRef(null);
-  const t = useTranslations('Index');
+  const t = useTranslations('translation');
   const {open} = useNavbarStore()
   useEffect(() => {
     setTimeout(() => {
@@ -49,14 +49,14 @@ const Page = (props: Props) => {
             {
               [
                 {
-                  title:" what to expect",
-                  content:"Your wedding is a unique reflection of you. That’s why I love getting to know you, and your wedding details, personally. Knowing your wedding day dreams enables me to create authentic images that reflect the real you. My shooting style produces images that reveal the intimate and authentic expressions of the love and commitment you share. Unguarded. Natural. Emotional. The cherished images of a lifetime. Your wedding day will be filled with extraordinary moments — intimate, surprising, and joyous. Captured creatively, those moments shine through as timeless heirlooms, instantly bringing you back to the essence of your day.",
-                  img:"https://firebasestorage.googleapis.com/v0/b/alamiphotography-b75a1.appspot.com/o/files%2F205116552%20What%20to%20expect.jpg?alt=media&token=84e6bb84-ecfd-461f-a7cb-23fef395a6d6"
+                  title:t("experiencePage_step1_title"),
+                  content:t("experiencePage_step1_content"),
+                  img:"step1"
                 },
                 {
-                  title:"From start to finish",
-                  content:"Once I receive your initial query, you will receive an automated confirmation email. If I am available you will receive my pricing guide along with my own 'Wedding Experience' bridal guide to help you get the most from your wedding day. If you are happy to move forward with me, we will make it official. You can then secure and book your date with a non-refundable booking fee.",
-                  img:"https://firebasestorage.googleapis.com/v0/b/alamiphotography-b75a1.appspot.com/o/files%2F226170573%20From%20start%20to%20finish.jpg?alt=media&token=4cafca51-1198-4dc4-beae-160dc70ba620"
+                  title:t("experiencePage_step2_title"),
+                  content:t("experiencePage_step2_content"),
+                  img:"step2"
                 }
               ].map((_, index) => {
                 return<InvestmentStepsCard item={_} key={index} index={index} />

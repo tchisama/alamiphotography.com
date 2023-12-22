@@ -3,6 +3,7 @@ import { Button } from './ui/button'
 import classNames from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
+import GetText from './GetText'
 
 type Props = {
     i:number,
@@ -33,7 +34,7 @@ const WeddingStoryComp = ({i,item}: Props) => {
             </h1>
             <p className='text-sm md:text-md md:mr-8'>{item.content}</p>
             <Link href={item['full story link']}>
-                <Button variant={"outline"} className='text-xl'>Full story</Button>
+                <Button variant={"outline"} className='text-xl'><GetText id="wedding_full_story_button"/></Button>
             </Link>
         </div>
     </div>

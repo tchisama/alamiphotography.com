@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import GetText from './GetText'
+import GetImage from './GetImage'
 
 type Props = {}
 
@@ -11,11 +12,11 @@ function Testimonial({}: Props) {
     <div className='my-20 fontcharm md:px-4'>
       <div className='flex md:flex-row flex-col items-center'>
         <div className='relative flex-[2]'>
-            <Image width={500} height={750} alt="" className='w-full  bg-[#0002]  hidden md:block scale-[1.08] max-w-[100vh] ' src='https://firebasestorage.googleapis.com/v0/b/alamiphotography-b75a1.appspot.com/o/files%2F887469811%20Photo%20a%20gauche!-min.jpg?alt=media&token=ce6caedb-67c1-4755-924d-fc8ef9dcfc13'></Image>
+            <GetImage width={500} height={750} className='w-full  bg-[#0002]  hidden md:block scale-[1.08] max-w-[100vh] ' name='bg' section='checkPackages'></GetImage>
         </div>
         <div className='flex-[3] flex md:flex-row md:p-0 pt-16 flex-col gap-12 justify-center'>
             <Link href={"/testimonials"} className='md:w-[300px] w-[200px]  md:-translate-y-20 flex flex-col md:gap-2 items-center'>
-                <Image width={200} height={300} className='w-[180px] bg-[#0002] ' src="https://firebasestorage.googleapis.com/v0/b/alamiphotography-b75a1.appspot.com/o/files%2F553804152%20TESTIMONIALS-min.jpg?alt=media&token=553b49ea-cf2d-4d5c-8351-db7dc4ddefc7" alt="" />
+                <GetImage width={200} height={300} className='w-[180px] bg-[#0002] ' name="testimonials" section="checkPackages" />
                 <h1 className='md:text-4xl uppercase text-xl  mt-4'>
                   <GetText id="testimonials_title"/>
                 </h1>
@@ -25,7 +26,7 @@ function Testimonial({}: Props) {
                 </h1>
             </Link>
             <Link href={"/experience"} className='md:w-[300px] w-[200px]  md:translate-y-20 flex flex-col md:gap-2 items-center'>
-                <Image width={200} height={300} className='w-[180px] bg-[#0002] ' src="https://firebasestorage.googleapis.com/v0/b/alamiphotography-b75a1.appspot.com/o/files%2F350238573%20EXPERIENCE-min.jpg?alt=media&token=bdd103ec-e410-457e-ae1c-4fa360397643" alt="" />
+                <GetImage width={200} height={300} className='w-[180px] bg-[#0002] ' name="experience" section="checkPackages" />
                 <h1 className='md:text-4xl uppercase text-xl  mt-4'>
                   <GetText id="experience_title"/>
                 </h1>
