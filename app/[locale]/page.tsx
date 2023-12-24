@@ -15,6 +15,7 @@ import {useTranslations} from 'next-intl';
 import WeAreCinematicStyle from "@/components/WeAreCinematicStyle";
 import InstagramFooter from "@/components/instagramFooter";
 import Testimonial from "@/components/Testimonial";
+import GetData from "@/components/GetData";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -85,7 +86,11 @@ export default function Home() {
           {/* <InstagramFooter/> */}
       </div>
 
-        
+        <GetData from="home/hello-section">
+          {({title}) => {
+            return <h1>{title}</h1>
+          }}
+        </GetData>
 
     </div>
 
