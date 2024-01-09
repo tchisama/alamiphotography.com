@@ -23,7 +23,7 @@ function HelloSection({homepage=false}: Props) {
             <p className='text-sm md:text-xl space-y-6 leading-relaxed md:max-w-4xl text-center md:text-start'>
               {
                 homepage?
-                <GetText id="about_hello_content"/>
+                <GetText id="hello_content"/>
                 :
                 <>
                 <GetText id="about_hello_content"/>

@@ -80,7 +80,7 @@ function Navbar({}: Props) {
 
 
                 <NavigationMenuItem>
-                    <Link href="/" legacyBehavior passHref>
+                    <Link href="/for-photographers" legacyBehavior passHref>
                             <NavigationMenuLink className={"uppercase px-2"}>{t("navbar_for photographers")}</NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>

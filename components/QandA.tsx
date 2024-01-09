@@ -44,8 +44,8 @@ const QandA = (props: Props) => {
             {
                 qandas.map((item) => (
                 <AccordionItem  value={item.id} key={item.id}>
-                    <AccordionTrigger className='text-xl md:text-3xl '>{item.question}</AccordionTrigger>
-                    <AccordionContent className=' md:text-xl font-sans'><span className='font-sans'>{item.answer}</span></AccordionContent>
+                    <AccordionTrigger className='text-sm md:text-xl text-start '>{item.question}</AccordionTrigger>
+                    <AccordionContent className=' md:text-lg text-xs font-sans'><span className='font-sans'>{item.answer}</span></AccordionContent>
                 </AccordionItem>
                 ))
             }
