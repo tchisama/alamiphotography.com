@@ -58,7 +58,7 @@ function NavbarMobile({}: Props) {
                     </Accordion>
                 </li>
                 <li className='flex justify-center'>
-                    <Link className='py-3 text-lg w-full text-center' href={"/"}>{t("navbar_for photographers")}</Link>
+                    <Link className='py-3 text-lg w-full text-center' href={"/for-photographers"}>{t("navbar_for photographers")}</Link>
                 </li>
                 <Separator className='opacity-50'/>
                 <li className='flex justify-center'>
