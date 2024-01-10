@@ -12,20 +12,24 @@ type Review = {
     Name: string,
     id: string
 }
-type Props = {}
-const WhatClientSays = (props: Props) => {
+type Props = {
+    about?: boolean
+}
+const WhatClientSays = ({about=false}: Props) => {
     const [reviews, setReviews] = useState<Review[]>([])
     useEffect(() => {
         // onsnapshot from wedding stories
         const unsub = onSnapshot(
         collection(db, "reviews"),( snap) => {
             setReviews(
+                about ?
+                snap.docs.map((doc) => ({ ...doc.data() as Review, id: doc.id })).slice(0,3) as Review[]  :
                 snap.docs.map((doc) => ({ ...doc.data() as Review, id: doc.id })) as Review[]
             );
         }
         )
         return () => unsub()
-    },[])
+    },[about])
   return (
     <div>
         {

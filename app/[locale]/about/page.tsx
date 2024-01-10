@@ -56,7 +56,7 @@ function Page({}: Props) {
                 <h1 className=' text-4xl md:text-6xl my-16 fontcharm'>
                   <GetText id="about_what_clients_say_title"/>
                 </h1>
-                <WhatClientSays/>
+                <WhatClientSays about={true}/>
             </div>
         </div>
 
