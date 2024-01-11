@@ -21,7 +21,7 @@ function LangButton({}: Props) {
   return (
     <DropdownMenu>
         <DropdownMenuTrigger asChild>
-            <Button size={"icon"} variant={"outline"} className={"ml-2 p-6 text-xl uppercase"}>{t('local')}</Button>
+            <Button size={"icon"} variant={"outline"} className={"ml-2 md:p-6 flex items-center justify-center md:text-xl uppercase"}>{t('local')}</Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
             <DropdownMenuItem asChild className='text-xl'>
