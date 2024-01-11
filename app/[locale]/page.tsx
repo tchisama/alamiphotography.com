@@ -86,11 +86,6 @@ export default function Home() {
           {/* <InstagramFooter/> */}
       </div>
 
-        <GetData from="home/hello-section">
-          {({title}) => {
-            return <h1>{title}</h1>
-          }}
-        </GetData>
 
     </div>
 
