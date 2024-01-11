@@ -42,7 +42,12 @@ function Navbar({}: Props) {
         <Link href={"/"}>
             <Image alt='' className=' w-[100px] object-contain md:w-[250px] ' src={blackLogo} width={160} height={100}></Image>
         </Link>
-        <Button size={"icon"} onClick={()=>setOpen(true)} variant={"ghost"} className='block md:hidden'><CiMenuFries size={24}/></Button>
+        <div className='flex gap-4 items-center'>
+            <div className='block md:hidden'>
+                <LangButton />
+            </div>
+            <Button size={"icon"} onClick={()=>setOpen(true)} variant={"ghost"} className='block md:hidden'><CiMenuFries size={24}/></Button>
+        </div>
 
         <NavigationMenu style={{}} className='hidden flex-1 md:flex text-xl z-50'>
             <NavigationMenuList className='flex gap-6 text-lg'>
