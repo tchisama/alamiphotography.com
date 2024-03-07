@@ -56,6 +56,10 @@ export default async function RootLayout({
       <title>
 Capture every nuance of your special day with timeless beauty and emotion as your premier Marrakech wedding photographer and videographer
       </title>
+      <meta
+        name="description"
+        content="Capture every nuance of your special day with timeless beauty and emotion as your premier Marrakech wedding photographer and videographer."
+      />
       </head>
       <body className={` ${charm.variable} ${dancing.variable} ${playfair.variable}`}>
       <LangProvider locale={locale}>
