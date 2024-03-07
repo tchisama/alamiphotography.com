@@ -7,6 +7,7 @@ import {NextIntlClientProvider} from 'next-intl';
 import {notFound} from 'next/navigation';
 import { Toaster } from "@/components/ui/toaster"
 import LangProvider from '@/components/LangProvider'
+import Head from 'next/head'
 
 // import "https://player.vimeo.com/api/player.js"
 
@@ -51,7 +52,7 @@ export default async function RootLayout({
   // }
   return (
     <html lang={locale}>
-      <head>
+      <Head>
       <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png"/>
       <title>
 Capture every nuance of your special day with timeless beauty and emotion as your premier Marrakech wedding photographer and videographer
@@ -59,8 +60,9 @@ Capture every nuance of your special day with timeless beauty and emotion as you
       <meta
         name="description"
         content="Capture every nuance of your special day with timeless beauty and emotion as your premier Marrakech wedding photographer and videographer."
+        key="desc"
       />
-      </head>
+      </Head>
       <body className={` ${charm.variable} ${dancing.variable} ${playfair.variable}`}>
       <LangProvider locale={locale}>
         <div className='text-gray-700 tracking-wider bg-[#fafaf8]'>
