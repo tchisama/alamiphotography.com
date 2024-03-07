@@ -52,7 +52,7 @@ export default async function RootLayout({
   // }
   return (
     <html lang={locale}>
-      <Head>
+      <head>
       <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png"/>
       <title>
 Capture every nuance of your special day with timeless beauty and emotion as your premier Marrakech wedding photographer and videographer
@@ -62,7 +62,7 @@ Capture every nuance of your special day with timeless beauty and emotion as you
         content="Capture every nuance of your special day with timeless beauty and emotion as your premier Marrakech wedding photographer and videographer."
         key="desc"
       />
-      </Head>
+      </head>
       <body className={` ${charm.variable} ${dancing.variable} ${playfair.variable}`}>
       <LangProvider locale={locale}>
         <div className='text-gray-700 tracking-wider bg-[#fafaf8]'>
