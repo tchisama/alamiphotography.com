@@ -16,6 +16,10 @@ import WeAreCinematicStyle from "@/components/WeAreCinematicStyle";
 import InstagramFooter from "@/components/instagramFooter";
 import Testimonial from "@/components/Testimonial";
 import GetData from "@/components/GetData";
+import { Metadata } from "next";
+
+
+
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
