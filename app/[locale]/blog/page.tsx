@@ -40,7 +40,7 @@ const Page = (props: Props) => {
             ref={texth}
             className="max-w-[1500px] mx-auto "
           >
-            {/* <motion.div  initial={{ y: 100 }} animate={{ y: 0 }}  className='grid grid-cols-1 overflow-hidden md:grid-cols-3 gap-4 md:gap-y-8  py-8'>
+            <motion.div  initial={{ y: 100 }} animate={{ y: 0 }}  className='grid grid-cols-1 overflow-hidden md:grid-cols-3 gap-4 md:gap-y-8  py-8'>
                 <BlogComp/>
                 <BlogComp/>
                 <BlogComp/>
@@ -48,11 +48,11 @@ const Page = (props: Props) => {
                 <BlogComp/>
                 <BlogComp/>
                 <BlogComp/>
-            </motion.div> */}
-            <div className='min-h-[80vh] flex items-center justify-center flex-col gap-4'>
-              <div className='  uppercase w-fit text-3xl md:text-5xl tracking-[.15em] '>Coming soon</div>
-              <p className='max-w-[910px] text-center text-xs md:text-lg'>Get ready to embark on a journey through the lens of love as we bring you the most enchanting tales of weddings, told through the artistry of our lenses. Stay tuned for a symphony of emotions, a dance of laughter, and a celebration of timeless love stories. Our upcoming blog will be a visual feast, an ode to the magic that happens when two hearts say {"'"}I do.{"'"} Save the date for an unforgettable rendezvous with the essence of matrimony. Love is about to take center stage, and you{"'"}re invited to witness the splendor. Coming soon!</p>
-            </div>
+            </motion.div> 
+            {/* <div className='min-h-[80vh] flex items-center justify-center flex-col gap-4'> */}
+            {/*   <div className='  uppercase w-fit text-3xl md:text-5xl tracking-[.15em] '>Coming soon</div> */}
+            {/*   <p className='max-w-[910px] text-center text-xs md:text-lg'>Get ready to embark on a journey through the lens of love as we bring you the most enchanting tales of weddings, told through the artistry of our lenses. Stay tuned for a symphony of emotions, a dance of laughter, and a celebration of timeless love stories. Our upcoming blog will be a visual feast, an ode to the magic that happens when two hearts say {"'"}I do.{"'"} Save the date for an unforgettable rendezvous with the essence of matrimony. Love is about to take center stage, and you{"'"}re invited to witness the splendor. Coming soon!</p> */}
+            {/* </div> */}
           </div>
       </div>
         <Footer/>

@@ -28,7 +28,7 @@ const page = (props: Props) => {
 
 const BlogComp = (props: Props) => {
   return (
-    <Link href={"/blog/0"} className='flex group relative min-h-[300px] hover:bg-[#fff]  hover:scale-[1.01] flex-col gap-4 items-center pb-4 md:pb-8  duration-300'>
+    <Link href={"/dashboard/blogs/0"} className='flex group relative min-h-[300px] hover:bg-[#fff]  hover:scale-[1.01] flex-col gap-4 items-center pb-4 md:pb-8  duration-300'>
         <img className='w-full aspect-square object-cover group-hover:shadow-none duration-300 ' src='https://www.niallscullyphotography.com/wp-content/uploads/2023/10/Michelle-Darragh-681-768x1154.jpg' alt=''></img>
         <h3 className='md:text-xl text-center'>Wedding</h3>
         <h2 className='text-xl md:text-2xl text-center'>Top Wedding Stationary Suppliers</h2>
