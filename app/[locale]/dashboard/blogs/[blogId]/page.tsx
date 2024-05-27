@@ -1,7 +1,15 @@
 "use client"
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Button } from '@/components/ui/button'
-import { ArrowDown, ArrowUp, GalleryVerticalIcon, ImageIcon, Plus, TrashIcon, TypeIcon } from 'lucide-react'
+import { ArrowDown, ArrowUp, CheckIcon, GalleryVerticalIcon, ImageIcon, Plus, SaveIcon, TrashIcon, TypeIcon } from 'lucide-react'
+
+
+import { useCreateBlockNote } from "@blocknote/react";
+import { BlockNoteView } from "@blocknote/mantine";
+import "@blocknote/core/fonts/inter.css";
+import "@blocknote/mantine/style.css";
+
+
 
 type Props = {}
 
@@ -59,7 +67,7 @@ function page({}: Props) {
         setSections([...sections, {
           id: Math.random().toString(),
           type: "img",
-          img: "https://source.unsplash.com/random/1000x500"
+          img: "https://source.unsplash.com/random"
         }])
       }}
           className="flex gap-2 font-sans"> <ImageIcon />Add Section</Button>
@@ -73,16 +81,19 @@ function page({}: Props) {
       }
       }
           className="flex gap-2 font-sans"> <TypeIcon />Add Section</Button>
-      <Button
-      onClick={() => {
-        setSections([...sections, {
-          id: Math.random().toString(),
-          type: "title",
-          text: "Title"
-        }])
-      }
-      }
-          className="flex gap-2 font-sans"> <TypeIcon />Add title</Button>
+      {/* <Button */}
+      {/* onClick={() => { */}
+      {/*   setSections([...sections, { */}
+      {/*     id: Math.random().toString(), */}
+      {/*     type: "title", */}
+      {/*     text: "Title"<p  */}
+      {/*       contentEditable={true} */}
+      {/*       className="text-md" */}
+      {/*         >{section.text}</p> */}
+      {/*   }]) */}
+      {/* } */}
+      {/* } */}
+      {/*     className="flex gap-2 font-sans"> <TypeIcon />Add title</Button> */}
       <Button
           className="flex gap-2 font-sans"> <GalleryVerticalIcon />Add Section</Button>
       </div>
@@ -103,21 +114,62 @@ const Section = ({section,sections,setSections}:{section:Section,
   sections:Section[],
   setSections:(sections:Section[])=>void
 })=>{
-      const a = ()=>{
+    const titleRef = useRef<HTMLHeadingElement>(null)
+
+      useEffect(() => {
+        if (titleRef.current && section.type === "title") {
+          // i want to focus the title
+          titleRef.current.focus()
+        }
+
+      }, [section]);
+
+
+      const editor = useCreateBlockNote({
+          // i want it to be light theme          
+        domAttributes:{
+          
+          block: {
+            class: "bg-white text-black fontcharm ",
+          }
+
+        }
+      });
+
+
+      const A = ()=>{
 
           if (section.type === "img") {
             return <img className="max-w-4xl" src={section.img } />
           } else if (section.type === "text") {
               // i want the p to be editable
-            return <p 
-            contentEditable={true}
-            className="text-md"
-              >{section.text}</p>
+              return <BlockNoteView editor={editor} />;
+                
           } else if(section.type === "title"){
-            return <h1 contentEditable className="text-4xl">{section.text}</h1>
-          } else if (section.type === "video") {
+            return (
+            <div className="relative">
+            <h1  
+              ref={titleRef}
+              dangerouslySetInnerHTML={{__html: section.text}}
+              contentEditable className="text-4xl"></h1>
+              <Button size="icon" onClick={
+              ()=>{
+                const index = sections.findIndex((s) => s.id === section.id)
+                const newSections = [...sections]
+                newSections[index] = {
+                  ...section,
+                  text: titleRef.current?.innerText || ""
+                }
+                setSections(newSections)
+                }
+              } className="absolute right-0 top-0">
+                <CheckIcon  />
+              </Button>
+            </div>
+            )
+          } else if(section.type === "video") {
             return <video src={section.video} />
-          } else if (section.type === "gallery") {
+          } else if(section.type === "gallery") {
             return <div>
               {
                 section.gallery.map((img) => {
@@ -131,9 +183,7 @@ const Section = ({section,sections,setSections}:{section:Section,
    }
     return (
     <div className="width-full relative group">
-      {
-      a()
-      }
+      <A />
       <div className="hidden group-hover:block">
       <Button onClick={()=>{
         setSections(sections.filter((s) => s.id !== section.id))
@@ -159,5 +209,11 @@ const Section = ({section,sections,setSections}:{section:Section,
     </div>
     )
 }
+
+
+
+
+
+
 
 export default page

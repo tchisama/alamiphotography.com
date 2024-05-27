@@ -96,11 +96,16 @@ input, textarea {
 }
 
 .fontcharm {
-  font-family: 'Derivia';
+  font-family: 'Derivia' !important;
 }
 
 .fontroman {
-  font-family: "Windsong";
+  font-family: "Windsong" !important;
+}
+
+.bn-editor{
+  background : white !important;
+  font-family: 'Derivia' !important;
 }
 
 .fontsign {
