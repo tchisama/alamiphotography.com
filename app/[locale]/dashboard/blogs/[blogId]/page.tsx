@@ -8,7 +8,21 @@ import { useCreateBlockNote } from "@blocknote/react";
 import { BlockNoteView } from "@blocknote/mantine";
 import "@blocknote/core/fonts/inter.css";
 import "@blocknote/mantine/style.css";
+import { Timestamp, doc, getDoc } from 'firebase/firestore';
+import { db } from '@/firebase';
+import { useParams } from 'next/navigation';
 
+
+type Blog = {
+  id: string,
+  title: string,
+  date: Timestamp,
+  category: string,
+  content : {
+    type: string,
+    data: string
+  }[]
+}
 
 
 type Props = {}
@@ -22,32 +36,35 @@ type Section = {
 } | {
   type: "text",
   text: string
-} | {
-  type: "title",
-  text: string
-} | {
-  type: "video",
-  video: string
-} | {
-  type: "gallery",
-  gallery: string[]
-})
+} )
 
 
 
 
 function page({}: Props) {
   const [sections, setSections] = React.useState<Section[]>([])
+  const [blog, setBlog] = React.useState<Blog>()
+  const {blogId} = useParams()
+
+  useEffect(() => {
+    getDoc(doc(db as any,'blogs',blogId as string) )
+    .then((doc) => {
+      setBlog({...doc.data() as Blog, id: doc.id})
+    })
+  }
+  ,[blogId])
+
   return (
+    blog &&
     <div>
 
 
 
       <div className="flex flex-col gap-4 mt-20 container">
           <div className="flex px-12 flex-col gap-2 ">
-                <h4 className='text-sm md:text-xl text-muted-foreground '>September 15, 2023</h4>
-                <h2 className='text-xl md:text-5xl '>Top Wedding Stationary Suppliers</h2>
-                <h3 className='md:text-2xl '>Wedding</h3>
+                <h4 className='text-sm md:text-xl text-muted-foreground '>{blog.date.toDate().toDateString()}</h4>
+                <h2 className='text-xl md:text-5xl '>{blog.title ?? "no title set yet"}</h2>
+                <h3 className='md:text-2xl '>{blog.category}</h3>
           </div>
 
                 {/* <p className='py-4 text-sm md:py-20 md:text-xl '>LoLorem ipsum dolor sit amet consectetur adipisicing elit. Cum tempore natus doloremque, ipsam magni doloribus delectus, inventore incidunt id ullam praesentium assumenda iure dolorum quidem illo, quis provident animi cumque.Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum tempore natus doloremque, ipsam magni doloribus delectus, inventore incidunt id ullam praesentium assumenda iure dolorum quidem illo, quis provident animi cumque.Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum tempore natus doloremque, ipsam magni doloribus delectus, inventore incidunt id ullam praesentium assumenda iure dolorum quidem illo, quis provident animi cumque.Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum tempore natus doloremque, ipsam magni doloribus delectus,</p> */}
@@ -114,17 +131,6 @@ const Section = ({section,sections,setSections}:{section:Section,
   sections:Section[],
   setSections:(sections:Section[])=>void
 })=>{
-    const titleRef = useRef<HTMLHeadingElement>(null)
-
-      useEffect(() => {
-        if (titleRef.current && section.type === "title") {
-          // i want to focus the title
-      titleRef.current.focus()
-    }
-
-      }, [section]);
-
-
       const editor = useCreateBlockNote({
           // i want it to be light theme          
         domAttributes:{
@@ -135,54 +141,35 @@ const Section = ({section,sections,setSections}:{section:Section,
 
         }
       });
-
-
-      const A = ()=>{
-
-          if (section.type === "img") {
-            return <img className="max-w-4xl" src={section.img } />
-          } else if (section.type === "text") {
-              // i want the p to be editable
-              return <BlockNoteView editor={editor} />;
-                
-          } else if(section.type === "title"){
-            return (
-            <div className="relative">
-            <h1  
-              ref={titleRef}
-              dangerouslySetInnerHTML={{__html: section.text}}
-              contentEditable className="text-4xl"></h1>
-              <Button size="icon" onClick={
-              ()=>{
-                const index = sections.findIndex((s) => s.id === section.id)
-                const newSections = [...sections]
-                newSections[index] = {
-                  ...section,
-                  text: titleRef.current?.innerText || ""
-                }
-                setSections(newSections)
-                }
-              } className="absolute right-0 top-0">
-                <CheckIcon  />
-              </Button>
-            </div>
-            )
-          } else if(section.type === "video") {
-            return <video src={section.video} />
-          } else if(section.type === "gallery") {
-            return <div>
-              {
-                section.gallery.map((img) => {
-                  return <img src={img} />
-                })
+      const Save = async () => {
+        const text = await editor.blocksToHTMLLossy(editor.document)
+          console.log(text)
+          setSections(sections.map((s) => {
+            if (s.id === section.id) {
+              return {
+                ...s,
+                text
               }
-            </div>
-          } else {
-            return <div>Unknown Section Type</div>
+            } else {
+              return s
+            }
           }
-   }
-    return (
-    <div className="width-full relative group">
+        ))
+      } 
+
+        const A = ()=>{
+
+            if (section.type === "img") {
+              return <img className="max-w-4xl" src={section.img } />
+            } else if (section.type === "text") {
+                // i want the p to be editable
+                return <BlockNoteView editor={editor} />;
+            } else {
+              return <div>Unknown Section Type</div>
+            }
+    }
+      return (
+      <div className="width-full relative group">
       <A />
       <div className="hidden group-hover:block">
       <Button onClick={()=>{
