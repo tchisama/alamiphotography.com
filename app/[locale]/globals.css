@@ -103,9 +103,13 @@ input, textarea {
   font-family: "Windsong" !important;
 }
 
-.bn-editor{
-  background : white !important;
+.bn-editor *{
   font-family: 'Derivia' !important;
+  color: #444 !important;
+}
+
+.bn-editor {
+  background : white !important;
 }
 
 .fontsign {

@@ -44,7 +44,7 @@ function page({}: Props) {
 
 
       <div className="flex flex-col gap-4 mt-20 container">
-          <div className="flex flex-col gap-2 ">
+          <div className="flex px-12 flex-col gap-2 ">
                 <h4 className='text-sm md:text-xl text-muted-foreground '>September 15, 2023</h4>
                 <h2 className='text-xl md:text-5xl '>Top Wedding Stationary Suppliers</h2>
                 <h3 className='md:text-2xl '>Wedding</h3>
@@ -119,8 +119,8 @@ const Section = ({section,sections,setSections}:{section:Section,
       useEffect(() => {
         if (titleRef.current && section.type === "title") {
           // i want to focus the title
-          titleRef.current.focus()
-        }
+      titleRef.current.focus()
+    }
 
       }, [section]);
 
