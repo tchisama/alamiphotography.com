@@ -22,7 +22,7 @@ type Blog = {
 }
 
 
-const page = (props: Props) => {
+const Page = (props: Props) => {
   const [blogs , setBlogs] = React.useState([])
   useEffect(
     () => {
@@ -75,4 +75,4 @@ const BlogComp = ({blog}: {blog:Blog}) => {
   )
 }
 
-export default page
+export default Page

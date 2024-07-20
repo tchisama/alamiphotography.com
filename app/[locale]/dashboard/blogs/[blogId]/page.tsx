@@ -42,7 +42,7 @@ type Section = {
 
 
 
-function page({}: Props) {
+function Page({}: Props) {
   const [sections, setSections] = React.useState<Section[]>([])
   const [blog, setBlog] = React.useState<Blog>()
   const {blogId} = useParams()
@@ -99,7 +99,9 @@ function page({}: Props) {
 
       {
         sections.map((section: Section) => {
-        return <Section section={section} 
+        return <Section 
+                key={section.id}
+                section={section} 
               {...{sections,setSections}}
             />
       }) 
@@ -233,4 +235,4 @@ const Section = ({section,sections,setSections}:{section:Section,
 
 
 
-export default page
+export default Page
