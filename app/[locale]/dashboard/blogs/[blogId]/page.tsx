@@ -8,9 +8,10 @@ import { useCreateBlockNote } from "@blocknote/react";
 import { BlockNoteView } from "@blocknote/mantine";
 import "@blocknote/core/fonts/inter.css";
 import "@blocknote/mantine/style.css";
-import { Timestamp, doc, getDoc } from 'firebase/firestore';
+import { Timestamp, doc, getDoc, updateDoc } from 'firebase/firestore';
 import { db } from '@/firebase';
 import { useParams } from 'next/navigation';
+import { Input } from '@/components/ui/input';
 
 
 type Blog = {
@@ -54,6 +55,17 @@ function page({}: Props) {
   }
   ,[blogId])
 
+
+  const save = ()=>{
+    updateDoc(
+      doc(db as any,'blogs',blogId as string),
+      {
+        ...blog,
+        content: sections
+      }
+    )
+  }
+
   return (
     blog &&
     <div>
@@ -63,8 +75,24 @@ function page({}: Props) {
       <div className="flex flex-col gap-4 mt-20 container">
           <div className="flex px-12 flex-col gap-2 ">
                 <h4 className='text-sm md:text-xl text-muted-foreground '>{blog.date.toDate().toDateString()}</h4>
-                <h2 className='text-xl md:text-5xl '>{blog.title ?? "no title set yet"}</h2>
-                <h3 className='md:text-2xl '>{blog.category}</h3>
+                <Input onInput={
+                (e:any ) => {
+                  setBlog({
+                    ...blog,
+                    title: e.target.value
+                  })
+                }
+            } className='text-xl md:text-5xl fontcharm px-0 border-none' value={blog.title?? "no title set yet"}></Input>
+                <Input 
+                onInput={
+                (e:any ) => {
+                  setBlog({
+                    ...blog,
+                    category: e.target.value
+                  })
+                }
+            }
+              className=' md:text-2xl fontcharm px-0 h-8 border-none' value={blog.category?? "no title set yet"}></Input>
           </div>
 
                 {/* <p className='py-4 text-sm md:py-20 md:text-xl '>LoLorem ipsum dolor sit amet consectetur adipisicing elit. Cum tempore natus doloremque, ipsam magni doloribus delectus, inventore incidunt id ullam praesentium assumenda iure dolorum quidem illo, quis provident animi cumque.Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum tempore natus doloremque, ipsam magni doloribus delectus, inventore incidunt id ullam praesentium assumenda iure dolorum quidem illo, quis provident animi cumque.Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum tempore natus doloremque, ipsam magni doloribus delectus, inventore incidunt id ullam praesentium assumenda iure dolorum quidem illo, quis provident animi cumque.Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum tempore natus doloremque, ipsam magni doloribus delectus,</p> */}
@@ -113,8 +141,9 @@ function page({}: Props) {
       {/*     className="flex gap-2 font-sans"> <TypeIcon />Add title</Button> */}
       <Button
           className="flex gap-2 font-sans"> <GalleryVerticalIcon />Add Section</Button>
-      </div>
 
+      </div>
+      <Button onClick={ save } className="absolute top-2 right-2 font-sans text-lg">Save</Button>
     </div>
     </div>
   )
@@ -131,8 +160,9 @@ const Section = ({section,sections,setSections}:{section:Section,
   sections:Section[],
   setSections:(sections:Section[])=>void
 })=>{
+
       const editor = useCreateBlockNote({
-          // i want it to be light theme          
+    // i want it to be light theme          
         domAttributes:{
           
           block: {
